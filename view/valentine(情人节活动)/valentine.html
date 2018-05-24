@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/valentine/valentine.scss?__inline" media="screen" title="no_title" charset="utf-8">
+</head>
+<body style="visibility: hidden;">
+<div class="wrap">
+    <img class="indexbg" src="/images/valentine/indexbg.png" alt=""/>
+    <img class="part1_header" src="/images/valentine/part1_headerbg.png" alt=""/>
+    <div class="part1">
+        <input type="text" name="mobile" placeholder="输入手机号领取双人购专享红包"/>
+        <a class="get_voucher">领取双人购专享红包</a>
+        <div class="items">
+            <div class="row">
+                <a class="item" href="https://m.simpletour.com/mobile/gateway/wechat/tourism/detail/605">
+                    <img src="/images/valentine/pkg_lgh.png" alt=""/>
+                </a>
+                <a class="item" href="https://m.simpletour.com/mobile/gateway/wechat/tourism/detail/428">
+                    <img src="/images/valentine/pkg_dl.png" alt=""/>
+                </a>
+            </div>
+            <div class="row">
+                <a class="item" href="https://m.simpletour.com/mobile/gateway/wechat/tourism/detail/330">
+                    <img src="/images/valentine/pkg_ylxs.png" alt=""/>
+                </a>
+                <a class="item" href="https://m.simpletour.com/mobile/gateway/wechat/tourism/detail/599">
+                    <img src="/images/valentine/pkg_xgll.png" alt=""/>
+                </a>
+            </div>
+        </div>
+    </div>
+    <img class="part2_header" src="/images/valentine/part2_headerbg.png" alt=""/>
+    <div class="part2">
+        <div class="tabs">
+            <span class="tourism">轻奢情侣云南游</span>
+            <span class="show_photo">唯美旅拍秀恩爱</span>
+        </div>
+        <div class="panels">
+            <div class="panel tourism show">
+                <a class="prod" href="https://m.simpletour.com/mobile/gateway/wechat/resource/activity/369">
+                    <img src="/images/valentine/prod_lsh.png" alt=""/>
+                </a>
+                <a class="prod" href="https://m.simpletour.com/mobile/gateway/wechat/resource/scenic/278">
+                    <img src="/images/valentine/prod_xgll.png" alt=""/>
+                </a>
+                <a class="prod" href="https://m.simpletour.com/mobile/gateway/wechat/resource/activity/236">
+                    <img src="/images/valentine/prod_yylj.png" alt=""/>
+                </a>
+            </div>
+            <div class="panel camerist">
+                <img src="/images/valentine/camerist.png" alt=""/>
+            </div>
+        </div>
+    </div>
+    <img class="part3_header" src="/images/valentine/part3_headerbg.png" alt=""/>
+    <div class="part3">
+        <img src="/images/valentine/hostels_bg.png" alt=""/>
+        <a class="order_hotel" href="https://m.simpletour.com/mobile/gateway/wechat/resource/hotel/371">点此订购房间</a>
+    </div>
+    <img class="part4_header" src="/images/valentine/part4_headerbg.png" alt=""/>
+    <div class="part4">
+        <div class="contain">
+            <div class="rule">
+                活动期间（即日起至2.28日）购买双人情人节
+                套餐后，可自由选择购买13.14元“简途爱情保单”
+                本保单可抵用2018年自然年内简途云南任意双人
+                套餐200元现金（两次出行人需一致否则保单不生
+                效）。详情可查看保单说明。
+            </div>
+            <div class="slogan">
+                别说“我会爱你一辈子”不如先爱到明年试试看
+            </div>
+            <a class="insure" href="https://m.simpletour.com/mobile/gateway/wechat/resource/activity/372">马上投保</a>
+        </div>
+        <div class="scanCode">
+            <img class="qrcode" src="/images/valentine/qrcode.png" alt=""/>
+            <div class="info">
+                <div class="info-title">详情请扫码咨询</div>
+                <div class="info-content">微信ID：mariayudan</div>
+            </div>
+        </div>
+    </div>
+    <img class="part5_header" src="/images/valentine/part5_headerbg.png" alt=""/>
+    <div class="part5">
+        <img class="pictures" src="/images/valentine/pictures.png" alt=""/>
+        <img class="part5_footer" src="/images/valentine/part5_footerbg.png" alt=""/>
+    </div>
+</div>
+<div class="audio on">
+    <audio id="audio" src="/images/valentine/valentine.mp3" autoplay="autoplay" loop="loop"></audio>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/js/base.js"></script>
+<script type="text/javascript">
+    (function (root, factory) {
+        if (typeof define === 'function' && define.amd) {
+            //AMD
+            define(factory);
+        } else if (typeof exports === 'object') {
+            //Node, CommonJS之类的
+            module.exports = factory();
+        } else {
+            //浏览器全局变量(root 即 window)
+            root.imgLoader = factory(root);
+        }
+    }(this, function () {
+        var isFunc = function(f){
+            return typeof f === 'function';
+        }
+        //构造器函数
+        function imgLoader(config){
+            this.option = {
+                backgroundResources : [], //背景图资源路径数组
+                onStart : null, //加载开始回调函数，传入参数total
+                onProgress : null, //正在加载回调函数，传入参数currentIndex, total
+                onComplete : null //加载完毕回调函数，传入参数total
+            }
+            if(config){
+                for(i in config){
+                    this.option[i] = config[i];
+                }
+            }
+            else{
+                alert('参数错误！');
+                return;
+            }
+            this.status = 0; //加载器的状态，0：未启动   1：正在加载   2：加载完毕
+            // this.total = this.option.resources.length || 0; //资源总数
+            this.total = $('img[data-src]').length + this.option.backgroundResources.length || 0; //资源总数
+            this.currentIndex = 0; //当前正在加载的资源索引
+        };
+
+        imgLoader.prototype.start = function(){
+            this.status = 1;
+            var _this = this;
+            var baseUrl = this.option.baseUrl;
+            var imgs = $('img[data-src]');
+            for(var i=0,l=this.option.backgroundResources.length; i<l; i++){
+                var url = this.option.backgroundResources[i];
+
+                var bcImage = new Image();
+                bcImage.onload = function(){_this.loaded();};
+                bcImage.onerror = function(){_this.loaded();};
+                bcImage.src = url;
+            }
+            for(var j = 0, len = imgs.length; j < len;j++) {
+                var image = new Image();
+                image.onload = function(){
+                    _this.loaded();
+                };
+                image.onerror = function(){_this.loaded();};
+                image.src = $(imgs[j]).attr('data-src');
+                $(imgs[j]).attr('src',$(imgs[j]).attr('data-src'));
+            }
+            if(isFunc(this.option.onStart)){
+                this.option.onStart(this.total);
+            }
+        }
+
+        imgLoader.prototype.loaded = function(){
+            if(isFunc(this.option.onProgress)){
+                this.option.onProgress(++this.currentIndex, this.total);
+            }
+            //加载完毕
+            if(this.currentIndex===this.total){
+                if(isFunc(this.option.onComplete)){
+                    this.option.onComplete(this.total);
+                }
+            }
+        }
+
+        //暴露公共方法
+        return imgLoader;
+    }));
+</script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        document.body.style.visibility = 'visible';
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+        document.body.addEventListener('touchstart', function () {});
+    })(document, window);
+    $(document).ready(function () {
+        var loader = new imgLoader({
+            backgroundResources: [
+                "/images/valentine/tourism_btn_active.png",
+                "/images/valentine/show_photo_btn_active.png",
+                "/images/valentine/camerist.png"
+            ],
+            onStart: function (total) {
+            },
+            onProgress: function (current, total) {
+
+            },
+            onComplete: function () {
+                $('.loading .loading_btn').addClass('in');
+            }
+        });
+        loader.start();
+        //Tab切换
+        var $panel = $('.panels .panel');
+        $('.tabs span').on('click',function(e){
+            var $this = $(this);
+            $panel.removeClass('show');
+            $panel.eq($this.index()).addClass('show');
+        });
+        //音乐播放器
+        var audio = document.getElementById('audio'),flag = true;
+        document.addEventListener('touchstart', function (e) {
+            if(flag){
+                audio.play();
+                flag = false;
+            }
+        },false);
+        $('.audio').click(function(e){
+            var $this = $(this);
+            if($this.hasClass('on')){
+                $this.removeClass('on');
+                audio.pause();
+            }else{
+                $this.addClass('on');
+                audio.play();
+            }
+        });
+        $('a.get_voucher').click(function(e){
+            e.preventDefault();
+            var $this = $(this);
+            if (!$this.hasClass('disabled')) {
+                var mobile = $.trim($('input[name=mobile]').val());
+                $this.addClass('disabled');
+                if (!mobile) {
+                    $.alert({
+                        msg: '手机号不能为空!'
+                    });
+                    $this.removeClass('disabled');
+                }else if (!/^0?(13|14|15|17|18)[0-9]{9}$/.test(mobile)) {
+                    $.alert({
+                        msg: '手机号格式错误'
+                    });
+                    $this.removeClass('disabled');
+                }else {
+                    //提交代码
+                    $.ajax({
+                        type: 'POST',
+                        url:'/mobile/gateway/${platform}/coupon/fetch',
+                        data:{mobile:mobile,couponActityId:'${couponActityId}',shareOpenId:'${shareOpenId}'},
+                        success: function (data) {
+                            if (data.code == 0) {
+                                $.alert({
+                                    msg: '领取成功!'
+                                });
+                                $this.removeClass('disabled');
+                            }else {
+                                $.confirm({
+                                    title: '领取失败',
+                                    detail: [data.msg],
+                                    yes: '确认',
+                                    yesFun: function () {
+                                    }
+                                });
+                                $this.removeClass('disabled');
+                            }
+                        },
+                        error: function (data) {
+                            $this.removeClass('disabled');
+                            $.alert({
+                                msg: '网络异常,请重试'
+                            });
+                        }
+                    })
+                }
+            }else{
+                $.alert({
+                    msg: '不要急,休息一下!'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

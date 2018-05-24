@@ -1,0 +1,354 @@
+@import "/common/css/base";
+$baseFontSize : 40px;
+body{
+  background-color: #ffd83e;
+}
+.page-content{
+  padding-bottom: rem(70px);
+}
+img.header{
+  width: 100%;
+}
+.tabs{
+  @include displayflex;
+  @include flexflowRow();
+  div{
+    margin-left:rem(6px);
+    height: rem(72px);
+    line-height: rem(67px);
+    font-size: rem(26px);
+    text-align: center;
+    background-color: #5894de;
+    color: white;
+    border:rem(5px) solid black;
+    border-radius: rem(35px);
+    box-sizing: border-box;
+    &:last-child{
+      margin-right: rem(6px);
+    }
+    &.selected{
+      background-color: #f85353;
+    }
+  }
+  .crowdfunding,.recommend,.presale{
+    @include flex(1);
+  }
+  .card{
+    width: rem(122px);
+  }
+}
+.switch .recommend{
+  display: none;
+  .products{
+    padding: 0 rem(10px);
+  }
+}
+.switch{
+  .title-img{
+    width: 100%;
+    margin-top: rem(24px);
+  }
+  .place{
+    width: 100%;
+    height: rem(63px);
+    margin: rem(26px) auto rem(16px) auto;
+    background: url("/images/nationalDay/place.png") no-repeat center top;
+    background-size: rem(559px);
+    color:white;
+    font-size: rem(26px);
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: rem(20px);
+  }
+}
+.switch .crowdfunding{
+  display: none;
+  .product-wrap{
+    padding: 0 rem(10px);
+  }
+  .product{
+    padding: rem(4px);
+    @include displayflex;
+    @include flexflowRow();
+    margin-bottom: rem(5px);
+    box-sizing: border-box;
+    height: rem(206px);
+    background-color: white;
+    img{
+      display: block;
+      width: rem(320px);
+      margin-right: .35rem;
+    }
+    .right{
+      @include flex(1);
+      box-sizing: border-box;
+      //padding-right: rem(4px);
+      h3{
+        color:#333333;
+        font-size: rem(28px);
+        line-height: rem(38px);
+        margin-top: rem(14px);
+        height: rem(76px);
+      }
+      p{
+        &:nth-child(2){
+          height: 1.4rem;
+        }
+        color:#333333;
+        margin-top: .1rem;
+        margin-bottom: .1rem;
+        font-size: .6rem;
+        @include displayflex;
+        @include flexflowRow();
+        justify-content:space-between;
+        align-items:baseline;
+        > span{
+          display: block;
+          font-size: .7rem;
+        }
+        .price{
+          color:#f85353;
+          font-size: rem(43px);
+          padding:0 rem(10px);
+          span{
+            font-size: rem(28px);
+          }
+        }
+      }
+    }
+  }
+}
+.switch .card{
+  display: none;
+  .products{
+    padding:0 rem(10px);
+  }
+  .single{
+    margin-bottom: rem(6px);
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+.single{
+  padding: rem(4px);
+  background-color: white;
+  position: relative;
+  font-size: 0;
+  height: rem(300px);
+  img{
+    width: 100%;
+  }
+  .tips{
+    border-radius: rem(6px);
+    position: absolute;
+    width: rem(508px);
+    height:3.2rem;
+    box-sizing: border-box;
+    background-color: rgba(255,255,255,.8);
+    padding-top:rem(10px);
+    text-align: center;
+    top:50%;
+    left:50%;
+    margin-left: rem(-254px);
+    margin-top: rem(-56px);
+    .tips-content{
+      display: inline-block;
+      margin: 0 auto;
+    }
+    h3{
+      font-size: rem(28px);
+      color:#333333;
+      text-align: center;
+      margin-bottom:rem(12px);
+      font-weight: 900;
+    }
+    .cutline{
+      border-top: 1px solid black;
+    }
+    h3,p{
+      padding: 0 rem(10px);
+    }
+    p{
+      padding-top: .1rem;
+      font-weight: 100;
+      display: inline-block;
+      font-size: rem(24px);
+      text-align: center;
+      color:#333;
+      span{
+        font-size: rem(28px);
+        margin-right: rem(10px);
+      }
+      .red{
+        font-size: rem(43px);
+        color:#f85353;
+        margin: 0 0 0 rem(10px);
+      }
+    }
+  }
+}
+.switch .presale{
+  display: none;
+  .products{
+    padding:0 rem(10px);
+  }
+}
+.double{
+  @include displayflex;
+  @include flexflowRow();
+  .tips{
+    position: absolute;
+    width: rem(228px);
+    height: rem(38px);
+    top:rem(20px);
+    left: .1rem;
+    background: url("/images/nationalDay/tips.png");
+    background-size: rem(228px) rem(38px);
+    color:white;
+    font-size: .6rem;
+    line-height: rem(38px);
+    padding-left: rem(5px);
+  }
+  a{
+    display: block;
+    @include flex(1);
+    margin-right: rem(8px);
+    width: 100%;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  div.hidden{
+    display: block;
+    @include flex(1);
+    visibility: hidden;
+    width: 100%;
+    img{
+      //display: none;
+      width: 100%;
+      //width:rem(298px);
+      height: rem(98.2*2px);
+    }
+  }
+  .double-item{
+    position: relative;
+    display: inline-block;
+    font-size: 0;
+    box-sizing: border-box;
+    padding: rem(4px);
+    height: rem(410px);
+    background-color: white;
+    margin-top: rem(6px);
+    img{
+      //display: none;
+      width: 100%;
+      //width:rem(298px);
+      height: rem(98.2*2px);
+    }
+    h3{
+      color:#333333;
+      font-size: rem(28px);
+      padding:0 rem(36px) 0 rem(10px);
+      line-height: rem(38px);
+      margin-top: rem(14px);
+      height: rem(76px);
+    }
+    p{
+      color:#333333;
+      margin-top: rem(14px);
+      margin-bottom: rem(14px);
+      font-size: rem(22px);
+      padding:0 rem(10px);
+      line-height: .8rem;
+    }
+    .price{
+      color:#f85353;
+      font-size: rem(43px);
+      padding:0 rem(10px);
+      position: absolute;
+      right: .2rem;
+      bottom: .01rem;
+      span{
+        font-size: rem(28px);
+      }
+    }
+  }
+}
+.card .products a{
+  margin-top: .15rem;
+  display: block;
+}
+.card .buy_card{
+  position: relative;
+  background-color: white;
+  width: rem(310*2px);
+  height: rem(184px);
+  margin: rem(30px) auto rem(20px);
+  padding: .1rem;
+  img{
+    width: 100%;
+  }
+  img.bus{
+    left:rem(20px);
+    top:-.3rem;
+    position: absolute;
+    width: rem(280px);
+    height: rem(206px);
+  }
+  .tips{
+    position: absolute;
+    width: rem(276px);
+    height: rem(168px);
+    right: rem(20px);
+    top:rem(7px);
+    background-color: rgba(255,255,255,.8);
+    border-radius: rem(6px);
+    padding: rem(10px) rem(18px);
+    h3{
+      font-size: .7rem;
+      color: #333;
+      text-align: center;
+      margin-bottom: .1rem;
+      font-weight: 900;
+      padding-bottom: rem(10px);
+      border-bottom:1px solid black;
+    }
+    p{
+      font-size: .7rem;
+      text-align: center;
+      span.red{
+        color:#f85353;
+        margin-left: rem(20px);
+        font-size: .7rem;
+      }
+    }
+    a{
+      display: block;
+      color:white;
+      background-color:#f85353;
+      width: rem(180px);
+      height: rem(50px);
+      text-align: center;
+      line-height: rem(50px);
+      border-radius: rem(50px);
+      font-size: .7rem;
+      margin: rem(5px) auto 0;
+    }
+  }
+}
+.switch{
+  .crowdfunding,.presale,.card,.recommend{
+    opacity: 0;
+    &.show{
+      display: block;
+    }
+    &.opacity{
+      opacity: 1;
+    }
+    &.transition{
+      -webkit-transition: ease-out 800ms;
+      transition: ease-out 800ms;
+    }
+  }
+}

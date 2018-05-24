@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/yyy/yyy.scss">
+</head>
+<body>
+<div class="pages">
+    <video style="background-color: rgb(0, 0, 0); width: 100%; height: 100%; display: none;" webkit-playsinline="" x-webkit-airplay="" id="video"  data-role="txp_video_tag" src="http://ugcbsy.qq.com/flv/194/40/s0371tner8y.p703.1.mp4?sdtfrom=v1010&amp;guid=af9e43d8595060c3114c1548ecc17d2f&amp;vkey=E1D10529BC8DDFAECFC7D6E544E919DA9BCD0C89958437D9613CDF75EC00CE13729D38E762579BB6DA148C8386E87C563121AF3694650265752EA098AA85D89CC9C059A8ABB632B24428ADA26A4994155310AE920B8D496098A7B25DA959FC862421048E039EEED494B8D483498CE6A7" class=""></video>
+
+    <button style="width: 100px;height:50px">asdasd</button>
+</div>
+<script src="/common/js/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 375) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $(document).ready(function() {
+
+        var docWidth = $(document).width()-16;
+        var docHeight = $(document).height()-16;
+        if(docWidth/docHeight > (723/1170)){
+            $(".page2-content").css({"height":docHeight+'px',"width":docHeight*723/1170+'px',left:(docWidth-docHeight*723/1170)/2+8+'px'})
+        }else{
+            $(".page2-content").css({"height":docWidth*1170/723+'px',"width":docWidth+'px',top:(docHeight-docWidth*1170/723)/2+8+'px'})
+        }
+        $('button').click(function() {
+            var v = document.getElementById('video');
+            v.play();
+        });
+    });
+
+</script>
+</body>
+</html>

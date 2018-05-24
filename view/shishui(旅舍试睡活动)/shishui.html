@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/shishui/shishui.scss?__inline" media="screen" title="no_title" charset="utf-8">
+</head>
+<body style="visibility: hidden;">
+<div class="header">
+    <img src="http://images.simpletour.com/sleep/ss-header@3x.png" alt=""/>
+</div>
+<div class="content">
+    <ul class="article">
+        <li>
+            <span class="icon">◆</span>成都沃克青年旅舍是成都离锦里，武侯祠，宽窄巷子最近的青年旅舍！
+        </li>
+        <li>
+            <span class="icon">◆</span>沃克国际青年旅舍一直都获得国内外热爱自助旅 行的背包客的好评。清洁，舒适，友好热情的员工，来自世界各地的旅 友，一切的一切都在热情地欢迎您。关于成都的任何问题，沃克都乐意回答；对于成都，沃克可是专家！酒吧覆盖无线网络，同时提供上网服务，电影，桌球游戏等。
+        </li>
+        <li>
+            <span class="icon">◆</span>沃克愿意静静聆听您和旅友们分享的旅途故事。欢迎进入沃克，一同享受自由的快乐！
+        </li>
+        <li class="albums">
+            <img src="http://images.simpletour.com/sleep/albums01@3x.png" alt=""/>
+            <img src="http://images.simpletour.com/sleep/albums02@3x.png" alt=""/>
+        </li>
+    </ul>
+    <div class="enrol">
+        <div class="e-title">
+            <img src="http://images.simpletour.com/sleep/enrol-title@3x.png" alt=""/>
+        </div>
+        <div class="slogan">
+            来局子，成为会员即可！<br/>
+            参照下方报名姿势，睡遍成都！
+        </div>
+        <div class="flow">
+            <div class="f-title">报名方式</div>
+            <div class="f-content">
+                <img class="qrcode" src="http://images.simpletour.com/sleep/enrol-qrcode@3x.png" alt=""/>
+                <div class="steps">
+                    <div class="step">①扫描／点击二维码</div>
+                    <div class="step">②填写报名表单</div>
+                    <div class="step">③等待审核啦</div>
+                </div>
+            </div>
+        </div>
+        <div class="trunTo">
+            <a class="a-enrol" href="http://form.mikecrm.com/zWwRKw">点此也可报名</a>
+            <div class="t-slogan">
+                除了睡遍成都，<br/>
+                还有更多会员福利等待你来解锁哦！
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="row">
+            <span>★1.路友局内购专场</span>
+            <span>★5.会员专属生日礼物</span>
+        </div>
+        <div class="row">
+            <span>★2.每周免费车票</span>
+            <span>★6.会员专属旅行顾问</span>
+        </div>
+        <div class="row">
+            <span>★3.新品首发体验</span>
+            <span>★7.更多会员专属福利</span>
+        </div>
+        <div class="row">
+            <span>★4.活动&福利特权利</span>
+        </div>
+    </div>
+</div>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        document.body.style.visibility = 'visible';
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+    })(document, window);
+</script>
+</body>
+</html>

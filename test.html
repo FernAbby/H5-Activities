@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>123</button>
+</body>
+<script src="/common/js/jquery-1.11.1.min.js"></script>
+<script>
+    var s = 1;
+    $(document).keypress(function (e) {
+        switch (e.keyCode){
+            case 49:
+                s = 0;
+                break;
+            case 50:
+                s = 1;
+                break;
+            case 51:
+                s = 2;
+                break;
+        }
+    });
+    $("button").click(function () {
+        console.log(s);
+    })
+</script>
+</html>

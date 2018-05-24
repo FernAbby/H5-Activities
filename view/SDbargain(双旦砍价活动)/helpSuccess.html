@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/SDbargain/helpSuccess.scss?__inline" media="screen" title="no_title" charset="utf-8">
+</head>
+<body style="visibility: hidden;">
+<div class="header">
+    <img src="/images/SDbargain/sdBargain_header@3x.png" alt=""/>
+</div>
+<div class="content">
+    <div class="info-message">
+        <img src="/images/SDbargain/success_icon@2x.png" alt=""/>
+        <div class="message">
+            你已为XXX猛砍XXX元！获得“好人卡”。<br/>
+            砍了2016，双旦去玩吧！看熊猫、吃四川火锅，更有超低价的九寨沟5星酒店奢华游...还等什么？马上去看看 ! !
+        </div>
+    </div>
+    <div class="buttons small">
+        <span>嗨玩双旦</span>
+        <span>发起我的砍价</span>
+    </div>
+    <div class="esoterica">
+        <div class="e-title">砍价秘籍</div>
+        <div class="e-content">
+            1.输入手机号码，邀请好友帮忙砍价；<br/>
+            2.每人在同一时段只能发起1个砍价，但可以帮多位好友砍价；<br/>
+            3.在一个砍价中，每位好友都有1次帮砍机会，金额随机减少0.8-8元；<br/>
+            4.帮砍成功，好友将获得简途特价产品购买机会；<br/>
+            5.该产品价格砍至0元时，砍价成功，你将获得该旅行产品“0元购”名额1个，并无法再次发起其他砍价；<br/>
+            6.若砍价过程中需要更换产品进行砍价，直接进入意向产品页面，点击“我要“0元购”“，放弃已发起的砍价即可；<br/>
+            7.当该产品所有“0元购”名额被抢光时，该产品砍价活动结束，届时其他参与者砍价失败，产品恢复原价。
+        </div>
+    </div>
+    <div class="footer">
+        <a href="">年终特惠,17去玩</a>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        document.body.style.visibility = 'visible';
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+    })(document, window);
+    $(document).ready(function () {
+
+    });
+</script>
+</body>
+</html>

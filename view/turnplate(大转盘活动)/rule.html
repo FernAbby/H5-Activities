@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-store">
+    <meta http-equiv="Cache-Control" content="no-cache,no-store">
+    <meta http-equiv="expires" content="0">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>活动规则</title>
+    <link rel="stylesheet" href="/css/turnplate/rule.scss?__inline" media="screen" title="no_title" charset="utf-8">
+</head>
+<body style="visibility: hidden;">
+<div class="wrap">
+    <div class="rule-section">
+            <h3 class="title">活动规则</h3>
+            <div class="deadline">截止至2018.8.15</div>
+            <ul class="rules">
+                <li>
+                    <i>01</i>
+                    <p>凡关注天上每人元的人没人增加一次抽奖机会！凡关注天上每人元的人没人</p>
+                </li>
+                <li>
+                <i>02</i>
+                <p>凡关注天上每人元的人没人增加一次抽奖机会！凡关注天上每人元的人没人增加一次抽奖机会</p>
+                </li>
+                <li>
+                <i>03</i>
+                <p>凡关注天上每人元的人没人增加一次抽奖机会！凡关注天上每人元的人没人增加一次抽奖机会</p>
+                </li>
+            </ul>
+        </div>
+    <div class="prize-section">
+        <div style="padding:1px;width:100%;"></div>
+        <h3 class="title">活动规则</h3>
+        <ul class="prizes">
+            <li>
+                <div class="img">
+                    <img src="" alt="">
+                    <span>三等奖</span>
+                </div>
+                <div class="name">悦碧施钻石修护面霜悦碧施钻石修护面霜</div>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="" alt="">
+                    <span>三等奖</span>
+                </div>
+            <div class="name">悦碧施钻石修护面霜</div>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="" alt="">
+                    <span>三等奖</span>
+                </div>
+            <div class="name">悦碧施钻石修护面霜</div>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="" alt="">
+                    <span>三等奖</span>
+                </div>
+            <div class="name">悦碧施钻石修护面霜</div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                // 针对uc横竖屏rem html没有重绘的问题
+                var style;
+                if (style = document.getElementById("forhtml")) {
+                    style.parentNode.removeChild(style);
+                }
+                style = document.createElement("style");
+                style.id = "forhtml";
+                document.head.appendChild(style);
+                style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+            };
+        recalc();
+        document.body.style.visibility = 'visible';
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+    })(document, window);
+</script>
+<script src="/common/js/zepto.min.js"></script>
+<script src="/common/js/zepto-adapter.js"></script>
+<script type="text/javascript">
+    if(document.body.offsetHeight>$('.rule-section').outerHeight()+$('.prize-section').outerHeight()){
+        var clientWidth = document.documentElement.clientWidth;
+        $('.prize-section').height(document.body.offsetHeight-$('.rule-section').outerHeight()-3.25*(20 * (clientWidth / 320)));
+    }
+    $('.button').on('click',function(e){
+        $('.address').addClass('show');
+        $('ul').addClass('forbid');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/marathon/marathon.scss?__inline" media="screen" title="no_title" charset="utf-8">
+</head>
+<body style="visibility: hidden;">
+<div class="wrap">
+    <div class="header">
+        <img src="/images/marathon/marathon_headerBg@3x.png" alt=""/>
+    </div>
+    <div class="content">
+        <div class="coupons">
+            <img src="https://images.simpletour.com/activity/marathon/coupons@3x.png" alt=""/>
+        </div>
+        <form>
+            <input type="text" name="mobile" placeholder="输入手机号码领取马拉松专属旅行代金券"/>
+            <span class="fetch">立即领取</span>
+        </form>
+        <div class="rule">
+            <div class="rule_title">
+                <span class="line"></span>
+                <span class="title">代金券使用说明</span>
+                <span class="line"></span>
+            </div>
+            <ul class="rule_content">
+                <li>代金券有效期：2017年3月17日至2017年12月31日</li>
+                <li>代金券截止领取时间为2017年3月26日24:00</li>
+                <li>代金券仅限购买简途四川地区车位产品时使用。</li>
+                <li>每个订单只能使用一张代金券，已经领取过代金券的用户不可重复进行领取。</li>
+            </ul>
+            <a class="toUse" href="https://m.simpletour.com/mobile/gateway/wechat/home/home/">戳我立即使用旅行代金券</a>
+            <p class="tip">*本活动最终解释权归简途旅行所有</p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/zepto.min.5551012.js"></script>
+<script type="text/javascript" src="/js/base.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        document.body.style.visibility = 'visible';
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+        document.body.addEventListener('touchstart', function () {
+        });
+    })(document, window);
+    $(document).ready(function () {
+        $('.fetch').click(function(e){
+            e.preventDefault();
+            var $this = $(this);
+            if (!$this.hasClass('disabled')) {
+                var mobile = $.trim($('input[name=mobile]').val());
+                $this.addClass('disabled');
+                if (!mobile) {
+                    $.alert({
+                        msg: '手机号不能为空!'
+                    });
+                    $this.removeClass('disabled');
+                }else if (!/^0?(13|14|15|17|18)[0-9]{9}$/.test(mobile)) {
+                    $.alert({
+                        msg: '手机号格式错误'
+                    });
+                    $this.removeClass('disabled');
+                }else {
+                    //提交代码
+                    $.ajax({
+                        type: 'POST',
+                        url:'/mobile/gateway/${platform}/coupon/fetch',
+                        // data:{mobile:mobile,couponActityId:${couponActityId},shareOpenId:'${shareOpenId}'},
+                        success: function (data) {
+                            if (data.code == 0) {
+                                $.alert({
+                                    msg: '领取成功!'
+                                });
+                                $this.removeClass('disabled');
+                            }else {
+                                $.confirm({
+                                    title: '领取失败',
+                                    detail: [data.msg],
+                                    yes: '确认',
+                                    yesFun: function () {
+                                    }
+                                });
+                                $this.removeClass('disabled');
+                            }
+                        },
+                        error: function (data) {
+                            $this.removeClass('disabled');
+                            $.alert({
+                                msg: '网络异常,请重试'
+                            });
+                        }
+                    })
+                }
+            }else{
+                $.alert({
+                    msg: '不要急,休息一下!'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

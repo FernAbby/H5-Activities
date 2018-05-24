@@ -1,0 +1,212 @@
+@import "/css/flavor/common";
+
+.wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: #f0b556;
+  background: -moz-linear-gradient(top, #f0b556, #ee954d);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f0b556), to(#ee954d));
+  background: -o-linear-gradient(top, #f0b556, #ee954d);
+  .act_header {
+    width: 100%;
+    min-height: rem(320px);
+    background-color: #efa451;
+    position: relative;
+    &:after{
+      content: '';
+      display: block;
+      width: rem(130px);
+      height: rem(70px);
+      position: absolute;
+      top: 0;
+      right: rem(30px);
+      background: url(https://images.simpletour.com/activity/flavor/jt_logo@3x.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+  .act_content {
+    padding-top: rem(10px);
+    padding-bottom: rem(74px);
+    background: #efa451;
+    background: -moz-linear-gradient(top, #efa451, #ec7144);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#efa451), to(#ec7144));
+    background: -o-linear-gradient(top, #efa451, #ec7144);
+    img.bonus {
+      width: 100%;
+      min-height: rem(319px);
+    }
+    .input_group {
+      width: rem(522px);
+      height: rem(68px);
+      border: rem(2px) solid #94050c;
+      margin: rem(-40px) auto 0;
+      font-size: rem(26px);
+      @include displayflex;
+      @include flexflowRow();
+      @include border-radius(8px);
+      input {
+        display: block;
+        color: #333;
+        font-size: rem(26px);
+        padding: rem(17px) rem(16px);
+        border: none;
+        border-top-right-radius: rem(8px);
+        border-bottom-right-radius: rem(8px);
+        @include flex;
+      }
+      span {
+        display: block;
+        width: rem(134px);
+        line-height: rem(68px);
+        color: #fff;
+        text-align: center;
+        background-color: #94050c;
+        &.disabled{
+          background-color:#888;color:#fff
+        }
+      }
+    }
+  }
+  .act_footer {
+    background: #f0b556;
+    background: -moz-linear-gradient(top, #f0b556, #ee974e);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f0b556), to(#ee974e));
+    background: -o-linear-gradient(top, #f0b556, #ee974e);
+    .rule {
+      padding: rem(2px) rem(60px) rem(70px) rem(70px);
+      font-size: rem(26px);
+      text-align: left;
+      .rule-title {
+        width: rem(186px);
+        padding: rem(10px);
+        margin: rem(-40px) auto rem(20px);
+        background-color: #efa752;
+        overflow: hidden;
+        color: #fff;
+        @include border-radius(8px);
+        span {
+          display: block;
+          height: rem(58px);
+          line-height: rem(54px);
+          width: rem(166px);
+          text-align: center;
+          padding-bottom: rem(18px);
+          font-size: rem(26px);
+          font-weight: bold;
+          border: rem(2px) solid #ed894a;
+          @include border-radius(8px);
+        }
+      }
+      .rule-content {
+        line-height: rem(40px);
+        font-size: rem(26px);
+        position: relative;
+        p {
+          line-height: rem(40px);
+          font-size: rem(26px);
+          color: #333;
+        }
+      }
+      a.jump{
+        display: block;
+        margin: rem(30px) auto 0;
+        width: rem(522px);
+        height: rem(68px);
+        line-height: rem(68px);
+        text-align: center;
+        background-color: #94050c;
+        color: #fff;
+        @include border-radius(8px);
+      }
+    }
+  }
+}
+
+.alert-modal-wrap {
+  width: 100%;
+  height: 100%;
+  display: none;
+  .alert-modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  .alert-modal{
+    width: rem(522px);
+    height: rem(230px);
+    background-color: #970201;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: rem(-115px);
+    margin-left: rem(-261px);
+    z-index: 1010;
+    padding: rem(10px);
+    @include border-radius(8px);
+    .modal-content{
+      height: rem(210px);
+      border: rem(3px) solid #d4a970;
+      text-align: center;
+      color: #fff;
+      font-size: rem(26px);
+      @include border-radius(8px);
+      .fail{
+        margin-top: rem(48px);
+        margin-bottom: rem(38px);
+      }
+      .success{
+        margin-top: rem(26px);
+        margin-bottom: rem(34px);
+        span{
+          font-size: rem(50px);
+        }
+      }
+      .to_use{
+        display: inline-block;
+        width: rem(306px);
+        height: rem(64px);
+        line-height: rem(64px);
+        background-color: #d4a970;
+        color: #940200;
+        @include border-radius(8px);
+      }
+    }
+  }
+}
+.alert-modal-wrap.fail {
+  .alert-modal{
+    height: rem(230px);
+  }
+}
+.alert-modal-wrap.success {
+  .alert-modal{
+    height: rem(360px);
+    top: 50%;
+    left: 50%;
+    margin-top: rem(-180px);
+    margin-left: rem(-261px);
+    .modal-content{
+      height: rem(340px);
+      .success{
+        margin-bottom: rem(20px);
+        img{
+          display: inline-block;
+          width: rem(440px);
+          margin-top: rem(20px);
+        }
+      }
+    }
+  }
+}

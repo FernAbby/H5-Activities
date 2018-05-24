@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/coupon/coupons.scss?__inline">
+</head>
+<body>
+<div class="page-group" style="visibility: hidden">
+    <div class="page page-current">
+        <div class="page-content">
+            <div class="top-bg">
+                <img src="/images/coupon/coupons-head-img.png" alt="">
+            </div>
+            <div class="coupon-list">
+
+                <div class="coupon-gp">
+                    <div class="left">
+                        <img src="/images/coupon/50yuan.png" alt="">
+                    </div>
+                    <div class="right">
+                        <h5>稻亚专享</h5>
+                        <p>现金抵用券X2</p>
+                    </div>
+                </div>
+                <div class="coupon-gp">
+                    <div class="left">
+                        <img src="/images/coupon/15yuan.png" alt="">
+                    </div>
+                    <div class="right">
+                        <h5>峨眉专享</h5>
+                        <p>现金抵用券X2</p>
+                    </div>
+                </div>
+                <div class="coupon-gp">
+                    <div class="left">
+                        <img src="/images/coupon/10yuan.png" alt="">
+                    </div>
+                    <div class="right">
+                        <h5>九寨专享</h5>
+                        <p>现金抵用券X2</p>
+                    </div>
+                </div>
+                <div class="coupon-gp">
+                    <div class="left">
+                        <img src="/images/coupon/10yuan.png" alt="">
+                    </div>
+                    <div class="right">
+                        <h5>青都专享</h5>
+                        <p>现金抵用券X3</p>
+                    </div>
+                </div>
+
+                <div class="coupon-gp">
+                    <div class="left">
+                        <img src="/images/coupon/10yuan.png" alt="">
+                    </div>
+                    <div class="right">
+                        <h5>避暑专享</h5>
+                        <p>现金抵用券X2</p>
+                    </div>
+                </div>
+
+                <div class="coupon-gp">
+                    <div class="left">
+                        <img style="width: 5rem;padding-right: 1rem;" src="/images/coupon/5yuan.png" alt="">
+                    </div>
+                    <div class="right">
+                        <h5>满99减5</h5>
+                        <p>现金抵用券X5</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-bg">
+                <a href="">点击一下,马上用券</a>
+                <p>有福同享!马上告诉好基友好丽友~</p>
+                <div class="bottom-logo">
+                    <img src="/images/coupon/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/common/js/zepto.min.js"></script>
+<script src="/common/common/js/base.js"></script>
+<script src="/common/js/scroll.js"></script>
+<script>
+    (function (doc, win) {
+
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 375) + "px !important;}"));
+                };
+        recalc();
+        doc.getElementsByClassName('page-group')[0].style.visibility = 'visible';
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $(document).ready(function() {
+    });
+</script>
+</body>
+</html>

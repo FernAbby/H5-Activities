@@ -1,0 +1,263 @@
+@import "/css/flavor/common";
+
+.wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: #f0b556;
+  background: -moz-linear-gradient(top, #f0b556, #ee954d);
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f0b556), to(#ee954d));
+  background: -o-linear-gradient(top, #f0b556, #ee954d);
+  .act_header {
+    width: 100%;
+    min-height: rem(320px);
+    background-color: #f1b74c;
+    position: relative;
+    img{
+      min-height: rem(320px);
+    }
+    &:after{
+      content: '';
+      display: block;
+      width: rem(130px);
+      height: rem(70px);
+      position: absolute;
+      top: 0;
+      right: rem(30px);
+      background: url(https://images.simpletour.com/activity/flavor/jt_logo@3x.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+  .act_content {
+    padding-top: rem(10px);
+    background: #efa451;
+    background: -moz-linear-gradient(top, #f1b74c, #ed6138);
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f1b74c), to(#ed6138));
+    background: -o-linear-gradient(top, #f1b74c, #ed6138);
+    img.coupon {
+      width: 100%;
+      min-height: rem(271px);
+    }
+    .spots{
+      .tabs{
+        text-align: center;
+        font-size: 0;
+        margin-top: rem(-14px);
+        li{
+          width: rem(180px);
+          height: rem(82.63px);
+          text-align: center;
+          line-height: rem(82.63px);
+          font-size: rem(28px);
+          color: #fff;
+          text-indent: -999px;
+          margin-right: rem(10px);
+          display: inline-block;
+          img{
+            min-height: rem(671.6px);
+          }
+          &.sc{
+            background: url(https://images.simpletour.com/activity/flavor/sc_tab@3x.png) no-repeat center;
+            background-size:contain;
+            &.current{
+              background: url(https://images.simpletour.com/activity/flavor/sc_tab_selected@3x.png) no-repeat center;
+              background-size:contain;
+            }
+          }
+          &.cq{
+            background: url(https://images.simpletour.com/activity/flavor/cq_tab@3x.png) no-repeat center;
+            background-size:contain;
+            &.current{
+              background: url(https://images.simpletour.com/activity/flavor/cq_tab_selected@3x.png) no-repeat center;
+              background-size:contain;
+            }
+          }
+          &.yn{
+            background: url(https://images.simpletour.com/activity/flavor/yn_tab@3x.png) no-repeat center;
+            background-size:contain;
+            margin-right: 0;
+            &.current{
+              background: url(https://images.simpletour.com/activity/flavor/yn_tab_selected@3x.png) no-repeat center;
+              background-size:contain;
+            }
+          }
+        }
+      }
+      .panels{
+        li{
+          padding:  rem(20px) rem(20px) rem(30px);
+          display: none;
+          &.current{
+            display: block;
+          }
+        }
+      }
+    }
+    .products{
+      .title{
+        width: rem(582px);
+        display: block;
+        margin: 0 auto rem(20px);
+      }
+      .tabs{
+        text-align: center;
+        font-size: 0;
+        li{
+          width: rem(210px);
+          height: rem(70.2px);
+          text-align: center;
+          line-height: rem(82.63px);
+          font-size: rem(28px);
+          color: #fff;
+          text-indent: -999px;
+          display: inline-block;
+          padding: 0 rem(37px);
+          &.sc{
+            background: url(https://images.simpletour.com/activity/flavor/scTour_tab@3x.png) no-repeat center;
+            background-size:contain;
+            &.current{
+              background: url(https://images.simpletour.com/activity/flavor/scTour_tab_selected@3x.png) no-repeat center;
+              background-size:contain;
+            }
+          }
+          &.cq{
+            background: url(https://images.simpletour.com/activity/flavor/cqTour_tab@3x.png) no-repeat center;
+            background-size:contain;
+            &.current{
+              background: url(https://images.simpletour.com/activity/flavor/cqTour_tab_selected@3x.png) no-repeat center;
+              background-size:contain;
+            }
+          }
+          &.yn{
+            background: url(https://images.simpletour.com/activity/flavor/ynTour_tab@3x.png) no-repeat center;
+            background-size:contain;
+            margin-right: 0;
+            &.current{
+              background: url(https://images.simpletour.com/activity/flavor/ynTour_tab_selected@3x.png) no-repeat center;
+              background-size:contain;
+            }
+          }
+        }
+      }
+      .panels{
+        li{
+          padding: rem(20px) rem(37px) 0;
+          display: none;
+          &.current{
+            display: block;
+          }
+          .product{
+            width: 100%;
+            overflow: hidden;
+            background-color: #fff;
+            margin-bottom: rem(20px);
+            @include border-radius(8px);
+            .pup{
+              width: 100%;
+              height: rem(262px);
+              background-color: #f5f5f5;
+              position: relative;
+              img{
+                height: rem(262px);
+              }
+              span.tag{
+                width: rem(114px);
+                height: rem(40px);
+                line-height: rem(40px);
+                text-align: center;
+                position: absolute;
+                left: 0;
+                top: rem(30px);
+                font-size: rem(24px);
+                color: #fff;
+                background-color: #f88000;
+                &:after{
+                  content: '';
+                  position: absolute;
+                  border-left: rem(20px) solid #f88000;
+                  border-top: rem(20px) solid transparent ;
+                  border-right: rem(20px) solid transparent ;
+                  border-bottom: rem(20px) solid transparent ;
+                  right: rem(-41px);
+                  top: 0;
+                }
+              }
+            }
+            .pdown{
+              font-size: rem(24px);
+              line-height: rem(30px);
+              padding: rem(20px);
+              @include displayflex;
+              @include flexflowRow();
+              -webkit-box-pack:center;
+              -webkit-justify-content:center;
+              justify-content:center;
+              -webkit-box-align:center;
+              -webkit-align-items:center;
+              align-items:center;
+              .left{
+                @include flex;
+                .name{
+                  padding-bottom: rem(10px);
+                }
+              }
+              .right{
+                a{
+                  width: rem(130px);
+                  height: rem(50px);
+                  display: block;
+                  text-align: center;
+                  line-height: rem(50px);
+                  background-color: #e80f33;
+                  color: #fff;
+                  margin: 0 rem(10px);
+                  @include border-radius(8px);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    img.get_coupon{
+      width: rem(586px);
+      display: block;
+      margin: 0 auto;
+    }
+    .rule {
+      padding: rem(20px) rem(54px) rem(54px);
+      font-size: rem(24px);
+      color: #fff;
+      text-align: left;
+      .rule-title {
+        @include displayflex;
+        @include flexflowRow();
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+        padding-bottom: rem(18px);
+        .line {
+          @include flex;
+          margin-top: rem(12px);
+          border-bottom: rem(2px) solid #fff;
+        }
+        .title {
+          font-size: rem(28px);
+          font-weight: bold;
+          margin: 0 rem(12px);
+        }
+      }
+      .rule-content {
+        line-height: rem(40px);
+        font-size: rem(24px);
+        position: relative;
+      }
+    }
+  }
+}

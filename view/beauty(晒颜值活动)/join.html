@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/beauty/join.scss?__inline">
+</head>
+<body>
+<div class="page-group" style="visibility: hidden">
+    <div class="page page-current">
+        <div class="page-content">
+            <canvas id="canvas" style="display: none"></canvas>
+            <canvas id="canvas2" style="display: none"></canvas>
+            <img class="head-img" src="/images/beauty/join-header-img.png" alt="">
+            <div class="gp">
+                <h5>1. 上传照片</h5>
+                <div id="imglist" class="photo-wrapper">
+                    <img style="position: absolute;top:0;left: 0;width: 100%;height:100%" />
+                    <input type="file" style="width: 100%;height: 100%;opacity: 0"  id="file" class="photo_wrapper" accept="image/jpeg,image/gif,image/png" capture="camera">
+                </div>
+            </div>
+            <div class="gp">
+                <h5>2. 填写你的信息</h5>
+                <div class="input-group">
+                    <label for="">昵称</label>
+                    <div class="cutline"></div>
+                    <input type="text" name="nickName" placeholder="宝宝我们怎么称呼你?">
+                </div>
+                <div class="input-group">
+                    <label for="">性别</label>
+                    <div class="cutline"></div>
+                    <span>男</span>
+                    <div class="radio-gp">
+                        <div class="radio choose" data-value="male"><span></span></div>
+                    </div>
+                    <span style="margin-left: 1rem">女</span>
+                    <div class="radio-gp">
+                        <div class="radio" data-value="female"><span></span></div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="">电话</label>
+                    <div class="cutline"></div>
+                    <input type="number" name="mobile" pattern="\d*" placeholder="得奖了好联系你">
+                </div>
+            </div>
+            <div class="gp">
+                <h5>3. 参赛宣言</h5>
+                <textarea placeholder="不管你是谁,简途陪你在路上" name="declaration" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="enlist">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/common/js/zepto.min.js"></script>
+<script src="/node_modules/lrz/dist/lrz.bundle.js"></script>
+<script>
+    (function (doc, win) {
+
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 375) + "px !important;}"));
+                };
+        recalc();
+        doc.getElementsByClassName('page-group')[0].style.visibility = 'visible';
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $(document).ready(function() {
+        $(".radio-gp").tap(function(e) {
+            $(".radio-gp").find('.radio').removeClass("choose");
+            $(this).find('.radio').addClass("choose");
+        });
+
+        var viewImg = $("#imglist");
+        var imgurl = '';
+//        $('#upload_image').localResizeIMG({
+//            width: ($('.photo-wrapper').width()-4)*3,
+//            height: ($('.photo-wrapper').height()-4)*3,
+//            oWidth: ($('.photo-wrapper').width()-4),
+//            oHeight: ($('.photo-wrapper').height()-4),
+//            quality: 1,
+//            success: function (result) {
+//                $('input[name=fileup]').remove();
+//                viewImg.append('<input type="hidden" name="fileup" value="'
+//                        + result.clearBase64 + '">');
+//                viewImg.find('img').attr('src',result.base64);
+//            }
+//        });
+        document.querySelector('#file').addEventListener('change', function () {
+            lrz(this.files[0])
+                    .then(function (rst) {
+                        // 处理成功会执行
+                        $("#imglist img").attr('src',rst.base64);
+                    })
+                    .catch(function (err) {
+                        // 处理失败会执行
+                    })
+                    .always(function () {
+                        // 不管是成功失败，都会执行
+                    });
+        });
+        //  提交按钮
+        $('.enlist').click(function() {
+            var $this = $(this);
+            var nickName = $('input[name=nickName]').val();
+            var mobile = $('input[name=mobile]').val();
+            var sex = $('.radio.choose').attr('data-value');
+            $this.addClass('disabled')
+        });
+    })
+</script>
+</body>
+</html>

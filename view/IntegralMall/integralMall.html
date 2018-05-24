@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>积分商城</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/integralMall/integralMall.scss?__inline" media="screen" title="no_title" charset="utf-8">
+</head>
+<body style="visibility: hidden;">
+<section>
+    <h5>
+        <i></i><span>活动专区</span>
+        <a href="activityZone.html"><em>更多</em></a>
+    </h5>
+    <div class="row">
+        <div class="prod">
+            <div class="thumbnail"><img src="/images/integralMall/002.png" alt=""/></div>
+            <div class="name">滴滴快车周末卡</div>
+            <div class="desc">8.5折快车周末卡</div>
+            <div class="price"><span>188</span>滴币</div>
+        </div>
+        <div class="prod">
+            <div class="thumbnail"><img src="/images/integralMall/gift_icon.png" alt=""/></div>
+            <div class="name">滴滴快车周末卡</div>
+            <div class="desc">8.5折快车周末卡</div>
+            <div class="price"><span>188</span>滴币</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="prod">
+            <div class="thumbnail"><img src="/images/integralMall/002.png" alt=""/></div>
+            <div class="name">滴滴快车周末卡</div>
+            <div class="desc">8.5折快车周末卡</div>
+            <div class="price"><span>188</span></div>
+        </div>
+    </div>
+</section>
+<section>
+    <h5>
+        <i></i><span>活动专区</span>
+        <a href="#"><em>更多</em></a>
+    </h5>
+    <div class="row">
+        <div class="prod">
+            <div class="thumbnail"><img src="/images/integralMall/002.png" alt=""/></div>
+            <div class="name">滴滴快车周末卡</div>
+            <div class="desc">8.5折快车周末卡</div>
+            <div class="price"><span>188</span>滴币</div>
+        </div>
+        <div class="prod">
+            <div class="thumbnail"><img src="/images/integralMall/gift_icon.png" alt=""/></div>
+            <div class="name">滴滴快车周末卡</div>
+            <div class="desc">8.5折快车周末卡</div>
+            <div class="price"><span>188</span>滴币</div>
+        </div>
+        <div class="prod">
+            <div class="thumbnail"><img src="/images/integralMall/002.png" alt=""/></div>
+            <div class="name">滴滴快车周末卡</div>
+            <div class="desc">8.5折快车周末卡</div>
+            <div class="price"><span>188</span>滴币</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="prod">
+            <div class="thumbnail"><img src="/images/integralMall/002.png" alt=""/></div>
+            <div class="name">滴滴快车周末卡</div>
+            <div class="desc">8.5折快车周末卡</div>
+            <div class="price"><span>188</span>滴币</div>
+        </div>
+        <div class="prod">
+            <div class="thumbnail"><img src="/images/integralMall/gift_icon.png" alt=""/></div>
+            <div class="name">滴滴快车周末卡</div>
+            <div class="desc">8.5折快车周末卡</div>
+            <div class="price"><span>188</span>滴币</div>
+        </div>
+        <div class="prod">
+            <div class="thumbnail"><img src="/images/integralMall/002.png" alt=""/></div>
+            <div class="name">滴滴快车周末卡</div>
+            <div class="desc">8.5折快车周末卡</div>
+            <div class="price"><span>188</span>滴币</div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="/lib/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                // 针对uc横竖屏rem html没有重绘的问题
+                var style;
+                if (style = document.getElementById("forhtml")) {
+                    style.parentNode.removeChild(style);
+                }
+                style = document.createElement("style");
+                style.id = "forhtml";
+                document.head.appendChild(style);
+                style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+            };
+        recalc();
+        document.body.style.visibility = 'visible';
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+    })(document, window);
+    $(document).ready(function () {
+        $('section .prod').click(function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            if($(this).attr('href')){
+                location.href = $(this).attr('href');
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+@import "/css/SDbargain/common";
+
+.content{
+  .product{
+    margin-bottom: rem(26px);
+  }
+  .notify{
+    text-align: center;
+    font-size: rem(24px);
+    color: #fff;
+    line-height: rem(37px);
+    margin-bottom: rem(20px);
+  }
+  .buttons{
+    a{
+      display: inline-block;
+      width: rem(272px);
+      height: rem(54px);
+      line-height: rem(54px);
+    }
+    a:first-child{
+      margin-right: rem(24px);
+    }
+    a:last-child{
+      background-color: #3b99f6;
+    }
+  }
+  .error-tips{
+    font-size: rem(24px);
+    color: #fff;
+    padding: 0 rem(10px);
+    text-align: center;
+    margin-bottom: rem(20px);
+    &:before{
+      content: '—';
+      display: inline-block;
+      font-size: rem(12px);
+      color: #fff;
+      margin-right: rem(10px);
+    }
+    &:after{
+      content: '—';
+      display: inline-block;
+      font-size: rem(12px);
+      color: #fff;
+      margin-left: rem(10px);
+    }
+  }
+  .rank-list{
+    margin-bottom: rem(30px);
+  }
+  .input-group{
+    margin-bottom: rem(16px);
+  }
+}

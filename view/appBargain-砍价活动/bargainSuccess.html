@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/appBargain/success.scss?__inline">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <div class="page-content">
+            <img class="header" src="/images/appBargain/header.png">
+            <img class="header-success" style="margin-top: -.8rem" src="/images/appBargain/header_bargain_success.png">
+            <div class="content" style="margin-top: -.8rem">
+                <p class="yellow" style="text-align: center">你已成功获得稻城亚丁5日自由行套餐产品。</p>
+                <div class="buttons" style="margin-top: 1rem">
+                    <button>下载简途APP</button>
+                </div>
+            </div>
+            <div class="tips">
+                <div class="tips-title">
+                    砍价秘籍
+                </div>
+                <ul>
+                    <li>1.使用有效期：<span>2016.9.13-2016.10.8</span></li>
+                    <li>2.关注“简途旅行”微信公众号，回复“<span>奔月计划+姓名+电话</span>”，会有在线客服为您预约行程</li>
+                    <li>3.活动产品，预约成功后，恕不退改</li>
+                    <li>4.在法律允许的范围内，本次活动最终解释权归简途旅行所有，如有疑问，请咨询客服：<span>400-800-3351</span>；</li>
+                </ul>
+            </div>
+            <img src="/images/appBargain/logo.png" alt="" class="logo">
+        </div>
+    </div>
+</div>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    var a = document.getElementsByTagName('a');
+    for(var i = 0; i < a.length; i++){
+        a[i].addEventListener('touchstart',function(){},false);
+    }
+</script>
+</body>
+</html>

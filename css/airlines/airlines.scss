@@ -1,0 +1,261 @@
+$baseFontSize: 40px !default;
+$red: #D71345 !default;
+$fontRed: #E61E4B !default;
+$opacity: 1 !default;
+@function rem($px) {
+  @return $px / $baseFontSize * 1rem;
+}
+
+@mixin displayflex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($size:1) {
+  -webkit-box-flex: $size;
+  -moz-box-flex: $size;
+  -webkit-flex: $size;
+  -ms-flex: $size;
+  flex: $size;
+}
+
+@mixin flexflowCol($direction:column,$dir:vertical) {
+  -webkit-box-orient: $dir;
+  -ms-box-orient: $dir;
+  -moz-box-orient: $dir;
+  -webkit-flex-flow: $direction nowrap;
+  -ms-flex-flow: $direction nowrap;
+  -moz-flex-flow: $direction nowrap;
+  flex-flow: $direction nowrap;
+}
+
+@mixin flexflowRow($direction:row,$dir:horizontal) {
+  -webkit-box-orient: $dir;
+  -ms-box-orient: $dir;
+  -moz-box-orient: $dir;
+  -webkit-flex-flow: $direction nowrap;
+  -ms-flex-flow: $direction nowrap;
+  -moz-flex-flow: $direction nowrap;
+  flex-flow: $direction nowrap;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  font-family: "方正粗圆简体", Helvetica, sans-serif;
+  -webkit-touch-callout: none;
+  @include box-sizing(border-box);
+  outline: none;
+}
+
+a,a:active, a:hover, a:link, a:visited {
+  text-decoration: none;
+  outline: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  background-color: #F5F5F5;
+}
+
+body {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: #f5f5f5;
+  .act_header {
+    width: 100%;
+    min-height: rem(297px);
+  }
+  .act_content {
+    img.title {
+      display: block;
+      width: 100%;
+      min-height: rem(182px);
+    }
+    img.content{
+      width: 100%;
+    }
+    section:nth-child(1) {
+      background-color: #6c39d9;
+      padding-top: rem(8px);
+      .prods .prod img{
+        height: rem(234px);
+      }
+    }
+    section:nth-child(2) {
+      background-color: #e82d55;
+      padding-top: rem(8px);
+    }
+    section:nth-child(3) {
+      background-color: #e82d55;
+      padding-top: rem(6px);
+      padding-bottom: rem(46px);
+      .more{
+        background: url(https://images.simpletour.com/activity/airlines/cq_btn.png) no-repeat center;
+        background-size: contain;
+      }
+    }
+    section:nth-child(4){
+      background-color: #fff;
+    }
+    section .more{
+      display: block;
+      width: rem(438px);
+      height: rem(60px);
+      margin: 0 auto;
+      color: #fff;
+      font-size: 0;
+      text-indent: -9999px;
+      background: url(https://images.simpletour.com/activity/airlines/wl_btn.png) no-repeat center;
+      background-size: contain;
+    }
+    .prods {
+      width: 100%;
+      padding: rem(12px) rem(14px) rem(16px);
+      font-size: 0;
+      @include displayflex;
+      @include flexflowRow();
+      .prod.short .name{
+        height: rem(48px);
+      }
+      .prod.long .name{
+        height: rem(116px);
+      }
+      .prod {
+        @include flex(1);
+        display: inline-block;
+        width: rem(299px);
+        vertical-align: top;
+        margin-right: rem(14px);
+        text-align: center;
+        font-size: rem(24px);
+        margin-bottom: rem(14px);
+        overflow: hidden;
+        -webkit-border-radius: rem(8px) rem(8px) rem(6px) rem(6px);
+        -moz-border-radius: rem(8px) rem(8px) rem(6px) rem(6px);
+        -ms-border-radius: rem(8px) rem(8px) rem(6px) rem(6px);
+        -o-border-radius: rem(8px) rem(8px) rem(6px) rem(6px);
+        border-radius: rem(8px) rem(8px) rem(6px) rem(6px);
+        img {
+          width: 100%;
+          height: rem(270px);
+          display: block;
+        }
+        .desc {
+          height: rem(36px);
+          line-height: rem(36px);
+          color: #fff;
+          font-style: italic;
+          background-color: #a932f7;
+        }
+        .name {
+          height: rem(82px);
+          overflow: hidden;
+          padding: rem(6px) rem(12px);
+          line-height: rem(34px);
+          color: #000;
+          background-color: #fff;
+          border-bottom: 1px solid #cdcdcd;
+          &.pad{
+            padding: .55rem .3rem;
+          }
+        }
+        .bt {
+          padding: rem(8px);
+          background-color: #fff;
+          @include displayflex;
+          @include flexflowRow();
+          span {
+            display: block;
+          }
+          span.price {
+            font-size: rem(36px);
+            line-height: rem(38px);
+            color: #f00346;
+            font-weight: bold;
+            text-align: left;
+            @include flex(1);
+          }
+          span.price:before {
+            content: '￥';
+            display: inline-block;
+            font-size: rem(24px);
+            color: #000;
+          }
+          span.price:after {
+            content: '起';
+            display: inline-block;
+            font-size: rem(24px);
+            color: #000;
+          }
+          .order {
+            padding: 0 rem(30px);
+            height: rem(40px);
+            line-height: rem(40px);
+            color: #fff;
+            background-color: #ee0448;
+            @include border-radius(38px);
+          }
+        }
+      }
+      .prod:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+}

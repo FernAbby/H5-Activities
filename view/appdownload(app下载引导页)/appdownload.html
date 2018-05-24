@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/appdownload/appdownload.scss?__inline">
+</head>
+<body>
+<div class="screen-wrap">
+    <div class="one-page screen">
+        <div class="main">
+            <div class="up">
+                <img  class="logo" src="/images/AppDownload/slogan.png" alt=""/>
+                <div class="copy">公路蜿蜒&nbsp;&nbsp;看过大海&nbsp;&nbsp;仰止山川</div>
+            </div>
+            <div class="down">
+                <img src="/images/AppDownload/one-bottom.png" alt=""/>
+            </div>
+            <div class="download-wrap">
+                <a href="#">下载</a>
+                <div class="text">搭乘巴士&nbsp;&nbsp;这一次不为赶路</div>
+                <div class="downArrow"></div>
+            </div>
+        </div>
+    </div>
+    <div class="two-page screen">
+        <div class="main">
+            <div class="up">
+                <div class="slogan">你的公路大片</div>
+                <div class="slogan">没有俗套剧情</div>
+                <div class="copy pb18">自由随心在线选座&nbsp;&nbsp;下单吃住行玩</div>
+                <div class="copy">摆脱行程束缚&nbsp;&nbsp;100个人有一百种玩法</div>
+            </div>
+            <div class="down">
+                <img src="/images/AppDownload/two-bottom.png" alt=""/>
+            </div>
+            <div class="sample">
+                <img class="sample" src="/images/AppDownload/two-sample.png" alt=""/>
+            </div>
+            <div class="download-wrap">
+                <a href="#">下载</a>
+                <div class="downArrow"></div>
+            </div>
+        </div>
+    </div>
+    <div class="three-page screen">
+        <div class="main">
+            <div class="up">
+                <div class="slogan">巴士自由行</div>
+                <div class="slogan">把旅游还给风景</div>
+                <div class="copy pb18">独家设计路线&nbsp;&nbsp;串联特色景点</div>
+                <div class="copy">直达心之向往</div>
+            </div>
+            <div class="down">
+                <img src="/images/AppDownload/three-bottom.png" alt=""/>
+            </div>
+            <div class="sample">
+                <img class="sample" src="/images/AppDownload/three-sample.png" alt=""/>
+            </div>
+            <div class="download-wrap">
+                <a href="#">下载</a>
+                <div class="downArrow"></div>
+            </div>
+        </div>
+    </div>
+    <div class="four-page screen">
+        <div class="main">
+            <div class="up">
+                <div class="slogan">稳稳前行</div>
+                <div class="slogan">给你旅行的安全感</div>
+                <div class="copy pb18">舒适豪华旅行巴士&nbsp;&nbsp;行车助理全程讲解服务</div>
+                <div class="copy">20万保额的旅行意外保险</div>
+            </div>
+            <div class="down">
+                <img src="/images/AppDownload/four-bottom.png" alt=""/>
+            </div>
+            <div class="sample">
+                <img class="sample" src="/images/AppDownload/four-sample.png" alt=""/>
+            </div>
+            <div class="download-wrap">
+                <a href="#">下载</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $(document).ready(function() {
+        var startY,endY,offset,$index;
+        var $wrap = $('.screen-wrap');
+        $('.downArrow').on('tap',function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            slideUp($(this).parents('.screen').index());
+        });
+        $('.download-wrap a').on('tap',function(event){
+            location.href = $(this).attr('href');
+        });
+        function translate(y){
+            $wrap.css({
+                'transform': 'translate(0,-'+y*100+'%)',
+                '-webkit-transform': 'translate(0,-'+y*100+'%)'
+            });
+        }
+        function slideUp(index){
+            if(index<3){
+                translate(index+1);
+            }
+        }
+        function slideDown(index){
+            if(index>0){
+                translate(index-1);
+            }
+        }
+        $(document.body).bind('touchstart',function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            startY = e.changedTouches[0].clientY;
+        });
+        $(document.body).bind('touchend',function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            endY = e.changedTouches[0].clientY;
+            $index = $(e.target).parents('.screen').index();
+            offset = endY-startY;
+            if($(e.target).hasClass('downArrow')){
+                slideUp($index);
+            }else{
+                if(offset<0 && offset<-10){
+                    slideUp($index);
+                }else if(offset>0 && offset>10){
+                    slideDown($index);
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

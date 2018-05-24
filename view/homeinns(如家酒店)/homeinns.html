@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/homeinns/homeinns.scss?__inline" media="screen" title="no_title" charset="utf-8">
+</head>
+<body style="visibility: hidden;">
+<div class="wrap">
+    <div class="header">
+        <img src="https://images.simpletour.com/activity/homeinns/headerBg@3x.png" alt=""/>
+    </div>
+    <div class="content">
+        <div class="notice">
+            即日起至3月26日，<br/>
+            通过如家酒店集团官网/掌上如家APP/如家酒店集团官方微信/如家400电话<br/>
+            预定并成功入住如家酒店集团旗下活动酒店的会员客人均可获赠由：<br/>
+            中国巴士旅行创领者——简途旅行<br/>
+            提供的四川游玩礼包1份
+        </div>
+        <form>
+            <input type="text" name="mobile" placeholder="输入手机号码领取满减大礼包"/>
+            <span class="fetch">立即领取</span>
+        </form>
+        <div class="discount first">
+            <div class="title">NO.1 每满100减50券</div>
+            <div class="info">
+                <p>
+                    仅限简途四川地区产品。领取简途满减优惠券大礼包后使用手机号码登陆微站/APP即可进行减免。
+                </p>
+                <p>
+                    热门线路减免参考：<br/>
+                    <span class="bold">01.峨眉山1日往返套餐</span>（含门票）<span class="line-through">原价294</span> <span class="bold">现284</span>
+                    <span class="bold">02.都江堰、青城山1日往返套餐</span>（含门票）<br/>
+                    <span class="line-through">原价234</span> <span class="bold">现224</span><br/>
+                    <span class="bold">03.九寨沟3日往返套餐</span>（含门票、观光车）<br/>
+                    <span class="line-through">原价409</span> <span class="bold">现389</span>
+                   <br/> ……
+                </p>
+            </div>
+        </div>
+        <div class="discount second">
+            <div class="title">NO.1 每满100减50券</div>
+            <div class="info">
+                <p><span class="bold">抽取条件：</span>每使用30个简途优惠券即从这30个使用者之间抽取1位获得。</p>
+
+                <p><span class="bold">抽取方式：</span>转发简途旅行置顶活动微博，晒出使用简途减免券购买的成功订单截图，每满30人抽取幸运巴士座位1人。</p>
+
+                <p><span class="bold">可选线路：</span>成都-九寨沟3日往返巴士车票、成都-乐山、峨眉山2日往返巴士车票、成都-峨眉山1日往返巴士车票、成都-青城山、都江堰1日往返巴士车票、成都-熊猫基地1日往返巴士车票</p>
+                <p><span class="bold">使用条件：</span>获奖后3个自然月有效（例如3月1日中奖，5月31日前有效），仅限本人使用；幸运巴士座位号不能抵扣已购买的商品；幸运巴士座位号不可兑换回程车票，使用前请提前使用中奖微博私信简途旅行官方微博进行预约。</p>
+                <p>更多详细信息及福利请关注简途旅行：</p>
+                <div class="code">
+                    <img src="https://images.simpletour.com/activity/homeinns/wechatSubscription@3x.png" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/common/js/zepto.min.js"></script>
+<script type="text/javascript" src="/common/common/js/base.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        document.body.style.visibility = 'visible';
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+        document.body.addEventListener('touchstart', function () {
+        });
+    })(document, window);
+    $(document).ready(function () {
+        $('.fetch').click(function(e){
+            e.preventDefault();
+            var $this = $(this);
+            if (!$this.hasClass('disabled')) {
+                var mobile = $.trim($('input[name=mobile]').val());
+                $this.addClass('disabled');
+                if (!mobile) {
+                    $.alert({
+                        msg: '手机号不能为空!'
+                    });
+                    $this.removeClass('disabled');
+                }else if (!/^0?(13|14|15|17|18)[0-9]{9}$/.test(mobile)) {
+                    $.alert({
+                        msg: '手机号格式错误'
+                    });
+                    $this.removeClass('disabled');
+                }else {
+                    //提交代码
+                    $.ajax({
+                        type: 'POST',
+                        url:'/mobile/gateway/${platform}/coupon/fetch',
+                        data:{mobile:mobile,couponActityId:'${couponActityId}',shareOpenId:'${shareOpenId}'},
+                        success: function (data) {
+                            if (data.code == 0) {
+                                $.alert({
+                                    msg: '领取成功!'
+                                });
+                                $this.removeClass('disabled');
+                            }else {
+                                $.confirm({
+                                    title: '领取失败',
+                                    detail: [data.msg],
+                                    yes: '确认',
+                                    yesFun: function () {
+                                    }
+                                });
+                                $this.removeClass('disabled');
+                            }
+                        },
+                        error: function (data) {
+                            $this.removeClass('disabled');
+                            $.alert({
+                                msg: '网络异常,请重试'
+                            });
+                        }
+                    })
+                }
+            }else{
+                $.alert({
+                    msg: '不要急,休息一下!'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

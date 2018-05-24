@@ -1,0 +1,309 @@
+$baseFontSize: 40px !default;
+$red: #D71345 !default;
+$opacity: 1 !default;
+@function rem($px) {
+  @return $px / $baseFontSize * 1rem;
+}
+
+@mixin displayflex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($size:1) {
+  -webkit-box-flex: $size;
+  -moz-box-flex: $size;
+  -webkit-flex: $size;
+  -ms-flex: $size;
+  flex: $size;
+}
+
+@mixin flexflowCol($direction:column,$dir:vertical) {
+  -webkit-box-orient: $dir;
+  -ms-box-orient: $dir;
+  -moz-box-orient: $dir;
+  -webkit-flex-flow: $direction nowrap;
+  -ms-flex-flow: $direction nowrap;
+  -moz-flex-flow: $direction nowrap;
+  flex-flow: $direction nowrap;
+}
+
+@mixin flexflowRow($direction:row,$dir:horizontal) {
+  -webkit-box-orient: $dir;
+  -ms-box-orient: $dir;
+  -moz-box-orient: $dir;
+  -webkit-flex-flow: $direction nowrap;
+  -ms-flex-flow: $direction nowrap;
+  -moz-flex-flow: $direction nowrap;
+  flex-flow: $direction nowrap;
+}
+
+@mixin shadow($x:0,$y:0px,$z:5px,$color:#bdbdbd) {
+  box-shadow: $x $y $z $color;
+  -webkit-box-shadow: $x $y $z $color;
+  -moz-box-shadow: $x $y $z $color;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  font-family: Helvetica, sans-serif;
+  -webkit-touch-callout: none;
+  box-sizing: border-box;
+}
+
+a:active, a:hover, a:link, a:visited {
+  text-decoration: none;
+  outline: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  background-color: #ffe683;
+  position: relative;
+}
+
+html {
+  font-size: 20px;
+}
+
+* {
+  @include box-sizing(border-box);
+  outline: none;
+}
+
+.header {
+  width: 100%;
+  min-height: rem(227px);
+  background: #ffe683 url(http://images.simpletour.com/sleep/ss-header-bg@3x.png) no-repeat top left;
+  background-size: 100%;
+  img {
+    display: block;
+    width: 100%;
+    min-height: rem(227px);
+    border: none;
+  }
+}
+.content {
+  background-color: #fdd534;
+  font-size: rem(26px);
+  color: #583d18;
+  padding: rem(30px) rem(40px) rem(27px);
+  margin-top: rem(-75px);
+  ul,li{
+    list-style: none;
+  }
+  .article{
+    border: rem(10px) solid #fff3c2;
+    padding: rem(45px) rem(20px) rem(20px);
+    background-color: #fff;
+    margin-bottom: rem(55px);
+    @include border-radius(8px);
+    overflow: hidden;
+    li{
+      font-size: rem(26px);
+      color: #583d18;
+      line-height: rem(40px);
+      padding-bottom: rem(16px);
+      .icon{
+        font-size: rem(26px);
+        line-height: rem(40px);
+        width: rem(10px);
+        height: rem(10px);
+        display: inline-block;
+        background: url(http://images.simpletour.com/sleep/diamond@3x.png) no-repeat center;
+        background-size: 100%;
+        text-indent: -9999px;
+        margin-right: rem(8px);
+        vertical-align: -35%;
+      }
+    }
+    .albums{
+      padding-bottom: 0;
+      padding-top: rem(10px);
+      @include displayflex;
+      @include flexflowRow;
+      img{
+        height: rem(165px);
+        display: block;
+        @include flex;
+      }
+      img:first-child{
+        margin-right: rem(20px);
+      }
+    }
+  }
+  .enrol{
+    position: relative;
+    background-color: #b2d6ff;
+    padding: rem(40px) rem(12px) rem(20px);
+    border: rem(10px) solid #fff3c2;
+    margin-bottom: rem(72px);
+    @include border-radius(8px);
+    .e-title{
+      width: rem(432px);
+      height: rem(64px);
+      position: absolute;
+      top: rem(-38px);
+      margin-left: rem(-216px);
+      left: 50%;
+      z-index: 20;
+      img{
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    }
+    .slogan{
+      font-size: rem(26px);
+      line-height: rem(40px);
+      color: #3a699a;
+    }
+    .flow{
+      position: relative;
+      margin-bottom: rem(17px);
+      &:after{
+        position: absolute;
+        right: 0;
+        top: rem(-70px);
+        display: block;
+        content: '';
+        z-index: 20;
+        width: rem(166px);
+        height: rem(142px);
+        background: url(http://images.simpletour.com/sleep/enrol-stamp@3x.png) no-repeat center;
+        background-size: 100%;
+      }
+      .f-title{
+        width: rem(120px);
+        height: rem(36.5px);
+        background: url(http://images.simpletour.com/sleep/enrol-way@3x.png) no-repeat center;
+        background-size: 100%;
+        text-indent: -9999px;
+        margin: rem(10px) 0;
+      }
+      .f-content{
+        background-color: #d4e9ff;
+        @include border-radius(8px);
+        @include displayflex;
+        @include flexflowRow;
+        -webkit-box-pack:center;
+        -webkit-justify-content:center;
+        justify-content:center;
+        -webkit-box-align:center;
+        -webkit-align-items:center;
+        align-items:center;
+        img.qrcode{
+          width: rem(215px);
+          height: rem(215px);
+          display: block;
+        }
+        .steps{
+          padding: rem(27px) rem(25px);
+          @include flex;
+          .step{
+            padding-bottom: rem(25px);
+            font-size: rem(26px);
+            line-height: rem(30px);
+            color: #3a699a;
+            &:last-child{
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+    .trunTo{
+      position: relative;
+      &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        left: rem(-40px);
+        top: rem(20px);
+        width: rem(177px);
+        height: rem(72px);
+        background: url(http://images.simpletour.com/sleep/left-cloud@3x.png) no-repeat center;
+        background-size: 100%;
+      }
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        right: rem(-40px);
+        top: rem(20px);
+        width: rem(177px);
+        height: rem(72px);
+        background: url(http://images.simpletour.com/sleep/right-cloud@3x.png) no-repeat center;
+        background-size: 100%;
+      }
+      .a-enrol{
+        width: rem(232px);
+        height: rem(62px);
+        display: block;
+        margin: 0 auto;
+        background: url(http://images.simpletour.com/sleep/enrol-aclick@3x.png) no-repeat center;
+        background-size: 100%;
+        text-indent: -9999px;
+      }
+      .t-slogan{
+        padding-top: rem(12px);
+        text-align: center;
+        font-size: rem(26px);
+        line-height: rem(40px);
+        color: #3a699a;
+      }
+    }
+  }
+  .footer{
+    position: relative;
+    background-color: #ffe683;
+    padding: rem(57px) rem(35px) rem(30px);
+    @include border-radius(8px);
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: rem(-42px);
+      width: rem(554px);
+      height: rem(84px);
+      margin-left: rem(-277px);
+      background: url(http://images.simpletour.com/sleep/footer-title@3x.png) no-repeat center;
+      background-size: 100%;
+    }
+    .row{
+      @include displayflex;
+      @include flexflowRow;
+      span{
+        display: block;
+        font-size: rem(26px);
+        line-height: rem(40px);
+        white-space: nowrap;
+        @include flex;
+      }
+    }
+  }
+}

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(255,255,255,0);font-family:Helvetica,sans-serif;-webkit-touch-callout:none;box-sizing:border-box}a:active,a:hover,a:link,a:visited{text-decoration:none;outline:0}html,body{width:100%;height:100%;font-size:20px}html{font-size:20px}.head-img{width:100%;height:9.8rem}.page,.page-group{position:absolute;overflow:hidden;width:100%;top:0;left:0;height:100%}.page{display:none;z-index:100}.page.page-current{display:block}.page-content{position:absolute;width:100%;top:0;bottom:0;overflow:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}.confirm-bg{position:absolute;top:0;left:0;width:100%;height:100%;z-index:10600;visibility:hidden;opacity:0;background-color:rgba(0,0,0,.4);-webkit-transition-duration:400ms;transition-duration:400ms}.confirm-content{background-color:#e8e8e8;border-radius:.1rem;width:7.25rem;position:absolute;z-index:11000;left:50%;box-sizing:border-box;margin-left:-3.625rem;top:50%;text-align:center;background-color:#fff;color:#535353;opacity:0;font-size:.45rem;-webkit-transform:translate3d(0,0,0) scale(1.185);transform:translate3d(0,0,0) scale(1.185);-webkit-transition-property:-webkit-transform,opacity;transition-property:transform,opacity}.confirm-content.in{opacity:1;-webkit-transition-duration:400ms;transition-duration:400ms;-webkit-transfrom:translate3d(0,0,0) scale(1);transform:translate3d(0,0,0) scale(1)}.confirm-content.out{opacity:0;z-index:10999;-webkit-transition-duration:400ms;transition-duration:400ms;-webkit-transform:translate3d(0,0,0) scale(0.815);transform:translate3d(0,0,0) scale(0.815)}.confirm-content .confirm-inner{padding:.625rem .625rem .475rem}.confirm-content .confirm-detail{font-size:.35rem;color:#535353;margin-top:.25rem}.confirm-content .confirm-buttons{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-ms-box-orient:horizontal;-moz-box-orient:horizontal;-webkit-flex-flow:row nowrap;-ms-flex-flow:row nowrap;-moz-flex-flow:row nowrap;flex-flow:row nowrap;border-top:1px solid #E4E4E4}.confirm-content .confirm-buttons span{display:block;-webkit-box-flex:1;-moz-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;height:1.25rem;line-height:1.25rem;box-sizing:border-box}.confirm-content .confirm-buttons span:active{background-color:#d4d4d4}.confirm-content .confirm-buttons span+span{border-left:1px solid #E4E4E4}.confirm-bg.confirm-bg-visible{visibility:visible;opacity:1}.alert-msg{position:absolute;z-index:10000;top:40%;width:100%;text-align:center;opacity:0;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transition:.15s ease-out;transition:.15s ease-out}.alert-msg.in{opacity:1;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}.alert-msg div{background-color:rgba(63,63,63,.47);color:#fff;display:inline;margin:0 auto;font-size:.7rem;padding:.55rem 1.55rem;border-radius:1.6rem}.head-img img{width:100%;height:100%}body{position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden}.wrapper{position:absolute;overflow-x:hidden;width:100%;top:0;left:0;height:100%}.navBar{width:100%;height:2rem;line-height:2rem;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-ms-box-orient:horizontal;-moz-box-orient:horizontal;-webkit-flex-flow:row nowrap;-ms-flex-flow:row nowrap;-moz-flex-flow:row nowrap;flex-flow:row nowrap}.navBar div{-webkit-box-flex:1;-moz-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;text-align:center;font-size:.85rem}.navBar div.sichuan{color:#df3c2c}.navBar div.chongqing{color:#ff7e14;border-left:.05rem solid #d98014;border-right:.05rem solid #d98014}.navBar div.yunnan{color:#00c09b}.navBar div.selected.sichuan{color:#fff;background-color:#df3c2c}.navBar div.selected.chongqing{color:#fff;background-color:#fb9025}.navBar div.selected.yunnan{color:#fff;background-color:#3aa291}.contents-wrapper{width:100%;min-height:100%;font-size:0;overflow: hidden;position:relative}.contents-wrapper .contents{position:absolute;z-index:1;width:100%;font-size:0;-webkit-transition:.2s ease-out;transition:.2s ease-out}.contents-wrapper .contents .presell{background-color:#df3c2c;padding:.85rem 0}.contents-wrapper .contents .have-to{background-color:#ffc779}.contents-wrapper .contents .around{background-color:#ffc171}.contents-wrapper .contents .rules{background-color:#f67800}.contents-wrapper .contents .item{margin:0 auto;position:relative;border-radius:.2rem;overflow:hidden;width:14.75rem;margin-bottom:.85rem}.contents-wrapper .contents .item:last-child{margin-bottom:0}.contents-wrapper .contents .item .img-wrapper{width:100%;position:relative;height:5.125rem}.contents-wrapper .contents .item .img-wrapper img{width:100%}.contents-wrapper .contents .item .img-wrapper .price-cover{position:absolute;bottom:0;left:0;width:100%;height:1.35rem;background-color:#000;opacity:.6}.contents-wrapper .contents .item .img-wrapper .price-wrapper{position:absolute;bottom:0;left:0;width:100%;height:1.35rem;line-height:1.5rem;text-align:right}.contents-wrapper .contents .item .img-wrapper .price-wrapper span{font-size:.65rem;color:#fff}.contents-wrapper .contents .item .img-wrapper .price-wrapper span:first-child{font-size:.55rem;text-decoration:line-through;padding-right:1rem}.contents-wrapper .contents .item .img-wrapper .price-wrapper span:last-child{font-size:.9rem;padding-right:.8rem;padding-left:.2rem}.contents-wrapper .contents .item .pending-icon{position:absolute;top:.55rem;left:0;padding-left:.3rem;width:4.5rem;height:1.95rem;background-color:#d71405;border-bottom-right-radius:1.8rem;border-top-right-radius:1.8rem;color:#fff}.contents-wrapper .contents .item .pending-icon h5{display:inline-block;margin:.1rem 0 0;font-size:.7rem;padding:0}.contents-wrapper .contents .item .pending-icon p{display:inline-block;font-size:.6rem;margin:0;padding:0}.contents-wrapper .contents .item .hot-icon{position:absolute;top:0;left:.675rem;width:2.4rem;height:2.225rem}.contents-wrapper .contents .item .hot-icon img{width:100%;height:100%}.contents-wrapper .contents .item .infos{width:100%;height:4.45rem;position: relative;padding:.5rem .35rem;background-color:#fff}.contents-wrapper .contents .item .infos h5{font-size:.8rem;margin-bottom:.35rem}.contents-wrapper .contents .item .infos .bottom span{color:#5b5b5b;display: inline-block; padding-top: .2rem;;font-size:.6rem}.contents-wrapper .contents .item .infos .bottom a{float:right;display:inline-block;width:5rem;height:1.2rem;line-height:1.2rem;text-align:center;border-radius:.15rem;background-color:#d71405;color:#fff;font-size:.8rem}.contents-wrapper .contents .item .infos .bottom:after{content:'';display:block;clear:both}.contents-wrapper .contents .item.disabled:after{content:'';display:inline-block;position:absolute;top:2rem;left:1.5rem;width:11.05rem;height:3.725rem;background:url(/images/autumn/sold-out.png) no-repeat center;background-size:contain;-webkit-transform:rotate(-20deg);transform:rotate(-20deg)}.contents-wrapper .contents .color-walk{width:100%;height:5.475rem;font-size:0}.contents-wrapper .contents .color-walk img{width:100%;height:100%;font-size:0}.contents-wrapper .contents .around-img{width:100%;height:6.875rem;font-size:0}.contents-wrapper .contents .around-img img{width:100%;height:100%}.contents-wrapper .contents .view-more{width:100%;height:4.55rem;font-size:0}.contents-wrapper .contents .view-more img{width:100%;height:100%}.contents-wrapper .contents .rules{padding:.75rem 0;position:relative;background-color:#f67800}.contents-wrapper .contents .rules .title{position:absolute;width:2.85rem;height:.75rem;top:.375rem;left:1.375rem;text-align:center;font-size:.65rem;color:#fff;background-color:#f67800}.contents-wrapper .contents .rules ol{padding:.6rem .5rem .6rem 1.1rem;border:.05rem solid #fff;width:14rem;margin:0 auto}.contents-wrapper .contents .rules ol li{font-size:.6rem;color:#fff}.contents-wrapper .contents.chongqing .presell{background-color:#fb9025}.contents-wrapper .contents.yunnan .presell{background-color:#3aa291}.contents-wrapper .contents.yunnan .rules{background-color:#3aa291}.contents-wrapper .contents.yunnan .rules .title{background-color:#3aa291}.contents-wrapper .contents.current{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);opacity:1}.contents-wrapper .contents.prev{-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0);opacity:.4}.contents-wrapper .contents.next{-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0);opacity:.4}
+    .contents-wrapper .contents .item .infos .bottom {position: absolute; bottom:.5rem;left:0;width: 100%;padding: 0 .35rem}</style>
+</head>
+<body style="visibility: hidden">
+<div class="page-group">
+    <div class="page page-current">
+        <div class="page-content">
+            <div class="head-img">
+                <img src="/images/autumn/head-img.jpg" alt="">
+            </div>
+            <div class="navBar">
+                <div class="sichuan selected" data-destination="sichuan">四川</div>
+                <div class="chongqing" data-destination="chongqing">重庆</div>
+                <div class="yunnan" data-destination="yunnan">云南</div>
+            </div>
+            <div class="contents-wrapper">
+                <div class="contents sichuan current">
+                    <div class="presell">
+                        <div class="item disabled">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                                <div class="price-cover"></div>
+                                <div class="price-wrapper">
+                                    <span>原价$175</span>
+                                    <span>抢购价$</span>
+                                    <span>39.8</span>
+                                </div>
+                            </div>
+                            <div class="pending-icon">
+                                <h5>10月17日</h5>
+                                <p>15:00开抢</p>
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-乐山、峨眉山2日往返直通车&住宿&门票.jpg" alt="">
+                                <div class="price-cover"></div>
+                                <div class="price-wrapper">
+                                    <span>原价$175</span>
+                                    <span>抢购价$</span>
+                                    <span>39.8</span>
+                                </div>
+                            </div>
+                            <div class="pending-icon">
+                                <h5>10月17日</h5>
+                                <p>15:00开抢</p>
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-九寨沟3日往返直通车&住宿&景区套票.jpg" alt="">
+                                <div class="price-cover"></div>
+                                <div class="price-wrapper">
+                                    <span>原价$175</span>
+                                    <span>抢购价$</span>
+                                    <span>39.8</span>
+                                </div>
+                            </div>
+                            <div class="pending-icon">
+                                <h5>10月17日</h5>
+                                <p>15:00开抢</p>
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-walk">
+                        <img src="/images/autumn/sichuan-color-walk.jpg" alt="">
+                    </div>
+
+                    <div class="have-to">
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-峨眉山%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-九寨沟%203日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="around-img">
+                        <img src="/images/autumn/sichuan-around.jpg" alt="">
+                    </div>
+
+                    <div class="around">
+
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-都江堰&青城山%201日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-熊猫基地往返直通车&门票.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="view-more">
+                        <img src="/images/autumn/sichuan-more.jpg" alt="">
+                    </div>
+
+                    <div class="rules">
+                        <div class="title">活动规则</div>
+                        <ol>
+                            <li>活动时间：10月17日至11月11日每周一、三、五下午三点，四川、重庆、云南3个目的地超值商品准时开抢！</li>
+                            <li>抢购商品每人限购一份，购买多份或者重复下单均视为无效，系统将自动取消订单；</li>
+                            <li>商品（行程）出行人需与下单人保持一致；</li>
+                            <li>抢购活动商品一经抢购成功，不予退换，请谨慎购买（不可抗力导致的原因除外，如：自然灾害等）；</li>
+                            <li>客服电话：010-8069-7359；</li>
+                            <li>本次活动的最终解释权归简途旅行社有限公司所有。</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="contents chongqing next">
+                    <div class="presell">
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                                <div class="price-cover"></div>
+                                <div class="price-wrapper">
+                                    <span>原价$175</span>
+                                    <span>抢购价$</span>
+                                    <span>39.8</span>
+                                </div>
+                            </div>
+                            <div class="pending-icon">
+                                <h5>10月17日</h5>
+                                <p>15:00开抢</p>
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                                <div class="price-cover"></div>
+                                <div class="price-wrapper">
+                                    <span>原价$175</span>
+                                    <span>抢购价$</span>
+                                    <span>39.8</span>
+                                </div>
+                            </div>
+                            <div class="pending-icon">
+                                <h5>10月17日</h5>
+                                <p>15:00开抢</p>
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                                <div class="price-cover"></div>
+                                <div class="price-wrapper">
+                                    <span>原价$175</span>
+                                    <span>抢购价$</span>
+                                    <span>39.8</span>
+                                </div>
+                            </div>
+                            <div class="pending-icon">
+                                <h5>10月17日</h5>
+                                <p>15:00开抢</p>
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-walk">
+                        <img src="/images/autumn/chongqing-color-walk.jpg" alt="">
+                    </div>
+
+                    <div class="have-to">
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="around-img">
+                        <img src="/images/autumn/chongqing-around.jpg" alt="">
+                    </div>
+
+                    <div class="around">
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="view-more">
+                        <img src="/images/autumn/chongqing-more.jpg" alt="">
+                    </div>
+
+                    <div class="rules">
+                        <div class="title">活动规则</div>
+                        <ol>
+                            <li>活动时间：10月17日至11月11日每周一、三、五下午三点，四川、重庆、云南3个目的地超值商品准时开抢！</li>
+                            <li>抢购商品每人限购一份，购买多份或者重复下单均视为无效，系统将自动取消订单；</li>
+                            <li>商品（行程）出行人需与下单人保持一致；</li>
+                            <li>抢购活动商品一经抢购成功，不予退换，请谨慎购买（不可抗力导致的原因除外，如：自然灾害等）；</li>
+                            <li>客服电话：010-8069-7359；</li>
+                            <li>本次活动的最终解释权归简途旅行社有限公司所有。</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="contents yunnan next">
+                    <div class="presell">
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                                <div class="price-cover"></div>
+                                <div class="price-wrapper">
+                                    <span>原价$175</span>
+                                    <span>抢购价$</span>
+                                    <span>39.8</span>
+                                </div>
+                            </div>
+                            <div class="pending-icon">
+                                <h5>10月17日</h5>
+                                <p>15:00开抢</p>
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                                <div class="price-cover"></div>
+                                <div class="price-wrapper">
+                                    <span>原价$175</span>
+                                    <span>抢购价$</span>
+                                    <span>39.8</span>
+                                </div>
+                            </div>
+                            <div class="pending-icon">
+                                <h5>10月17日</h5>
+                                <p>15:00开抢</p>
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                                <div class="price-cover"></div>
+                                <div class="price-wrapper">
+                                    <span>原价$175</span>
+                                    <span>抢购价$</span>
+                                    <span>39.8</span>
+                                </div>
+                            </div>
+                            <div class="pending-icon">
+                                <h5>10月17日</h5>
+                                <p>15:00开抢</p>
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="color-walk">
+                        <img src="/images/autumn/yunnan-color-walk.jpg" alt="">
+                    </div>
+
+                    <div class="have-to">
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="around-img">
+                        <img src="/images/autumn/yunnan-around.jpg" alt="">
+                    </div>
+
+                    <div class="around">
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-wrapper">
+                                <img src="/images/autumn/成都-毕棚沟%202日往返直通车.jpg" alt="">
+                            </div>
+                            <div class="hot-icon">
+                                <img src="/images/autumn/hot-icon.png" alt="">
+                            </div>
+                            <div class="infos">
+                                <h5>成都-毕棚沟%202日往返直通车</h5>
+                                <div class="bottom">
+                                    <span>秋季最佳野餐地</span>
+                                    <a href="">立即抢购</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="view-more">
+                        <img src="/images/autumn/yunnan-more.jpg" alt="">
+                    </div>
+
+                    <div class="rules">
+                        <div class="title">活动规则</div>
+                        <ol>
+                            <li>活动时间：10月17日至11月11日每周一、三、五下午三点，四川、重庆、云南3个目的地超值商品准时开抢！</li>
+                            <li>抢购商品每人限购一份，购买多份或者重复下单均视为无效，系统将自动取消订单；</li>
+                            <li>商品（行程）出行人需与下单人保持一致；</li>
+                            <li>抢购活动商品一经抢购成功，不予退换，请谨慎购买（不可抗力导致的原因除外，如：自然灾害等）；</li>
+                            <li>客服电话：010-8069-7359；</li>
+                            <li>本次活动的最终解释权归简途旅行社有限公司所有。</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/common/js/zepto.min.js"></script>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        var a = document.getElementsByTagName('a');
+        for(var i = 0; i < a.length; i++){
+            a[i].addEventListener('touchstart',function(){},false);
+        }
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $(document).ready(function() {
+        var sichuanHeight = $('.contents.sichuan').height();
+        var chongqingHeight = $('.contents.chongqing').height();
+        var yunnanHeight = $('.contents.yunnan').height();
+        $('.contents-wrapper').height(sichuanHeight);
+
+        $('.navBar div').click(function() {
+            var $this = $(this);
+            $('.navBar .selected').removeClass('selected');
+            $this.addClass('selected');
+            var destination = $this.attr('data-destination');
+            $('.contents').removeClass('current next prev');
+            if(destination == 'sichuan') {
+                $('.contents-wrapper').height(sichuanHeight);
+
+                $('.contents.sichuan').addClass('current');
+                $('.contents.chongqing').addClass('next');
+                $('.contents.yunnan').addClass('next');
+            } else if(destination == 'chongqing') {
+                $('.contents-wrapper').height(chongqingHeight);
+
+                $('.contents.sichuan').addClass('prev');
+                $('.contents.chongqing').addClass('current');
+                $('.contents.yunnan').addClass('next');
+            } else {
+                $('.contents-wrapper').height(yunnanHeight);
+
+                $('.contents.sichuan').addClass('prev');
+                $('.contents.chongqing').addClass('prev');
+                $('.contents.yunnan').addClass('current');
+            }
+        });
+    });
+</script>
+</body>
+</html>

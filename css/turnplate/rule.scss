@@ -1,0 +1,189 @@
+@import "/css/utils";
+html,body{
+  background-color: rgb(254,251,233);;
+}
+body{
+  background-color: rgb(235,56,57);
+}
+.wrap{
+  width: 100%;
+  min-height: 100vh;
+  background: url('/images/turnplate/rulebg.png') no-repeat top center;
+  background-size: 100% auto;
+  background-color: rgb(235,56,57);
+  .rule-section{
+    padding: rem(202px) rem(26px) 0;
+    .title{
+      width: 100%;
+      height: rem(35px);
+      background: url('/images/turnplate/rule-title.png') no-repeat center;
+      background-size: 100% 100%;
+      font-size: 0;
+    }
+    .deadline{
+      font-size: rem(20px);
+      color: rgb(255,219,168);
+      text-align: center;
+      font-weight: 500;
+      margin-top: rem(4px);
+    }
+    .rules{
+      font-size: rem(26px);
+      line-height: rem(34px);
+      color: rgb(255,219,168);
+      li{
+        position: relative;
+        padding-top: rem(26px);
+        padding-bottom: rem(26px);
+        @include flexflowRow();
+        @include displayflex();
+        -ms-justify-content: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -ms-justify: center;
+        -webkit-justify: center;
+        justify: center;
+        -ms-box-align: center;
+        -webkit-box-align: center;
+        box-align: center;
+        -ms-align-items: center;
+        -webkit-align-items: center;
+        align-items: center;
+        &:after{
+          text-align: left;
+          content: '';
+          display: block;
+          width: rem(108px);
+          height: rem(12px);
+          background: url('/images/turnplate/border-line.png') no-repeat center;
+          background-size: 100%;
+          position: absolute;
+          bottom: rem(8px);
+          left: 0;
+        }
+        i{
+          font-size: rem(36px);
+          font-weight: bold;
+          font-style: italic;
+          margin-right: rem(28px);
+        }
+        p{
+          @include flex(1);
+        }
+      }
+    }
+  }
+  .prize-section{
+    position: relative;
+    margin-top: rem(130px);
+    background-color: rgb(254,251,233);
+    padding: 0 rem(26px);
+    &:before{
+      text-align: left;
+      content: '';
+      display: block;
+      width: 100%;
+      height: rem(128px);
+      background: url('/images/turnplate/cloud.png') no-repeat center;
+      background-size: 100% 100%;
+      position: absolute;
+      top: rem(-127px);
+      left: 0;
+    }
+    .title{
+      width: 100%;
+      height: rem(35px);
+      background: url('/images/turnplate/prize-title.png') no-repeat center;
+      background-size: 100% 100%;
+      font-size: 0;
+      margin: rem(16px) 0;
+    }
+    .prizes{
+      padding-top: rem(30px);
+      padding-bottom: rem(60px);
+      @include displayflex();
+      -webkit-box-orient: horizontal;
+      -ms-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+      -moz-flex-flow: row wrap;
+      flex-flow: row wrap;
+      li{
+        width: 50%;
+        text-align: center;
+        border-right: 1px dashed rgb(233,227,193);
+        border-bottom: 1px dashed rgb(233,227,193);
+        font-size: rem(24px);
+        color: rgb(148,77,15);
+        padding-bottom: rem(40px);
+        padding-top: rem(40px);
+        position: relative;
+        &:first-child,&:nth-child(2){
+          padding-top: 0;
+        }
+        &:nth-last-child(2),&:nth-last-child(1){
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+        &:nth-child(even) {
+          border-right: none;
+        }
+        &:nth-child(even):not(:last-child):not(:nth-last-child(2)){
+          &:before{
+            content: '';
+            display: inline-block;
+            width: rem(74px);
+            height: rem(74px);
+            -webkit-border-radius: rem(74px);
+            -moz-border-radius: rem(74px);
+            -ms-border-radius: rem(74px);
+            -o-border-radius: rem(74px);
+            border-radius: rem(74px);
+            position: absolute;
+            left: rem(-37px);
+            bottom: rem(-37px);
+            background: url('/images/turnplate/circle-icon.png') no-repeat center;
+            background-size: 35% 35%;
+            background-color: rgb(254,251,233);
+            z-index: 5;
+          }
+        }
+        &:nth-child(even):nth-last-child(2){
+          border-bottom: 1px dashed rgb(233,227,193) !important;
+        }
+        img,.img{
+          width: rem(132px);
+          height: rem(132px);
+          display: block;
+          margin: 0 auto;
+          background: rgb(233,227,193);
+          -webkit-border-radius: rem(6px);
+          -moz-border-radius: rem(6px);
+          -ms-border-radius: rem(6px);
+          -o-border-radius: rem(6px);
+          border-radius: rem(6px);
+        }
+        .img{
+          position: relative;
+          span{
+            display: block;
+            height: rem(32px);
+            line-height: rem(32px);
+            font-size: rem(20px);
+            color: rgb(255,250,244);
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,.3);
+          }
+        }
+        .name{
+          margin-top: rem(20px);
+          padding: 0 .5rem;
+        }
+      }
+    }
+  }
+}
