@@ -42,22 +42,29 @@ fis3 server start
 
 * lottery --- 大转盘抽奖
 
+ <img src="./resource/roulette.png" alt="大转盘活动图"/>
+
 * marathon --- 马拉松活动
 
 * nationalDay --- 国庆节活动
 
 * questionnaire --- 调查问卷
 
+<img src="./resource/quiz.png" alt="摇一摇活动图"/>
+
 * represent --- 谁能代表大四川
 
 * scratch --- 刮刮卡
+
+ <img src="./resource/scratch.png" alt="刮刮卡活动图"/>
 
 * SDbargain --- 双旦砍价活动
 
 * SDplay --- 双旦去玩
 
 * shaking --- 摇一摇活动
-    <img src="./resource/shaking.png" alt="摇一摇活动图"/>
+
+ <img src="./resource/shaking.png" alt="摇一摇活动图"/>
 
 * shishui --- 旅舍试睡活动
 
@@ -70,6 +77,16 @@ fis3 server start
 * YN9 --- 云南9元活动
 
 * yyy --- 测试活动
+
+## 待上传模板
+
+ <img src="./resource/vote-screen.png" alt="摇一摇活动图"/>
+
+ <img src="./resource/white-vote.png" alt="摇一摇活动图"/>
+
+ <img src="./resource/multiple-vote.png" alt="摇一摇活动图"/>
+
+ <img src="./resource/ballot.png" alt="摇一摇活动图"/>
 
 
 
