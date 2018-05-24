@@ -1,7 +1,22 @@
 # activity
 存放部分活动页面
 
-### 现存活动
+
+## 项目运行
+```
+git clone https://github.com/FernAbby/activities.git
+
+cd activities
+
+npm install fis3(如果已安装fis3,略过此步)
+
+fis3 release
+
+fis3 server start
+
+```
+
+## 现存活动
 
 * airlines --- 接机活动
 * appBargain ---  砍价活动
@@ -29,4 +44,6 @@
 * xlxs --- 西岭雪山活动
 * ＹＮ９ --- 云南9元活动
 * yyy --- 测试活动
+
+
 
