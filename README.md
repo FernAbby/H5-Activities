@@ -22,6 +22,8 @@ fis3 server start
 
 * appBargain --- 砍价活动
 
+ <img src="./resource/appBargain.png" alt="砍价活动图"/>
+
 * appdownload --- App下载引导页
 
 * autumn --- 秋季活动
