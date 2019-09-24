@@ -1,0 +1,22 @@
+@import "/old/css/css/SDbargain/common";
+
+.content{
+  .info-message{
+    img{
+      display: block;
+      width: rem(108px);
+      height: rem(108px);
+      margin: 0 auto rem(20px);
+    }
+    .message{
+      line-height: rem(37px);
+      margin-bottom: rem(22px);
+      background-color: #c12f30;
+      font-size: rem(24px);
+      color: #fff;
+      text-align: center;
+      padding: rem(8px);
+      @include border-radius(8px);
+    }
+  }
+}

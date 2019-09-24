@@ -1,0 +1,174 @@
+$baseFontSize: 40px !default;
+$opacity: 1 !default;
+@function rem($px) {
+  @return $px / $baseFontSize * 1rem;
+}
+@import "abbr";
+.clear:after{
+  content: '';
+  display: block;
+  clear: both;
+  width: 0;
+  height: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  font-family: PingFang SC,STHeiti,"Microsoft Yahei","微软雅黑",Helvetica, sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+a:active, a:hover, a:link, a:visited {
+  text-decoration: none;
+  outline: none;
+}
+ul,li{
+  list-style: none;
+}
+
+html, body {
+  width: 100%;
+  font-size: 20px;
+  background-color: #f0f0f0;
+}
+
+.alert-msg {
+  position: fixed;
+  z-index: 10000;
+  top: 40%;
+  margin-left: -6.75rem;
+  text-align: center;
+  opacity: 0;
+  left:50%;
+  color:white;
+  background-color: rgba(0,0,0,.65);
+  padding: rem(28px) rem(64px);
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  font-size: rem(28px);
+  border-radius: rem(6px);
+  -webkit-transform: translate3d(0, 0, 0) scale(1.185);
+  transform: translate3d(0, 0, 0) scale(1.185);
+  -webkit-transition-property: -webkit-transform, opacity;
+  transition-property: transform, opacity;
+  box-sizing: border-box;
+}
+.alert-msg.in {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+.alert-msg.out{
+  -webkit-transform: translate3d(0, 0, 0) scale(0.815);
+  transform: translate3d(0, 0, 0) scale(0.815);
+}
+.confirm-bg{
+  position: absolute;
+  left:0;
+  top:0;
+  bottom: 0;
+  right: 0;
+  z-index:9998;
+  background-color: rgba(69,69,69,.60);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition-duration:400ms;
+  transition-duration: 400ms;
+}
+.confirm-bg.confirm-bg-visible{
+  visibility: visible;
+  opacity: 1;
+}
+.confirm-msg{
+  opacity: 0;
+  -webkit-transform:translate3d(0,-50%,0) scale(1.185);
+  transform: translate3d(0,-50%,0) scale(1.185);
+  -webkit-transition-property:-webkit-transform,opacity;
+  transition-property: transform,opacity;
+  &.in{
+    opacity: 1;
+    -webkit-transition-duration:400ms;
+    transition-duration: 400ms;
+    -webkit-transfrom:translate3d(0,0,0) scale(1);
+    transform: translate3d(0,0,0) scale(1);
+  }
+  &.out{
+    opacity: 0;
+    z-index: 10999;
+    -webkit-transition-duration: 400ms;
+    transition-duration: 400ms;
+    -webkit-transform: translate3d(0, 0, 0) scale(0.815);
+    transform: translate3d(0, 0, 0) scale(0.815);
+  }
+  left :50%;
+  top: 50%;
+  margin-left: rem(-250px);
+  z-index: 9999;
+  position: absolute;
+  width: rem(500px);
+  .confirm-msg-title{
+    border-top-left-radius: rem(10px);
+    border-top-right-radius: rem(10px);
+    background-color: white;
+    height: rem(69px);
+    border-bottom: 1px solid #EBEBF5;
+    line-height: rem(69px);
+    text-align: center;
+    font-size: rem(34px);
+    color:#00a5e0;
+  }
+  .confirm-msg-content{
+    background-color: white;
+    padding: rem(20px) rem(26px);
+    border-bottom-left-radius: rem(10px);
+    border-bottom-right-radius: rem(10px);
+    //border-bottom: rem(10px) solid #00a5e0;
+    &.has-btn{
+      border:0;
+      border-radius: 0;
+    }
+    p{
+      color:#4F545B;
+      font-size: rem(28px);
+    }
+  }
+  .confirm-msg-btns{
+    @include displayflex;
+    @include flexflowRow(row,horizontal);
+    border-top:1px solid #E4E4E4;
+    padding: rem(7px) 0;
+    background: white;
+    border-bottom-left-radius: rem(10px);
+    border-bottom-right-radius: rem(10px);
+    span{
+      display: block;
+      @include flex(1);
+      height: rem(74px);
+      line-height: rem(74px);
+      font-size: rem(28px);
+      text-align: center;
+      box-sizing: border-box;
+      color:#4F545B;
+    }
+    span:first-child{
+      color:#00a5e0;
+    }
+    span + span{
+      border-left: 1px solid #E4E4E4;
+    }
+  }
+  .confirm-msg-close{
+    margin: rem(60px) auto 0;
+    width: rem(58px);
+    height: rem(58px);
+    background: url(/old/images/close.png) no-repeat;
+    background-size: rem(58px);
+  }
+}

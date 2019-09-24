@@ -1,0 +1,579 @@
+$baseFontSize: 40px !default;
+$red: #D71345 !default;
+$opacity: 1 !default;
+@function rem($px) {
+  @return $px / $baseFontSize * 1rem;
+}
+
+@mixin displayflex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($size:1) {
+  -webkit-box-flex: $size;
+  -moz-box-flex: $size;
+  -webkit-flex: $size;
+  -ms-flex: $size;
+  flex: $size;
+}
+
+@mixin flexflowCol($direction:column,$dir:vertical) {
+  -webkit-box-orient: $dir;
+  -ms-box-orient: $dir;
+  -moz-box-orient: $dir;
+  -webkit-flex-flow: $direction nowrap;
+  -ms-flex-flow: $direction nowrap;
+  -moz-flex-flow: $direction nowrap;
+  flex-flow: $direction nowrap;
+}
+
+@mixin flexflowRow($direction:row,$dir:horizontal) {
+  -webkit-box-orient: $dir;
+  -ms-box-orient: $dir;
+  -moz-box-orient: $dir;
+  -webkit-flex-flow: $direction nowrap;
+  -ms-flex-flow: $direction nowrap;
+  -moz-flex-flow: $direction nowrap;
+  flex-flow: $direction nowrap;
+}
+
+@mixin shadow($x:0,$y:0px,$z:5px,$color:#bdbdbd) {
+  box-shadow: $x $y $z $color;
+  -webkit-box-shadow: $x $y $z $color;
+  -moz-box-shadow: $x $y $z $color;
+}
+
+@mixin border-radius($radius:4px) {
+  -webkit-border-radius: rem($radius);
+  -moz-border-radius: rem($radius);
+  -ms-border-radius: rem($radius);
+  -o-border-radius: rem($radius);
+  border-radius: rem($radius);
+}
+
+@mixin box-sizing($set:border-box) {
+  -webkit-box-sizing: $set;
+  -moz-box-sizing: $set;
+  -ms-box-sizing: $set;
+  -o-box-sizing: $set;
+  box-sizing: $set;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  font-family: Helvetica, sans-serif;
+  -webkit-touch-callout: none;
+  box-sizing: border-box;
+}
+
+a:active, a:hover, a:link, a:visited {
+  text-decoration: none;
+  outline: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  background-color: #f85252;
+  position: relative;
+}
+
+html {
+  font-size: 20px;
+}
+
+* {
+  @include box-sizing(border-box);
+  outline: none;
+}
+
+.header {
+  img {
+    display: block;
+    width: 100%;
+    height: rem(416px);
+    border: none;
+  }
+}
+.footer{
+  padding: 0 rem(34px) rem(34px);
+  a{
+    display: block;
+    width: 100%;
+    height: rem(191px);
+    line-height: rem(44px);
+    text-align: center;
+    color: #c12f30;
+    font-size: rem(24px);
+    text-indent: -9999px;
+    background: url(/old/images/SDbargain/sdBargain_footer@3x.png) no-repeat center;
+    background-size: 100%;
+  }
+}
+.content {
+  position: relative;
+  padding: 0 rem(34px);
+  margin-top: rem(-74px);
+  .disabled{
+    background-color: #969696 !important;
+    color: #fff !important;
+  }
+  .title-line {
+    @include displayflex;
+    @include flexflowRow;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-bottom: rem(20px);
+    span {
+      display: block;
+      background-color: #fff;
+    }
+    span.title {
+      min-width: rem(200px);
+      height: rem(44px);
+      line-height: rem(44px);
+      text-align: center;
+      font-size: rem(28px);
+      color: #f85252;
+      padding: 0 rem(20px);
+      @include border-radius(44px);
+    }
+    span.line {
+      position: relative;
+      @include flex;
+      height: rem(6px);
+      margin: 0 rem(20px);
+      @include border-radius(6px);
+      &:first-child:after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: rem(34px);
+        height: rem(36px);
+        background: url(/old/images/SDbargain/snow@4x.png) no-repeat center;
+        background-size: cover;
+        top: rem(-15px);
+        right: rem(20px);
+        z-index: 5;
+      }
+      &:last-child:after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: rem(18px);
+        height: rem(20px);
+        background: url(/old/images/SDbargain/snow@4x.png) no-repeat center;
+        background-size: cover;
+        top: rem(-30px);
+        left: rem(45px);
+        z-index: 5;
+      }
+    }
+    &.short {
+      span.line:first-child:after {
+        top: rem(-15px);
+        right: 0;
+      }
+      span.line:last-child:after {
+        top: rem(-30px);
+        left: rem(10px);
+      }
+    }
+  }
+  .product {
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    @include border-radius(8px);
+    img {
+      display: block;
+      width: 100%;
+      height: rem(247px);
+    }
+    .name {
+      line-height: rem(37px);
+      font-size: rem(24px);
+      color: #fff;
+      background-color: #ff7e00;
+      padding: rem(10px) rem(20px);
+    }
+    .info {
+      @include displayflex;
+      @include flexflowRow;
+      span {
+        display: block;
+        height: rem(57px);
+        line-height: rem(57px);
+        font-size: rem(24px);
+        color: #fff;
+        text-align: center;
+        @include flex;
+      }
+      .price {
+        background-color: #f5a045;
+      }
+      .amount {
+        background-color: #0ec090;
+      }
+    }
+  }
+  .esoterica {
+    font-size: rem(24px);
+    color: #fff;
+    position: relative;
+    margin-bottom: rem(26px);
+    .e-title {
+      width: rem(180px);
+      height: rem(37px);
+      line-height: rem(42px);
+      background-color: #c12f30;
+      margin: 0 auto;
+      text-align: center;
+      font-weight: bold;
+      -webkit-border-radius: rem(8px) rem(8px) 0 0;
+      -moz-border-radius: rem(8px) rem(8px) 0 0;
+      -ms-border-radius: rem(8px) rem(8px) 0 0;
+      -o-border-radius: rem(8px) rem(8px) 0 0;
+      border-radius: rem(8px) rem(8px) 0 0;
+    }
+    .e-content {
+      padding: rem(30px) rem(16px) rem(20px) rem(22px);
+      line-height: rem(40px);
+      background-color: #c12f30;
+      @include border-radius(8px);
+      position: relative;
+      &:before {
+        position: absolute;
+        content: '';
+        display: block;
+        width: rem(34px);
+        height: rem(36px);
+        background: url(/old/images/SDbargain/snow@4x.png) no-repeat center;
+        background-size: cover;
+        top: rem(-18px);
+        left: rem(132px);
+        z-index: 5;
+      }
+      &:after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: rem(26px);
+        height: rem(28px);
+        background: url(/old/images/SDbargain/snow@4x.png) no-repeat center;
+        background-size: cover;
+        top: rem(22px);
+        right: rem(60px);
+        z-index: 5;
+      }
+    }
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: rem(26px);
+      height: rem(28px);
+      background: url(/old/images/SDbargain/snow@4x.png) no-repeat center;
+      background-size: cover;
+      top: rem(-5px);
+      left: rem(63px);
+      z-index: 5;
+    }
+    &:after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: rem(26px);
+      height: rem(28px);
+      background: url(/old/images/SDbargain/snow@4x.png) no-repeat center;
+      background-size: cover;
+      top: rem(8px);
+      right: rem(115px);
+      z-index: 5;
+    }
+  }
+  .input-group {
+    @include displayflex;
+    @include flexflowRow;
+    input {
+      height: rem(52px);
+      padding: rem(10px) rem(16px);
+      border: none;
+      outline: none;
+      font-size: rem(24px);
+      color: #000;
+      @include flex;
+      @include border-radius(8px);
+    }
+    span {
+      width: rem(194px);
+      height: rem(52px);
+      line-height: rem(52px);
+      text-align: center;
+      color: #000;
+      font-size: rem(24px);
+      background-color: #fad637;
+      display: block;
+      margin-left: rem(10px);
+      @include border-radius(8px);
+      &:active{
+         background-color: #f8a608;
+      }
+    }
+  }
+  a.btn{
+    display: block;
+    width: 100%;
+    height: rem(60px);
+    line-height: rem(60px);
+    color: #fff;
+    font-size: rem(30px);
+    text-align: center;
+    background-color: #00aeee;
+    @include border-radius(8px);
+    &:active{
+      background-color: #1ca3d5;
+    }
+  }
+  .buttons{
+    text-align: center;
+    font-size: 0;
+    margin-bottom: rem(32px);
+    span,a{
+      display: inline-block;
+      width: rem(272px);
+      height: rem(54px);
+      line-height: rem(54px);
+      color: #fff;
+      font-size: rem(24px);
+      text-align: center;
+      background-color: #00aeee;
+      @include border-radius(8px);
+      &:active{
+        background-color: #1ca3d5;
+      }
+    }
+    span:nth-child(2),a:nth-child(2){
+      margin-left: rem(24px);
+      background-color: #3b99f6;
+      &:active{
+        background-color: #1b7ee3;
+      }
+    }
+  }
+  .buttons.small{
+    span,a{
+      display: inline-block;
+      width: rem(176px);
+      height: rem(46px);
+      line-height: rem(46px);
+    }
+    span:nth-child(2),a:nth-child(2){
+      background-color: #00aeee;
+      margin-left: rem(32px);
+      &:active{
+        background-color: #1ca3d5;
+      }
+    }
+  }
+  table{
+    border-collapse:collapse;
+    border-spacing:0;
+    width: 100%;
+    tr{
+      width: 100%;
+    }
+    th{
+      font-weight: bold;
+    }
+    td,th{
+      height: rem(40px);
+      line-height: rem(40px);
+      font-size: rem(24px);
+      color: #fff;
+      text-align: center;
+    }
+  }
+  .bargain-list{
+    border-top: rem(4px) solid #fff;
+    padding-top: rem(14px);
+    margin-bottom: rem(26px);
+    table{
+      margin-bottom: rem(20px);
+    }
+    .pages{
+      text-align: center;
+      font-size: 0;
+      span{
+        display: inline-block;
+        width: rem(176px);
+        height: rem(44px);
+        line-height: rem(44px);
+        font-size: rem(24px);
+        color: #fff;
+        text-align: center;
+        background-color: #ed3937;
+        @include border-radius(8px);
+        &:first-child{
+          margin-right: rem(32px);
+        }
+      }
+    }
+  }
+  .rank-list{
+    .title{
+      width: rem(198px);
+      height: rem(42px);
+      line-height: rem(42px);
+      text-align: center;
+      margin: 0 auto rem(16px);
+      font-size: rem(24px);
+      color: #c13030;
+      font-weight: bold;
+      background: url(/old/images/SDbargain/title_bg.png) no-repeat center;
+      background-size: cover;
+    }
+    table{
+      overflow: hidden;
+      @include border-radius(8px);
+      tr:first-child{
+        height: rem(44px);
+        background-color: #c12f30;
+        th{
+          padding-top: rem(8px);
+        }
+      }
+      tr{
+        td{
+          border-right: rem(2px) solid  #c12f30;
+          border-top: rem(2px) solid  #c12f30;
+          background-color: #fff;
+          color: #c12f30;
+          &:last-child{
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+}
+.modal-wrap{
+  .modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10010;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition-duration: 400ms;
+    &.show{
+      visibility: visible;
+      opacity: 1;
+    }
+    .modal-content{
+      position: relative;
+      width: rem(572px);
+      margin: rem(350px) auto 0;
+      background-color: #fff;
+      @include border-radius(8px);
+      overflow: hidden;
+      .text-content{
+        padding: rem(30px);
+        font-size: rem(26px);
+        line-height: rem(40px);
+        text-align: center;
+        min-height: rem(140px);
+        color: #000;
+      }
+      .btns{
+        @include displayflex;
+        @include flexflowRow;
+        span{
+          display: block;
+          height: rem(62px);
+          line-height: rem(62px);
+          font-size: rem(26px);
+          color: #fff;
+          background-color: #f5a144;
+          text-align: center;
+          @include flex;
+        }
+        span:last-child{
+          background-color: #0dc08f;
+        }
+        span:first-child{
+          background-color: #f5a144;
+        }
+      }
+      .close{
+        width: rem(16px);
+        height: rem(17px);
+        position: absolute;
+        right: rem(16px);
+        top: rem(12px);
+        background: url(/old/images/SDbargain/red_close@2x.png) no-repeat center;
+        background-size: cover;
+      }
+    }
+  }
+  .modal-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10000;
+    visibility: hidden;
+    opacity: 0;
+    transition-duration: 400ms;
+    &.visible{
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+.alert-msg {
+  position: fixed;
+  z-index: 10000;
+  top: 40%;
+  margin-left: -6.75rem;
+  text-align: center;
+  opacity: 0;
+  left:50%;
+  color:white;
+  background-color: rgba(0,0,0,.65);
+  padding: rem(28px) rem(64px);
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  font-size: rem(28px);
+  border-radius: rem(6px);
+  -webkit-transform: translate3d(0, 0, 0) scale(1.185);
+  transform: translate3d(0, 0, 0) scale(1.185);
+  -webkit-transition-property: -webkit-transform, opacity;
+  transition-property: transform, opacity;
+  box-sizing: border-box;
+}
+.alert-msg.in {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+.alert-msg.out{
+  opacity: 0;
+  -webkit-transform: translate3d(0, 0, 0) scale(0.815);
+  transform: translate3d(0, 0, 0) scale(0.815);
+}

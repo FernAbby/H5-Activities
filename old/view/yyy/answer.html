@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/old/css/yyy/answer.scss">
+</head>
+<body>
+<div class="pages">
+    <!--<div class="audio on"></div>-->
+    <!--<audio id="audio" autoplay="" loop="loop" style="display:none" controls="">-->
+    <!--<source src="http://www.w3school.com.cn/i/song.mp3" type="audio/mpeg">-->
+    <!--</audio>-->
+    <div class="page questions">
+        <div class="page1-content">
+            <img src="/old/images/yyy/page1-bg.png" class="bg">
+            <img src="/old/images/yyy/q-1.png" alt="" class="head">
+            <img src="/old/images/yyy/q-2.png" alt="" class="light breath">
+            <img src="/old/images/yyy/border.png" class="border">
+            <img src="/old/images/yyy/q-3.png" class="cloud1">
+            <img src="/old/images/yyy/q-4.png" class="cloud2">
+            <img src="/old/images/yyy/q-5.png" class="cloud3">
+        </div>
+        <div style="position: absolute;bottom:0;left:0;right:0;">
+            <img src="/old/images/yyy/q-6.png" class="typewriter ">
+            <img src="/old/images/yyy/q-7.png" class="left">
+            <img src="/old/images/yyy/q-7.png" class="right">
+
+            <div class="question">
+                <img src="/old/images/yyy/question1.png">
+                <div class="color1"></div>
+                <div class="color2"></div>
+                <div class="first"></div>
+                <div class="second"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/old/common/js/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 375) + "px !important;}"));
+                };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $(document).ready(function() {
+
+    });
+
+</script>
+</body>
+</html>

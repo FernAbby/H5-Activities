@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/old/css/appBargain/coupon.scss?__inline">
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <div class="page-content">
+            <img class="header" src="/old/images/appBargain/header.png">
+            <img class="coupon" src="/old/images/appBargain/coupon.png">
+            <div class="content">
+                <p class="yellow">你已成功领取255元现金抵用券。</p>
+                <div class="buttons">
+                    <button>下载简途APP,立即使用</button>
+                </div>
+            </div>
+            <div class="coupon">
+                <div>立减40</div>
+                <div>成都-稻城亚丁6日往返车票+舒适住+套票</div>
+            </div>
+            <div class="coupon">
+                <div>立减40</div>
+                <div>成都-稻城亚丁6日往返车票+舒适住+套票</div>
+            </div>
+            <div class="coupon">
+                <div>立减40</div>
+                <div>成都-稻城亚丁6日往返车票+舒适住+套票</div>
+            </div>
+            <div class="coupon">
+                <div>立减40</div>
+                <div>成都-稻城亚丁6日往返车票+舒适住+套票</div>
+            </div>
+            <div class="tips">
+                <div class="tips-title">
+                    现金劵使用规则
+                </div>
+                <ul>
+                    <li>1、现金券仅限简途旅行App可用；</li>
+                    <li>2、现金券仅对简途指定商品可用，不予折现；</li>
+                    <li>3、在简途旅行App菜单栏中点击优惠券，可查所有现金券信息；</li>
+                    <li>4、在付款界面，选择获得的现金券即可享受优惠；</li>
+                    <li>5、同一商品只可使用一张现金券；</li>
+                    <li>6、现金券有效期：<span>2016年9月1日－2016年10月16日</span></li>
+                </ul>
+            </div>
+            <img src="/old/images/appBargain/logo.png" alt="" class="logo">
+        </div>
+    </div>
+</div>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                    docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                };
+        if (!doc.addEventListener) return;
+        recalc();
+        document.body.style.visibility = 'visible';
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    var a = document.getElementsByTagName('a');
+    for(var i = 0; i < a.length; i++){
+        a[i].addEventListener('touchstart',function(){},false);
+    }
+</script>
+</body>
+</html>

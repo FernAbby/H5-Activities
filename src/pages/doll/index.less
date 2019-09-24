@@ -1,0 +1,313 @@
+@charset "utf-8";
+@import "../../assets/styles/public.less";
+@import "../../assets/styles/commom.less";
+@import "../../assets/styles/swiper.min.css";
+
+@keyframes up{
+  100%{
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes shake{
+  0%,100%{
+    transform: rotate(0deg);
+  }
+  20%,60%{
+    transform: rotate(-5deg);
+  }
+  40%,80%{
+    transform: rotate(5deg);
+  }
+}
+
+body{
+  background-color: #feefab;
+}
+
+#container {
+  margin-top: -1px;
+  height: 1335px;
+  background: url(../../assets/images/doll/bg.png) no-repeat center;
+  background-size: 100% 100%;
+}
+
+// 活动顶部
+.header {
+  .rules, .personal {
+    position: relative;
+    z-index: 3;
+    margin-top: 36px;
+    width: 82px;
+    height: 56px;
+    background-color: #ff9d1b;
+    text-align: center;
+    line-height: 56px;
+    font-size: 24px;
+    color: #fff;
+  }
+
+  .rules {
+    float: left;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .personal {
+    float: right;
+    background-color: #fe5362;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+}
+
+/*游戏区域*/
+.main{
+  position: relative;
+  width: 100%;
+  height: 974px;
+
+  .fireworks{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: 3;
+    margin-left: -322px;
+    width: 644px;
+    height: 873px;
+    background: url(../../assets/images/doll/fireworks.png) no-repeat center;
+    background-size: 100% 100%;
+  }
+
+  .title{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 314px;
+    background: url(../../assets/images/doll/title.png) no-repeat center;
+    background-size: 100% 100%;
+  }
+}
+
+.box{
+  position: relative;
+  margin-top: -120px;
+  width: 100%;
+  height: 782px;
+  background: url(../../assets/images/doll/box.png) no-repeat center;
+  background-size: 100% 100%;
+
+  #hook{
+    position: absolute;
+    left: 50%;
+    top: -220px;
+    z-index: 1;
+    margin-left: -65px;
+    width: 130px;
+    height: 430px;
+
+    .line{
+      margin: auto;
+      width: 44px;
+      height: 342px;
+      background: url(../../assets/images/doll/line.png) no-repeat center;
+      background-size: 100% 100%;
+    }
+
+    .left, .right{
+      position: absolute;
+      bottom: 0;
+      width: 56px;
+      height: 101px;
+    }
+
+    .left{
+      left: 0;
+      background: url(../../assets/images/doll/left.png) no-repeat center;
+      background-size: 100% 100%;
+      -o-transform-origin: right top;
+      -ms-transform-origin: right top;
+      -moz-transform-origin: right top;
+      -webkit-transform-origin: right top;
+      transform-origin: right top;
+      transform: rotate(-20deg);
+    }
+
+    .right{
+      right: 0;
+      background: url(../../assets/images/doll/right.png) no-repeat center;
+      background-size: 100% 100%;
+      -o-transform-origin: left top;
+      -ms-transform-origin: left top;
+      -moz-transform-origin: left top;
+      -webkit-transform-origin: left top;
+      transform-origin: left top;
+      -o-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+      -moz-transform: rotate(20deg);
+      -webkit-transform: rotate(20deg);
+      transform: rotate(20deg);
+    }
+
+    .up{
+      -o-animation: up .5s linear forwards;
+      -ms-animation: up .5s linear forwards;
+      -moz-animation: up .5s linear forwards;
+      -webkit-animation: up .5s linear forwards;
+      animation: up .5s linear forwards;
+    }
+  }
+
+  /*传送带*/
+  .behind,.front{
+    overflow-x: hidden;
+    position: relative;
+    left: 50%;
+    top: 32%;
+    margin: -86px 0 0 -310px;
+    width: 620px;
+    height: 150px;
+    background: url(../../assets/images/doll/behind.png) no-repeat left bottom;
+    background-size: 100% 100%;
+
+    ul {
+      width: 14rem;
+    }
+  }
+
+  .front{
+    top: 43%;
+    width: 620px;
+    height: 215px;
+    background: url(../../assets/images/doll/front.png) no-repeat center;
+    background-size: 100% 100%;
+
+    ul{
+      position: absolute;
+      right: 0;
+
+      li{
+        position: relative;
+        float: right;
+        height: 156px;
+
+        img{
+          position: absolute;
+          right: 0;
+          width: 139px;
+          height: 156px;
+        }
+      }
+    }
+  }
+
+  .behind {
+    ul {
+      li {
+        position: relative;
+        float: left;
+        height: 105px;
+
+        img {
+          position: absolute;
+          width: 91px;
+          height: 102px;
+        }
+      }
+    }
+  }
+
+  h3{
+    margin: 355px auto 18px;
+    width: 286px;
+    height: 52px;
+    background-color: #ff9d1b;
+    text-align: center;
+    line-height: 52px;
+    font-size: 20px;
+    font-weight: normal;
+    color: #bc5700;
+    border-radius: 26px;
+  }
+
+  /*按钮区域*/
+  .box-btn{
+    width: 100%;
+    height: 139px;
+    li{
+      float: left;
+    }
+
+    li:nth-child(1) {
+      width: 157px;
+      height: 139px;
+      background: url(../../assets/images/doll/coin1.png) no-repeat center;
+      background-size: 100% 100%;
+      transform-origin: center bottom;
+      animation: shake 3s ease-in-out infinite alternate;
+    }
+
+    li:nth-child(2) {
+      margin: 0 60px;
+      width: 306px;
+      height: 103px;
+      background: url(../../assets/images/doll/start.png) no-repeat center;
+      background-size: 100% 100%;
+    }
+
+    li:nth-child(3) {
+      width: 165px;
+      height: 125px;
+      background: url(../../assets/images/doll/coin2.png) no-repeat center;
+      background-size: 100% 100%;
+    }
+  }
+}
+
+/*奖品展示*/
+.awards {
+  overflow: hidden;
+  position: static;
+  margin: 96px auto;
+  width: 690px;
+  height: 222px;
+  background: url(../../assets/images/doll/rect.png) no-repeat center;
+  background-size: 100% 100%;
+
+  .swiper-slide {
+    margin: 5px 20px;
+    padding: 15px;
+    width: 105px;
+    height: 105px;
+    background: url(../../assets/images/common/icon/drag/drag_box.png) no-repeat center;
+    background-size: 100% 100%;
+
+    img {
+      width: inherit;
+      height: inherit;
+    }
+  }
+
+  .swiper-container{
+    overflow: hidden;
+    margin: 16px auto;
+    padding: 22px 0;
+    width: 658px;
+    height: 190px;
+    background-color: #f5ae4f;
+    box-shadow: 0 20px 20px rgba(248, 131, 23, .7) inset;
+    border-radius: 16px;
+  }
+}
+
+/*规则弹窗背景色*/
+#mask-rule {
+  .box-rule{
+    background-color: #fe5c51;
+
+    .star{
+      background: url(../../assets/images/common/rule/star2.png) no-repeat center;
+      background-size: 100% 100%;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/old/css/SDbargain/success.scss?__inline" media="screen" title="no_title" charset="utf-8">
+</head>
+<body style="visibility: hidden;">
+<div class="header">
+    <img src="/old/images/SDbargain/sdBargain_header@3x.png" alt=""/>
+</div>
+<div class="content">
+    <div class="product">
+        <img src="" alt=""/>
+        <div class="name">九寨沟3日畅享套餐（含豪华型五星酒店天堂2晚)</div>
+        <div class="info">
+            <span class="price">售价:9999元</span>
+            <span class="amount">还有9999个0元购名额</span>
+        </div>
+    </div>
+    <div class="info-message">
+        <img src="/old/images/SDbargain/bargin_success@2x.png" alt=""/>
+        <div class="message">你已经成功获得XX产品</div>
+    </div>
+    <a class="btn">下载简途APP</a>
+    <div class="esoterica">
+        <div class="e-title">使用说明</div>
+        <div class="e-content">
+            1.使用有效期：2016.12.15-2017.2.11；<br/>
+            2.关注“简途旅行”微信公众号，回复“新年砍价季+姓名+电话”，会有在线客服为您预约行程；<br/>
+            3.活动期间若产品价格发生变化，由获奖者补齐差价后方可预约出行；<br/>
+            3.活动产品预约成功后，恕不退改；<br/>
+            4.在法律允许的范围内，本次活动最终解释权归简途旅行所有，如有疑问，请咨询客服：010-80697359。
+        </div>
+    </div>
+    <div class="footer">
+        <a href="">年终特惠,17去玩</a>
+    </div>
+</div>
+<script type="text/javascript" src="/old/common/js/zepto.min.js"></script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 针对uc横竖屏rem html没有重绘的问题
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        document.body.style.visibility = 'visible';
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+    })(document, window);
+    $(document).ready(function () {
+
+    });
+</script>
+</body>
+</html>

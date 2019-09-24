@@ -1,0 +1,26 @@
+@import "/old/css/css/SDbargain/common";
+
+.content{
+  .product{
+    margin-bottom: rem(24px);
+  }
+  .notify{
+    text-align: center;
+    font-size: rem(24px);
+    color: #fff;
+    line-height: rem(37px);
+    margin-bottom: rem(22px);
+  }
+  .rank-list{
+    margin-bottom: rem(26px);
+  }
+  table{
+    tr{
+      @include displayflex;
+      @include flexflowRow;
+    }
+    td,th{
+      @include flex;
+    }
+  }
+}

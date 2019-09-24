@@ -1,0 +1,43 @@
+@import "/old/common/css/base";
+body{
+  font-size: 0;
+}
+.page-content{
+  background: url("/src/imagesages/beauty/bg.jpg") repeat;
+  background-size: rem(375px);
+}
+.error-tips {
+  margin-top: rem(40px);
+  position: relative;
+  width: 100%;
+  img{
+    width:100%;
+  }
+  .error-text {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    font-size: rem(24px);
+    color: #4a4a4a;
+    text-align: center;
+    padding: rem(100px) rem(40px);
+  }
+}
+.btn-wp {
+  width: rem(117px);
+  height: rem(32px);
+  line-height: rem(32px);
+  margin: rem(250px) auto 0;
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url(/old/images/beauty/btn-bg.png) no-repeat center;
+    background-size: contain;
+    text-align: center;
+    font-size: rem(18px);
+    color: #000;
+  }
+}

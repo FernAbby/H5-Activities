@@ -1,0 +1,137 @@
+@import "/old/css/css/utils";
+html,body{
+  background-color: rgb(250,102,74);
+  background: url('/src/imagesages/scratch/red-px.png') repeat;
+  background-size: cover;
+}
+.wrap{
+  width: 100%;
+  min-height: 100vh;
+  background: url('/src/imagesages/scratch/sratch-bg.png') no-repeat top center;
+  background-size: 100% auto;
+  padding: rem(280px) rem(20px) rem(20px);
+  .times{
+    font-size: rem(26px);
+    color: rgb(210,157,233);
+    text-align: center;
+    margin-bottom: rem(64px);
+    i{
+      font-style: normal;
+    }
+  }
+  .sratchArea{
+    width: 100%;
+    height: rem(330px);
+    background: url('/src/imagesages/scratch/sratchArea-bg.png') no-repeat top center;
+    background-size: 100% auto;
+    padding: rem(18px) rem(16px);
+    position: relative;
+    .base{
+      width: 100%;
+      height: rem(294px);
+      line-height: rem(290px);
+      text-align: center;
+      font-size: rem(48px);
+      font-weight: bold;
+      color: #a06a03;
+      background-color: #fed90b;
+    }
+    #redux,canvas{
+      width: rem(568px) !important;
+      height: rem(294px) !important;
+      position: absolute;
+      top: rem(18px);
+      left: rem(16px);
+      z-index: 2;
+    }
+  }
+  .my-prizes{
+    width: rem(556px);
+    height: rem(76px);
+    line-height: rem(76px);
+    display: block;
+    margin: rem(49px) auto 0;
+    color: rgb(130,101,7);
+    font-size: rem(32px);
+    font-weight: 500;
+    background-color: rgb(255,217,2);
+    text-align: center;
+    @include border-radius(76px);
+    &:active{
+      background-color: rgb(255, 210, 6);
+    }
+  }
+  .activityInfo{
+    width: 100%;
+    padding: rem(18px) rem(36px) 0;
+    background-color: rgb(247,122,90);
+    color: #fff;
+    font-size: rem(28px);
+    line-height: rem(40px);
+    margin-top: rem(84px);
+    margin-bottom: rem(34px);
+    @include border-radius(6px);
+    position: relative;
+    &:before{
+      content: '';
+      display: block;
+      width: rem(206px);
+      height: rem(35px);
+      background: url(/old/images/scratch/borderTop.png) no-repeat center;
+      background-size: contain;
+      position: absolute;
+      left: 0;
+      top: rem(-34px);
+    }
+    .item{
+      padding: rem(38px) rem(20px) rem(24px);
+      border-bottom: 1px solid rgb(244,134,111);
+      &:last-child{
+        border: none;
+      }
+      h4{
+        font-size: rem(30px);
+        color: rgb(204,50,16);
+        font-weight: 600;
+        line-height: rem(40px);
+        padding: 0 0 rem(24px) rem(44px);
+        position: relative;
+        &:before{
+          content: '';
+          display: inline-block;
+          margin-right: rem(16px);
+          width: rem(26px);
+          height: rem(26px);
+          background: url(/old/images/scratch/gift-icon.png) no-repeat center;
+          background-size: contain;
+          vertical-align: baseline;
+          position: absolute;
+          top: rem(7px);
+          left: 0;
+
+        }
+      }
+      &.gift h4:before{
+        background: url(/old/images/scratch/gift-icon.png) no-repeat center;
+        background-size: contain;
+      }
+      &.time h4:before{
+        background: url(/old/images/scratch/time-icon.png) no-repeat center;
+        background-size: contain;
+      }
+     &.tip h4:before{
+        background: url(/old/images/scratch/tip-icon.png) no-repeat center;
+        background-size: contain;
+      }
+      &.note h4:before{
+        background: url(/old/images/scratch/note-icon.png) no-repeat center;
+        background-size: contain;
+      }
+      p{
+        padding-bottom: rem(16px);
+        line-height: rem(40px);
+      }
+    }
+  }
+}
+@import "bombBox";

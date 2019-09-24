@@ -1,0 +1,117 @@
+@import "/old/common/css/base";
+$baseFontSize : 46.875px;
+.page-content{
+  background-color: #4346A5;
+}
+img{
+  border:0;
+}
+img.header{
+  width: 100%;
+}
+img.coupon{
+  width: rem(686px);
+  margin: rem(-40px) auto 0;
+  display: block;
+}
+.content{
+  margin: rem(40px) auto;
+  padding: rem(40px) rem(30px);
+  background-color: #101E6B;
+  width: rem(680px);
+  box-sizing: border-box;
+  border-radius: rem(10px);
+  p.yellow{
+    text-align: center;
+    color: #FFFC00;
+  }
+  p{
+    font-size:rem(30px);
+    color: white;
+    span{
+      color:#FFFC00;
+    }
+  }
+  .buttons{
+    text-align: center;
+    margin: rem(47px) 0 0 0;
+    button{
+      width: rem(380px);
+      height: rem(70px);
+      background-color: #0FC346;
+      font-size: rem(30px);
+      color: white;
+      border:none;
+      border-radius: rem(10px);
+      &:active{
+        background-color:#2AEB85;
+      }
+    }
+    button+button{
+      margin-left: rem(60px);
+    }
+  }
+}
+div.coupon{
+  margin: rem(40px) auto;
+  width: rem(672px);
+  height:rem(72px);
+  border:rem(4px) solid #101E6B;
+  border-radius: rem(10px);
+  border-bottom-width: rem(8px);
+  @include displayflex;
+  @include flexflowRow(row,horizontal);
+  div:first-child{
+    width: rem(140px);
+    color:white;
+    background-color: #FF6344;
+    font-size: rem(34px);
+    line-height: rem(60px);
+    text-align: center;
+    border-top-left-radius: rem(6px);
+    border-bottom-left-radius: rem(6px);
+  }
+  div:last-child{
+    @include flex(1);
+    box-sizing: border-box;
+    color:#101E6B;
+    font-size: rem(26px);
+    line-height: rem(60px);
+    background-color: #FFFC00;
+    border-top-right-radius: rem(6px);
+    border-bottom-right-radius: rem(6px);
+    padding: 0 rem(16px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.tips{
+  margin: rem(80px) rem(35px) rem(120px);
+  .tips-title{
+    height: rem(56px);
+    text-align: center;
+    font-size: rem(34px);
+    line-height: rem(56px);
+    color: white;
+    background-color: #5C64D2;
+    border-radius: rem(10px);
+    margin-bottom: rem(32px);
+  }
+  ul{
+    list-style: none;
+  }
+  li{
+    font-size: rem(22px);
+    line-height: 1rem;
+    color:white;
+    span{
+      color: #FFFC00;
+    }
+  }
+}
+img.logo{
+  width:rem(431px);
+  display: block;
+  margin: 0 auto rem(100px);
+}

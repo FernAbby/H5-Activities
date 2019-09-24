@@ -1,0 +1,78 @@
+@import "/old/css/css/common";
+html,body{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+body{
+  padding: rem(24px) 0;
+}
+header{
+  line-height: rem(32px);
+  margin: rem(4px) 0;
+  padding: 0 rem(26px);
+  span{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .label{
+    font-size: rem(28px);
+    color: #5f5f5f;
+    font-weight: 500;
+  }
+  .integral{
+    font-size: rem(28px);
+    color: #ea8174;
+  }
+}
+.records{
+  .title{
+    width: 100%;
+    color: #5f5f5f;
+    font-size: rem(26px);
+    line-height: rem(32px);
+    padding: rem(20px) rem(26px) rem(12px) rem(26px);
+    font-weight: 600;
+    border-bottom: 1px solid #f2f2f2;
+  }
+  ul{
+    font-size: rem(26px);
+    color: #5f5f5f;
+    line-height: rem(34px);
+    li{
+      border-top: 1px solid #f2f2f2;
+      padding: rem(12px) rem(26px);
+      &:first-child{
+        border-top: none;
+      }
+      .up{
+        @include displayflex();
+        @include flexflowRow();
+        span{
+          display: block;
+        }
+        .name{
+          @include flex(1);
+          margin-bottom: rem(4px);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .count{
+          margin: 0 rem(4px);
+          color: #ea8174;
+        }
+      }
+      .time{
+        font-size: rem(24px);
+      }
+    }
+  }
+}
+.no-records{
+  color: #5f5f5f;
+  font-size: rem(26px);
+  padding: rem(16px) rem(26px);
+  text-align: center;
+  display: none;
+}

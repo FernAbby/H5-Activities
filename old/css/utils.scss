@@ -1,0 +1,41 @@
+$baseFontSize: 40px !default;
+$opacity: 1 !default;
+@function rem($px) {
+  @return $px / $baseFontSize * 1rem;
+}
+@import "abbr";
+.clear:after{
+  content: '';
+  display: block;
+  clear: both;
+  width: 0;
+  height: 0;
+}
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;}
+ul,ol{list-style-type:none;}
+select,input,img,select{vertical-align:middle;}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  font-family: PingFang SC,STHeiti,"Microsoft Yahei","微软雅黑",Helvetica, sans-serif;
+  -webkit-touch-callout: none;
+  @include box-sizing(border-box);
+  outline: none;
+}
+
+a:active, a:hover, a:link, a:visited {
+  text-decoration: none;
+  outline: none;
+}
+ul,li{
+  list-style: none;
+}
+
+html, body {
+  width: 100%;
+  font-size: 20px;
+  background-color: #f0f0f0;
+}
+
+@import "/old/css/css/mask-layer";

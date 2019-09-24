@@ -1,0 +1,147 @@
+@import "/old/css/css/coupon-common";
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: #6933b7;
+  .header {
+    width: 100%;
+    min-height: rem(412px);
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .content {
+    .coupons {
+      width: 100%;
+      height: rem(438px);
+    }
+    form {
+      padding: rem(26px) 0 rem(46px);
+      text-align: center;
+      input, span {
+        display: inline-block;
+        width: rem(536px);
+        height: rem(62px);
+        margin: 0 auto;
+        border: none;
+        outline: none;
+        @include border-radius(8px);
+      }
+      input {
+        text-align: center;
+        padding: 0 rem(16px);
+        @include border-radius(4px);
+      }
+      span {
+        height: rem(70px);
+        color: #fff;
+        line-height: rem(70px);
+        font-size: rem(32px);
+        background-color: #dd164c;
+        margin-top: rem(16px);
+        &.disabled {
+          background-color: #939393;
+        }
+      }
+    }
+    .rule {
+      padding: 0 rem(54px);
+      background: url(https://images.simpletour.com/activity/marathon/ruleBg@3x.png) no-repeat 100% 100%;
+      background-size: 100%;
+      .rule_title {
+        height: rem(40px);
+        @include displayflex;
+        @include flexflowRow();
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+        span {
+          display: block;
+          font-size: rem(28px);
+          color: #ffd405;
+        }
+        .title {
+          margin: 0 rem(12px);
+        }
+        span.line {
+          @include flex(1);
+          border-bottom: rem(2px) solid #fff;
+          margin-top: rem(20px);
+        }
+      }
+      .rule_content {
+        border-bottom: 1px solid #fff;
+        list-style: disc;
+        margin-bottom: rem(42px);
+        padding: rem(10px) 0 rem(16px) 0;
+        li {
+          list-style: disc;
+          margin-left: rem(24px);
+          font-size: rem(24px);
+          color: #fff;
+          line-height: rem(44px);
+        }
+      }
+      .toUse {
+        display: block;
+        width: rem(536px);
+        height: rem(70px);
+        line-height: rem(70px);
+        margin: 0 auto;
+        background-color: #dd164c;
+        color: #fff;
+        font-size: rem(30px);
+        text-align: center;
+        position: relative;
+        &:before {
+          content: '';
+          display: block;
+          width: rem(22px);
+          height: rem(22px);
+          position: absolute;
+          top: rem(24px);
+          left: rem(-12px);
+          background-color: #6933b7;
+          @include border-radius(22px);
+        }
+        &:after {
+          content: '';
+          display: block;
+          width: rem(22px);
+          height: rem(22px);
+          position: absolute;
+          top: rem(24px);
+          right: rem(-12px);
+          background-color: #6933b7;
+          @include border-radius(22px);
+        }
+      }
+      p.tip {
+        font-size: rem(24px);
+        color: #fff;
+        width: 100%;
+        padding: rem(40px) rem(20px);
+        text-align: center;
+      }
+    }
+  }
+  .footer {
+    width: 100%;
+    min-height: rem(81px);
+    background-color: #fff;
+  }
+}

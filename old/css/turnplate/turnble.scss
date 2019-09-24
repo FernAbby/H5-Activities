@@ -1,0 +1,159 @@
+@import "/old/css/css/utils";
+html,body{
+  background-color: rgb(235,56,57);
+}
+body{
+  background-color: rgb(235,56,57);
+}
+.wrap{
+  width: 100%;
+  min-height: 100vh;
+  background: url('/src/imagesages/turnplate/turnplate-bg.png') no-repeat top center;
+  background-size: 100% auto;
+  background-color: rgb(235,56,57);
+  padding-top: rem(212px);
+  padding-bottom: rem(20px);
+  vertical-align: top;
+  .turnplate{
+    display:block;
+    width:85%;
+    margin:0 auto;
+    position:relative;
+    background:url(/old/images/turnplate/turnplate.png) no-repeat 0 0;
+    background-size:99.7% auto;
+    canvas.item {
+      width:100%;
+    }
+    img.pointer{
+      position:absolute;
+      left:38.95%;
+      top:31.5%;
+      width:22%;
+    }
+  }
+  .content{
+    .times{
+      text-align: center;
+      color: rgb(255,194,97);
+      font-size: rem(24px);
+      padding: rem(20px) rem(10px) rem(24px);
+    }
+    .links{
+      position: relative;
+      .my-prize{
+        display: block;
+        text-align: center;
+        width: rem(232px);
+        height: rem(66px);
+        line-height: rem(66px);
+        font-size: rem(30px);
+        color: rgb(155,77,15);
+        background-color: rgb(255,218,15);
+        -webkit-border-radius: rem(6px);
+        -moz-border-radius: rem(8px);
+        -ms-border-radius: rem(8px);
+        -o-border-radius: rem(8px);
+        border-radius: rem(8px);
+        margin: 0 auto;
+        &:active{
+          background-color: rgb(243,208,11);
+        }
+      }
+      .rules{
+        color: rgb(226,180,163);
+        font-size: rem(26px);
+        line-height: rem(66px);
+        text-decoration: underline;
+        position: absolute;
+        right: 9%;
+        top: 0;
+        &:active{
+          color: rgb(240,195,175);
+        }
+      }
+      .arrow{
+        width: rem(28px);
+        height: rem(16px);
+        display: block;
+        margin: 0 auto;
+        background: url('/src/imagesages/turnplate/down-arrow.png') no-repeat center;
+        background-size: 100%;
+        margin-top: rem(16px);
+      }
+      .tips{
+        font-size: rem(24px);
+        color: rgb(226,180,163);
+        text-align: center;
+        padding: rem(16px) rem(10px) 0;
+        i{
+          color: rgb(255,218,15);
+          font-style: normal;
+        }
+      }
+    }
+    .winners{
+      width: rem(554px);
+      margin: rem(42px) auto;
+      background-color: rgb(251,240,240);
+      -webkit-border-radius: rem(8px);
+      -moz-border-radius: rem(8px);
+      -ms-border-radius: rem(8px);
+      -o-border-radius: rem(8px);
+      border-radius: rem(8px);
+      padding: rem(16px);
+      position: relative;
+      .title{
+        font-size: rem(30px);
+        width: rem(190px);
+        height: rem(50px);
+        position: absolute;
+        top: rem(-18px);
+        left: 50%;
+        transform: translate3D(rem(-95px),0,0);
+        -ms-transform: translate3D(rem(-95px),0,0);
+        -moz-transform: translate3D(rem(-95px),0,0);
+        -webkit-transform: translate3D(rem(-95px),0,0);
+        -o-transform: translate3D(rem(-95px),0,0);
+        margin: 0 auto;
+        line-height: rem(50px);
+        text-align: center;
+        color: rgb(255,250,244);
+        -webkit-border-radius: rem(50px);
+        -moz-border-radius: rem(50px);
+        -ms-border-radius: rem(50px);
+        -o-border-radius: rem(50px);
+        border-radius: rem(50px);
+        background-color: rgb(255,179,15);
+      }
+      ul{
+        border: 1px dashed rgb(235,160,159);
+        padding: rem(50px);
+        color: rgb(148,77,15);
+        font-size: rem(26px);
+        line-height: rem(34px);
+        li{
+          margin-bottom: rem(40px);
+          @include flexflowRow();
+          @include displayflex();
+          &:last-child{
+            margin-bottom: 0;
+          }
+          span{
+            overflow:hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: block;
+          }
+          span:first-child{
+            margin-right: rem(10px);
+          }
+          span:last-child{
+            text-align: right;
+            @include flex(1);
+          }
+        }
+      }
+    }
+  }
+}
+@import "/old/css/css/bombBox";

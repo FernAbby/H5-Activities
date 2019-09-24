@@ -1,0 +1,96 @@
+@import "/old/common/css/base";
+body{
+  font-size: 0;
+}
+.page-content{
+  background: url("/src/imagesages/beauty/bg.jpg") repeat;
+  background-size: rem(375px);
+}
+.head-img{
+  margin: rem(20px) auto;
+  width:40%;
+  img{
+    width:100%;
+  }
+}
+.price-content {
+  width: rem(340px);
+  margin: rem(5px) auto;
+  border: rem(2.5px) solid black;
+  border-radius: rem(5px);
+  .thead {
+    @include displayflex;
+    @include flexflowRow();
+    background-color: #feff01;
+    text-align: center;
+    font-size: rem(18px);
+    font-weight: 500;
+    .rank{
+      padding: rem(6px) 0;
+      width: rem(80px);
+      border-right: rem(1.5px) solid black;
+    }
+    .price{
+      padding: rem(6px) 0;
+      @include flex(1);
+    }
+  }
+  .tr {
+    @include displayflex;
+    @include flexflowRow();
+    background-color: #fff;
+    text-align: center;
+    font-size: rem(18px);
+    font-weight: 500;
+    .rank{
+      padding: rem(8px) 0;
+      width: rem(80px);
+      border-top: rem(2.5px) solid black;
+      border-right: rem(1.5px) solid black;
+      span {
+        font-size: rem(10px);
+      }
+    }
+    .price{
+      @include displayflex;
+      @include flexflowCol();
+      border-top: rem(2.5px) solid black;
+      padding: rem(6px) 0;
+      @include flex(1);
+      p {
+        font-size: rem(12px);
+      }
+      .item {
+        padding: rem(6px) 0;
+        border-bottom: 1px solid black;
+        &:last-child{
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}
+.detail-content {
+  width: rem(340px);
+  margin: rem(5px) auto;
+  border: rem(2.5px) solid black;
+  border-radius: rem(5px);
+  padding: rem(6px);
+  background-color: #fb7244;
+  font-size: rem(14px);
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+  li{
+    margin-bottom: rem(5px);
+    line-height: 1rem;
+  }
+}
+.bottom-text {
+  width: rem(240px);
+  height: rem(30px);
+  line-height: rem(30px);
+  margin:rem(10px) auto rem(20px);
+  text-align: center;
+  font-size: rem(16px);
+  font-weight: 500;
+}

@@ -1,0 +1,260 @@
+@import "/old/common/css/base";
+$baseFontSize : 40px;
+.banner{
+  width: 100%;
+  display: block;
+}
+.recommend{
+  background-color:#f75016;
+  text-align: center;
+  padding-top: rem(24px);
+  padding-bottom: rem(24px);
+}
+.item{
+  width: rem(596px);
+  margin: 0 auto rem(24px);
+  .item-footer{
+    height: rem(74px);
+    background-color: white;
+    padding: 0 rem(18px);
+    position: relative;
+    p{
+      position: absolute;
+      bottom:rem(18px);
+      font-size: rem(24px);
+      left: rem(18px);
+      color:#595757;
+    }
+    a{
+      position: absolute;
+      right: rem(18px);
+      width: rem(158px);
+      height: rem(40px);
+      bottom: rem(18px);
+      background-color: #cc0440;
+      color:white;
+      text-align: center;
+      line-height: rem(40px);
+      font-size: rem(26px);
+      border-radius: rem(8px);
+    }
+    span.red{
+      color:#cc0440;
+      display: inline-block;
+    }
+    span.middle{
+      font-size: rem(28px);
+    }
+    span.big{
+      font-size: rem(36px);
+    }
+    span.l1{
+      margin-left: rem(12px);
+    }
+    span.l2{
+      margin-left: rem(14px);
+    }
+  }
+  .img-box{
+    height: rem(183px);
+    overflow: hidden;
+    position: relative;
+  }
+  .img-box-flag{
+    text-align: center;
+    position: absolute;
+    padding: .05rem .1rem;
+    top:0;
+    right: rem(18px);
+    color:white;
+    border-bottom-left-radius: rem(8px);
+    border-bottom-right-radius: rem(8px);
+    width: rem(69px);
+    height: rem(76px);
+    font-size: rem(24px);
+    background: url("/xlxs/images/flag.png") no-repeat;
+    background-size: rem(69px) rem(76px);
+  }
+  .img-box-tips{
+    padding: 0 rem(20px);
+    position: absolute;
+    top:0;
+    left: rem(18px);
+    background-color: #cc0440;
+    color:white;
+    border-bottom-left-radius: rem(8px);
+    border-bottom-right-radius: rem(8px);
+    height: rem(40px);
+    line-height: rem(40px);
+    font-size: rem(24px);
+  }
+  .img-box-name{
+    font-size:rem(30px) ;
+    position: absolute;
+    left: rem(18px);
+    bottom: rem(45px);
+    font-weight: bolder;
+    color:white;
+    &.black{
+      color:black;
+    }
+  }
+  .img-box-footer{
+    padding-left: rem(18px);
+    background-color: rgba(0,0,0,.6);
+    overflow: hidden;
+    text-align: left;
+    color:white;
+    font-size: rem(24px);
+    height: rem(38px);
+    line-height: rem(38px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  img{
+    width: 100%;
+    border:none;
+  }
+}
+.cutline{
+  width: rem(596px);
+  margin: rem(24px) auto;
+  position: relative;
+  height: rem(24px);
+  @include displayflex;
+  @include flexflowRow();
+  .left,.right{
+    @include flex(1);
+    position: relative;
+    div{
+      height: rem(12px);
+      border-bottom: 1px solid white;
+      text-indent: -999999px;
+    }
+    p{
+      position: absolute;
+      right: 0;
+      width: rem(8px);
+      text-indent: -999999px;
+      height: rem(8px);
+      border-radius: rem(20px);
+      top:.2rem;
+      background-color: white;
+    }
+  }
+  .right{
+    p{
+      left:0;
+      right: auto;
+    }
+  }
+  .middle{
+    width: rem(206px);
+    height: rem(24px);
+    font-size: rem(24px);
+    color:white;
+    text-align: center;
+  }
+}
+.skiing{
+  background-color: #09a0ce;
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+.hotspring{
+  background-color: #ffce9b;
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+.both{
+  background-color: #3ebabd;
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+.tabs{
+  @include displayflex;
+  @include flexflowRow();
+  padding-bottom: rem(6px);
+  position: relative;
+  background-color: #f75016;
+  .placeholder{
+    position: absolute;
+    height: rem(6px) !important;
+    width: 100%;
+    bottom: 0;
+    left:0;
+  }
+  .hotspring{
+    margin: 0 1px;
+  }
+  &.hotspring{
+    .hotspring{
+      background-color: #ffa639;
+    }
+  }
+  &.skiing{
+    .skiing{
+      background-color: #09a0ce;
+    }
+  }
+  &.both{
+    .both{
+      background-color: #3ebabd;
+    }
+  }
+  .skiing,.hotspring,.both{
+    display: block;
+    @include flex();
+    text-align: center;
+    color:white;
+    font-size: rem(32px);
+    height: rem(62px);
+    line-height: rem(62px);
+    background-color: #ff7140;
+  }
+}
+.skiing-footer{
+  background-color: white;
+  padding-bottom: rem(50px);
+  img{
+    width: 100%;
+    display: block;
+  }
+}
+.button-wrapper{
+  margin-top: rem(20px);
+  text-align: center;
+  background: url("/xlxs/images/cursor.png") no-repeat 12.8rem;
+  background-size: rem(66px);
+  a{
+    display: inline-block;
+    color:white;
+    font-size: rem(30px);
+    height: rem(64px);
+    width: rem(326px);
+    line-height: rem(64px);
+    background-color: #cc0440;
+    border-radius: rem(8px);
+  }
+}
+.hotspring{
+  .cutline{
+    .middle{
+      color:#e67100;
+    }
+    div{
+      border-bottom-color: #e67100;
+    }
+    p{
+      background-color: #e67100;
+    }
+  }
+}

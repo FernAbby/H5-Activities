@@ -1,0 +1,96 @@
+// 变量
+
+._mask {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+#container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+//规则弹框
+#mask-rule {
+  ._mask();
+
+  #close-rule {
+    position: absolute;
+    right: 0.45333333rem;
+    top: 0.50666667rem;
+    width: 0.53333333rem;
+    height: 0.53333333rem;
+    background-image: url(../images/common/rule/close.png);
+  }
+
+  .box-rule {
+    position: relative;
+    margin: 20% auto;
+    padding-top: 0.53333333rem;
+    width: 90%;
+    height: 70%;
+    border-radius: 0.26666667rem;
+
+    .star {
+      position: absolute;
+      left: 50%;
+      top: -1.33333333rem;
+      margin-left: -1.73333333rem;
+      width: 3.45333333rem;
+      height: 1.16rem;
+    }
+
+    h2 {
+      width: 100%;
+      text-align: center;
+      line-height: 0.45333333rem;
+      font-size: 0.45333333rem;
+      font-weight: normal;
+      color: #fff;
+    }
+
+    h2::before,
+    h2::after {
+      display: inline-block;
+      content: "";
+      width: 0.24rem;
+      height: 0.24rem;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+    h2::before {
+      margin-right: 0.32rem;
+    }
+    h2::after {
+      margin-left: 0.32rem;
+    }
+  }
+
+  .rule-content {
+    overflow: auto;
+    position: relative;
+    margin: 0.53333333rem auto;
+    padding-right: 0.2rem;
+    width: 7.73333333rem;
+    height: 82%;
+    line-height: 0.64rem;
+    font-size: 0.34666667rem;
+    color: #fff;
+
+    .text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: auto;
+    }
+  }
+}
+

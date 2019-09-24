@@ -1,0 +1,126 @@
+@import "/old/css/css/common";
+section{
+  margin-bottom: rem(20px);
+  background-color: transparent;
+  h5{
+    padding: rem(27px) rem(22px);
+    border-bottom: rem(2px) solid #e5e5e5;
+    font-size: rem(30px);
+    line-height: rem(34px);
+    font-weight: bold;
+    color: #fa8b21;
+    overflow: auto;
+    background-color: #fff;
+    i{
+      display: inline-block;
+      width: rem(34px);
+      height: rem(34px);
+      background: url(/old/images/integralMall/gift_icon.png) no-repeat center;
+      background-size: contain;
+      vertical-align: top;
+      margin-right: rem(4px);
+    }
+    span{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    a{
+      display: inline-block;
+      font-size: rem(24px);
+      float: right;
+      color: #adadad;
+      em{
+        display: inline-block;
+        vertical-align: middle;
+        font-style: normal;
+        font-weight: normal;
+      }
+      &:after{
+        content: '';
+        width: rem(15px);
+        height: rem(24px);
+        display: inline-block;
+        background: url(/old/images/integralMall/grey_next.png) no-repeat center;
+        background-size: contain;
+        vertical-align: middle;
+      }
+    }
+  }
+  .row{
+    width: 100%;
+    font-size: 0;
+    background-color: #fff;
+    @include displayflex;
+    @include flexflowRow();
+    .prod{
+      width: 33.2%;
+      border-bottom: rem(2px) solid #e5e5e5;
+      display: inline-block;
+      vertical-align: top;
+      padding: rem(20px) rem(20px);
+      color: #666;
+      background-color: #fff;
+      font-size: rem(24px);
+      line-height: rem(26px);
+      border-right: rem(2px) solid #e5e5e5;
+      .thumbnail{
+        width: 100%;
+        height: rem(180px);
+        line-height: rem(180px);
+        font-size: 0;
+        display: flex;
+        -ms-justify-content: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -ms-justify: center;
+        -webkit-justify: center;
+        justify: center;
+        -ms-box-align: center;
+        -webkit-box-align: center;
+        box-align: center;
+        -ms-align-items: center;
+        -webkit-align-items: center;
+        align-items: center;
+        img{
+          display: inline-block;
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+      .name{
+        font-weight: bold;
+        margin-top: rem(20px);
+      }
+      .desc{
+        color: #9c9c9c;
+        margin-top: rem(12px);
+      }
+      .price{
+        margin-top: rem(28px);
+        span{
+          color: #fa8b21;
+          margin-right: rem(8px);
+        }
+      }
+      .name,.desc,.price{
+        width: rem(239px);
+        white-space: nowrap;
+        word-break: keep-all;
+        word-wrap: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      &:nth-child(3n){
+        @include flex(1);
+        border-left: none;
+      }
+      .thumbnail{
+        height: rem(172px);
+        line-height: rem(172px);
+      }
+      .name,.desc,.price {
+        width: rem(160px);
+      }
+    }
+  }
+}

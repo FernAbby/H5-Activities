@@ -1,0 +1,58 @@
+{
+  "name": "activities",
+  "version": "1.0.0",
+  "description": "活动锦集",
+  "main": "src/pages/index/index.js",
+  "scripts": {
+    "start": "export NODE_ENV=dev && webpack-dev-server --progress --colors",
+    "server": "export NODE_ENV=dev && webpack --progress --colors",
+    "build": "export NODE_ENV=prod && webpack -p",
+    "lint": "export NODE_ENV=lint && webpack-dev-server",
+    "serve": "http-server ./dist -p 8888 -o",
+    "serve2": "http-server ./dist -p 8888",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://e.coding.net/digitalexplore/activities.git"
+  },
+  "author": "wenzhen",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.6.0",
+    "autoprefixer": "^9.6.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.3.0",
+    "eslint-loader": "^3.0.0",
+    "expose-loader": "^0.7.5",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^4.2.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "postcss-plugin-px2rem": "^0.8.1",
+    "precss": "^4.0.0",
+    "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^2.0.1",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.6.0",
+    "jquery": "^3.4.1",
+    "swiper": "^5.0.3",
+    "zepto": "^1.2.0"
+  }
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我的积分</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/old/css/integralMall/integralMy.scss?__inline" media="screen" title="no_title" charset="utf-8">
+</head>
+<body style="visibility: hidden;">
+    <header>
+        <span class="label">当前积分</span>
+        <span class="integral">89850</span>
+    </header>
+    <div class="records">
+        <div class="title">积分记录</div>
+        <ul>
+            <li>
+                <div class="up">
+                    <span class="name">阅读新闻</span>
+                    <span class="count">+2</span>
+                </div>
+                <div class="time">12-17 23：13</div>
+            </li>
+            <li>
+                <div class="up">
+                    <span class="name">阅读新闻</span>
+                    <span class="count">+10</span>
+                </div>
+                <div class="time">12-17 23：13</div>
+            </li>
+            <li>
+                <div class="up">
+                    <span class="name">阅读新闻</span>
+                    <span class="count">+10</span>
+                </div>
+                <div class="time">12-17 23：13</div>
+            </li>
+            <li>
+                <div class="up">
+                    <span class="name">活动</span>
+                    <span class="count">+2</span>
+                </div>
+                <div class="time">12-17 23：13</div>
+            </li>
+            <li>
+                <div class="up">
+                    <span class="name">阅读新闻</span>
+                    <span class="count">+10</span>
+                </div>
+                <div class="time">12-17 23：13</div>
+            </li>
+        </ul>
+        <div class="no-records">暂无兑换记录</div>
+    </div>
+<script type="text/javascript">
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                // 针对uc横竖屏rem html没有重绘的问题
+                var style;
+                if (style = document.getElementById("forhtml")) {
+                    style.parentNode.removeChild(style);
+                }
+                style = document.createElement("style");
+                style.id = "forhtml";
+                document.head.appendChild(style);
+                style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+            };
+        recalc();
+        document.body.style.visibility = 'visible';
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+        var a = document.getElementsByTagName('a');
+        for (var i = 0; i < a.length; i++) {
+            a[i].addEventListener('touchstart', function () {
+            }, false);
+        }
+    })(document, window);
+</script>
+<script type="text/javascript" charset="utf-8" src="/old/common/js/jquery2.1.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="/old/common/js/jquery.base.js"></script>
+<script type="text/javascript" charset="utf-8" src="/old/common/js/jquery.cookie.js"></script>
+<script type="text/javascript" charset="utf-8" src="/old/common/js/config.js?_v=2134423"></script>
+<script type="text/javascript" charset="utf-8" src="/old/common/js/common.js?_v=2134423"></script>
+<script type="text/javascript" charset="utf-8" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var pageIndex = 1,$integral = $('header .integral'),$ul=$('.records ul');
+        if(isNaN(uid)||uid<0||uid==='undefined'||uid==='null'){
+            $.alert({
+                msg: '获取积分参数有误'
+            });
+            history.go(-1);
+        }else{
+            getList();
+        }
+        function appendItems(list){
+            var html = '';
+            for(var i in list){
+               html += '<li><div class="up"><span class="name">'+list[i].consumption+'</span><span class="count">'
+                +list[i]['limit']+'</span></div><div class="time">'+list[i]['date']+'</div></li>';
+            }
+            $ul.append(html);
+        }
+        function getList(){
+            $.ajax({
+                url: '/creditshop/getIntergal/',
+                type: 'post',
+                dataType: 'json',
+                data: {page:indexList,pageSize:10,uid:uid,token:token,tenantid:tenent,openid:openid},
+                success:function(data){
+                    if(data.code=='0000'){
+                        pageIndex ++;
+                        $integral.text(data.data.integral);
+                        if(pageIndex==1&&data.data.list.length==0){
+                            $('.no-records').show();
+                        }else{
+                            appendItems(data.data.list);
+                        }
+                    }else{
+                        $.alert({
+                            msg: data.description
+                        });
+                    }
+                },
+                error: function(data){
+                    $.alert({
+                        msg: '网络异常，稍后重试！'
+                    });
+                }
+            })
+        }
+        $(function(){
+            var u = navigator.userAgent, app = navigator.appVersion;
+            //var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            if(isiOS){
+                var str='<div style="text-align:center;width:100%;font-size: 12px">所有活动及奖品与苹果公司无关。</div>';
+                $('body').append(str);
+            }
+
+        });
+    });
+</script>
+<script type="text/javascript">
+    wx.config({
+        debug: false,
+        appId: '',
+        timestamp: 1482738998,
+        nonceStr: '0Jsth0qxLccQlsZ2',
+        signature: 'd47c0d6b7fc1d0ab43452a5e1714d69dbdcf041e',
+        jsApiList: [
+            'hideOptionMenu',
+            'showOptionMenu',
+            'hideAllNonBaseMenuItem',
+            'showAllNonBaseMenuItem',
+            'hideMenuItems',
+            'showMenuItems',
+            'hideAllNonBaseMenuItem',
+            'showAllNonBaseMenuItem',
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage',
+            'onMenuShareQQ',
+            'onMenuShareWeibo',
+            'onMenuShareQZone',
+        ]
+    });
+    wx.ready(function () {
+        //wx.showOptionMenu();
+        wx.hideMenuItems({
+            menuList: ['menuItem:share:appMessage', 'menuItem:share:timeline', 'menuItem:share:qq', 'menuItem:share:weiboApp', 'menuItem:share:facebook', 'menuItem:share:QZone'],
+        });
+    });
+    wx.error(function (res) {
+        console.error(JSON.stringify(res));
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>简途旅行</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/old/css/price/fourStarWechat.scss?__inline">
+</head>
+<body>
+<div class="page-group" style="visibility: hidden">
+    <div class="page page-current">
+        <div class="page-content">
+            <img src="/old/images/represent/header-image.png" alt="">
+            <div class="star-wrapper">
+                <div class="star-wp" style="width: 7rem;margin-left: -3.9rem;">
+                    <img src="/old/images/represent/fourHalfStar.png" alt="">
+                </div>
+                <div class="text-wp" style="width: 7.9rem;margin-left: -4.3rem;">
+                    <img src="/old/images/represent/hao-text.png" alt="">
+                </div>
+                <img src="/old/images/represent/stars-wrap.png" alt="">
+            </div>
+            <div class="text-img">
+                <img src="/old/images/represent/app255.png" alt="">
+            </div>
+            <div class="btn-wrapper">
+                <a href="">
+                    <img src="/old/images/represent/btn.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/old/common/js/zepto.min.js"></script>
+<script src="/old/common/common/js/base.js"></script>
+<script src="/old/common/js/scroll.js"></script>
+<script>
+    (function (doc, win) {
+
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    var style;
+                    if (style = document.getElementById("forhtml")) {
+                        style.parentNode.removeChild(style);
+                    }
+                    style = document.createElement("style");
+                    style.id = "forhtml";
+                    document.head.appendChild(style);
+                    style.appendChild(document.createTextNode("html{font-size:" + 20 * (clientWidth / 320) + "px !important;}"));
+                };
+        recalc();
+        doc.getElementsByClassName('page-group')[0].style.visibility = 'visible';
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    $(document).ready(function() {
+    });
+</script>
+</body>
+</html>

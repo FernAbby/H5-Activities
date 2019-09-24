@@ -1,0 +1,112 @@
+@import "/old/common/css/base";
+body{
+  font-size: 0;
+  background-color: #ec2a53;
+}
+.header-wrapper {
+  position: relative;
+  width:100%;
+  z-index:11;
+  img {
+    width:100%;
+  }
+}
+.report-content {
+  position: relative;
+  top: rem(-30px);
+  width:90%;
+  border: rem(4px) solid #ffffff;
+  z-index:10;
+  margin:0 auto;
+  padding-top: rem(20px);
+  text-align: center;
+  .input-group {
+    width: 90%;
+    margin: rem(10px) auto;
+    @include displayflex;
+    @include flexflowRow();
+    label {
+      width:rem(60px);
+      height:rem(28px);
+      line-height: rem(28px);
+      font-size: rem(14px);
+      color: #ffffff;
+      text-align: right;
+      padding-right: rem(10px);
+    }
+    input {
+      @include flex(1);
+      height:rem(28px);
+      line-height: rem(14px);
+      font-size: rem(14px);
+      padding-left: rem(4px);
+    }
+  }
+  .tips {
+    width: 90%;
+    color: #ffffff;
+    font-size: rem(12px);
+    text-align: right;
+  }
+
+  h5{
+    margin-top: rem(15px);
+    color: #ffffff;
+    font-size: rem(14px);
+    text-align: center;
+  }
+  textarea {
+    margin: rem(10px) auto;
+    width: 90%;
+    padding: rem(6px);
+    font-size: rem(12px);
+  }
+  .photo-wrapper {
+    position: relative;
+    width: 90%;
+    margin: rem(10px) auto;
+    height: rem(185px);
+    border-radius: rem(5px);
+    background: url(https://images.simpletour.com/activity/complain/upload_icon.png) no-repeat center ;
+    background-size: 25%;
+    background-color: #fff;
+  }
+  .submit {
+    width: 60%;
+    margin:rem(20px) auto;
+    img  {
+      width:100%;
+    }
+  }
+}
+.confirm-bg{position:absolute;left:0;top:0;bottom:0;right:0;z-index:9998;background-color:rgba(69,69,69,.8);visibility:hidden;opacity:0;-webkit-transition-duration:400ms;transition-duration:400ms}
+.confirm-bg.confirm-bg-visible{visibility:visible;opacity:1}
+.confirm-msg{opacity:0;-webkit-transform:translate3d(0,-50%,0) scale(1.185);transform:translate3d(0,-50%,0) scale(1.185);-webkit-transition-property:-webkit-transform,opacity;
+  transition-property:transform,opacity;left:50%;top:40%;margin-left:-7.5rem;z-index:9999;position:absolute;width:15rem}
+.confirm-msg.in{opacity:1;-webkit-transition-duration:400ms;transition-duration:400ms;-webkit-transfrom:translate3d(0,0,0) scale(1);transform:translate3d(0,0,0) scale(1)}
+.confirm-msg.out{opacity:0;z-index:10999;-webkit-transition-duration:400ms;transition-duration:400ms;-webkit-transform:translate3d(0,0,0) scale(0.815);transform:translate3d(0,0,0) scale(0.815)}
+
+.confirm-msg-content{
+  width: 100%;
+  position: relative;
+  img {
+    width:100%;
+  }
+
+}
+.confirm-msg-btns {
+  position: absolute;
+  width:74%;
+  bottom: 1.2rem;
+  left: 50%;
+  margin-left: -37%;
+  @include displayflex;
+  @include flexflowRow();
+  div{
+    @include flex(1);
+    text-align: center;
+    img {
+      width:84%;
+    }
+  }
+}
