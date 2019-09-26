@@ -76,7 +76,7 @@
     fnGetPrize = opts.getPrize;
     fnGotBack = opts.gotBack;
 
-    opts.config(function (data) {
+    opts.webpack(function (data) {
       prizes = opts.prizes = data;
       num = prizes.length;
       draw(opts);

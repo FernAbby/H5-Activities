@@ -1,6 +1,18 @@
 # activities
 存放部分活动页面,包含投票,问卷,大转盘,砍价,刮刮卡,摇一摇,优惠券,意见收集活动......
 
+## 项目新运行
+
+```
+git clone https://github.com/FernAbby/activities.git
+
+cd activities
+
+npm i
+
+npm start 
+
+```
 
 ## 项目运行
 ```

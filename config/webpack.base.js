@@ -1,19 +1,41 @@
 const path = require("path");
 const webpack = require('webpack');
+const HTMLWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 抽取css
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // 压缩css
+const TerserPlugin = require('terser-webpack-plugin'); // 压缩JS
 
-// 抽取 css
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-// 压缩JS
-const TerserPlugin = require('terser-webpack-plugin');
+const config = require("./webpack.config");
 
-// 引入多页面文件列表
-const config = require("./config");
-const common = require("./common");
+let HTMLPlugins = [];
+let Entries = {};
+// 生成多页面的集合
+config.HTMLDirs.forEach((page) => {
+  const htmlPlugin = new HTMLWebpackPlugin({
+    filename: path.resolve(__dirname, page == 'index' ? `../dist/index.html` : `../dist/pages/${page}.html`),
+    template: path.resolve(__dirname, page == 'index' ? `../src/index.html` : `../src/pages/${page}/index.html`),
+    title: page,
+    favicon: '',
+    inject: true,  // 不把生成的css，js插入到html中
+    chunks: [page],
+    minify: {  // 压缩html
+      minifyCSS: true, // 压缩css
+      minifyJS: true, // 压缩js
+      collapseWhitespace: true, // 清除空格、换行符
+      removeComments: true, // 清除注释
+      caseSensitive: true, // 大小写敏感
+      removeEmptyElements: false, // 清除空元素
+      removeScriptTypeAttributes: false, // 清除script标签type属性
+      removeStyleLinkTypeAttributes: false, // 清除style标签type属性
+    }
+  });
+  HTMLPlugins.push(htmlPlugin);
+  Entries[page] = path.resolve(__dirname, `../src/pages/${page}/index.js`);
+});
 
 module.exports = {
-  entry: common.Entries,
-  devtool: "cheap-module-source-map",
+  entry: Entries,
+  devtool: "source-map",
   output:{
     filename: "static/js/[name].js",
     path: path.resolve(__dirname,"../dist")
@@ -82,7 +104,14 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use:["file-loader"]
+        use: [{
+          loader: 'file-loader',
+          options: {
+            outputPath: '/', // 定义输出的图片文件夹
+            publicPath: '/',
+            name: 'static/fonts/[name].[ext]',
+          }
+        }],
       },
       {
         test: /\.json$/,
@@ -115,9 +144,6 @@ module.exports = {
     }
   },
   plugins:[
-    // 自动清理 dist 文件夹
-    // new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     // 将 css 抽取到某个文件夹
     new MiniCssExtractPlugin({
       publicPath: config.cssPublicPath,
@@ -125,7 +151,7 @@ module.exports = {
       chunkFilename: '[name].[id].css',
     }),
     // 自动生成 HTML 插件
-    ...common.HTMLPlugins,
+    ...HTMLPlugins,
   ],
 };
 

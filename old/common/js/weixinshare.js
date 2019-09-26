@@ -48,7 +48,7 @@ wxshare.register = function(config){
 			for(var i in wxshare.config.jsApiList){
 				wxshare.apiList[wxshare.config.jsApiList[i]] = wxshare.config.jsApiList[i];
 			}
-			wx.config(wxshare.config);
+			wx.webpack(wxshare.config);
 			wxshare.ready();
     	}else{
     		console.log("获取配置失败");

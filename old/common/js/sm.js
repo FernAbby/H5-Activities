@@ -16,7 +16,7 @@
         swipePanelOnlyClose: true  //只允许滑动关闭，不允许滑动打开侧栏
     };
 
-    $.smConfig = $.extend(defaults, $.config);
+    $.smConfig = $.extend(defaults, $.webpack);
 
 }(Zepto);
 
