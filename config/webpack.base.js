@@ -45,7 +45,7 @@ module.exports = {
     rules:[
       {
         test: /\.html$/,
-        loader: 'html-loader?minimize=true'
+        loader: 'html-loader?minimize=true',
       },
         {
         test:/\.css$/,
@@ -153,5 +153,12 @@ module.exports = {
     // 自动生成 HTML 插件
     ...HTMLPlugins,
   ],
+  resolve:{
+    alias:{
+      '@src': path.resolve(__dirname, '../src'),
+      '@assets': path.resolve(__dirname, '../assets'),
+      'images': path.resolve(__dirname, '../assets/images'),
+    }
+  }
 };
 

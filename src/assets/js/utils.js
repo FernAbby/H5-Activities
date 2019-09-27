@@ -6,5 +6,12 @@ export default {
     }
     changeRem();
     window.addEventListener('resize', changeRem);
+  },
+
+  winModal() {
+    const defaultOptions = {
+      prize_img: '',
+    };
+
   }
 }

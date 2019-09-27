@@ -1,7 +1,7 @@
 const webpackMerge = require("webpack-merge");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const webpackBase = require("webpack.base");
+const webpackBase = require("./webpack.base");
 const config = require("./webpack.config");
 
 module.exports = webpackMerge(webpackBase,{

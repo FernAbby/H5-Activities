@@ -1,4 +1,4 @@
-// 变量
+@import "keyframes.less";
 
 ._mask {
   display: none;
@@ -94,3 +94,137 @@
   }
 }
 
+// 中奖提示
+#modal.modal-wrap {
+  ._mask();
+  background-image: url(../images/common/modal/mask-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+
+  .blink {
+    width: 100%;
+    height: 100%;
+    background: url(../images/common/modal/gold.png) no-repeat center;
+    background-size: contain;
+    animation: blinkCircle 10s linear infinite;
+  }
+
+  .modal-content {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    z-index: 1;
+    width: 600px;
+    height: 480px;
+    margin: -260px 0 0 0;
+    transform: scale(0.1);
+
+    .red-packet {
+      position: relative;
+      width: 100%;
+      height: 478px;
+      overflow: hidden;
+
+      .red-packet-head {
+        position: relative;
+        width: 100%;
+        height: 320px;
+        background: url(../images/common/modal/redpack-top.png) no-repeat center;
+        background-size: 100% 100%;
+      }
+
+      .red-packet-body {
+        position: relative;
+        margin-top: -175px;
+        z-index: 2;
+        width: 100%;
+        height: 360px;
+        background: url(../images/common/modal/redpack-bottom.png) no-repeat center;
+        background-size: 100% 100%;
+      }
+
+      .card {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 1;
+        width: 84%;
+        margin-left: -252px;
+        margin-top: -66px;
+        height: 320px;
+        background: url(../images/common/modal/redpack-middle.png) no-repeat center;
+        background-size: 100% 100%;
+        transition: top .5s;
+
+        .prize {
+          width: 92%;
+          height: 290px;
+          margin-left: 21px;
+          margin-top: 15px;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+          }
+        }
+      }
+    }
+
+    .fetch-btn {
+      position: absolute;
+      left: 50%;
+      bottom: 9.5%;
+      z-index: 2;
+      width: 364px;
+      height: 71px;
+      line-height: 71px;
+      margin-left: -182px;
+      font-size: 28px;
+      color: #fff;
+      text-align: center;
+      background: url(../images/common/modal/fetch-btn.png) no-repeat center;
+      background-size: 100% 100%;
+      text-indent: -9999px;
+    }
+
+    #close-modal {
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: -80px;
+      z-index: 10;
+      width: 64px;
+      height: 64px;
+      background: url(../images/common/modal/close.png) no-repeat center;
+      background-size: 100% 100%;
+    }
+  }
+
+  .modal-content.animation {
+    animation: redPack .5s .3s linear forwards;
+    //transition: transform ;
+    //transition-delay: .5s;
+    //transform: scale(1);
+
+    .red-packet {
+
+      .card {
+        animation: card .6s .5s ease-in-out forwards;
+      }
+    }
+
+    .fetch-btn {
+      animation-delay: .3s;
+      animation: shake .5s 2s linear alternate;
+    }
+
+    #close-modal {
+      animation: fadein .5s 1s linear forwards;
+    }
+  }
+}
