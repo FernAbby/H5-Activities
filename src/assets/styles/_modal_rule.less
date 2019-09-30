@@ -1,0 +1,85 @@
+#modal-rule {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+
+  .rules-body {
+    position: relative;
+    width: 90vw;
+    height: 80vh;
+    border-radius: 4px;
+    background-color: #fe5c51;
+    padding: 32px 32px 36px;
+    margin: 12vh auto 0;
+    display: flex;
+    flex-direction: column;
+
+    &:before {
+      position: absolute;
+      left: 50%;
+      top: -90px;
+      content: '';
+      display: block;
+      width: 256px;
+      height: 87px;
+      margin-left: -128px;
+      background: url(../../assets/images/rules/star2.png) no-repeat center;
+      background-size: 100% 100%;
+    }
+
+    .title {
+      width: 100%;
+      text-align: center;
+      line-height: 1.75;
+      font-size: 32px;
+      font-weight: normal;
+      color: #fff;
+
+      &:before,
+      &:after {
+        display: inline-block;
+        content: "";
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        border-radius: 50%;
+        margin: 0 16px;
+      }
+    }
+
+    .rule-content {
+      flex: 1;
+      overflow: auto;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #fff;
+      margin-top: 16px;
+      p {
+        margin-bottom: 6px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    #close-rule {
+      position: absolute;
+      right: 34px;
+      top: 38px;
+      width: 40px;
+      height: 40px;
+      background: url(../../assets/images/rules/close.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  &.animationIn {
+    animation: opacity-modal .4s linear forwards;
+  }
+}

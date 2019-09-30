@@ -2,6 +2,8 @@ import './index.less';
 import '../../assets/js/mobile-flexible.js';
 import $ from 'expose-loader?$!jquery';
 import Swiper from 'swiper';
+import '../../assets/js/modal.js';
+import prizeImg from '../../assets/images/common/modal/prize2.png';
 
 const globalData = {
   count: 5,
@@ -19,13 +21,10 @@ $(function() {
   const $frontList = $(".front ul li"); // 第二列福袋
   const $topBag = $(".behind img"); // 第一列每个福袋
   const $bottomBag = $(".front img"); // 第二列每个福袋
-  const $modal = $("#modal");
-  const rem = 75;
-  // parseFloat(window.document.documentElement.style.fontSize)*2
+  const rem = 75; // parseFloat(window.document.documentElement.style.fontSize)*2
 
   let left = 0; // 后方福袋移动
   let right = 0; // 前方福袋移动
-  let index = 0; //
   let timer = null;
   let hookTimer = null;
 
@@ -67,23 +66,17 @@ $(function() {
   // 判断钩子和福袋的距离
   const redPacket1 = () => {
     for (let i = 0; i < $behindList.length; i++) {
-      if ($hook.find("img").length) break; // 如果钩子上已经有福袋跳出循环
+      if ($hook.find('img').length) break; // 如果钩子上已经有福袋跳出循环
       const b_left = $behindList.eq(i).position().left;
-
-      if ($hook.position().left - 130 <= b_left && b_left <= $hook.position().left - 40) {
-        !$hook.find("img").length && $hook.append($topBag.eq(i)); // 如果未抓取到福袋才抓取
-        $topBag.eq(i).css({ // 重设福袋大小
-          width: 91 / rem + "rem",
-          height: 102 / rem + "rem"
-        });
-
+      if ($hook.position().left - 130 <= b_left && b_left <= $hook.position().left - 50) {
+        !$hook.find("img").length && $hook.append($topBag.eq(i));
         globalData.winIndex = i;
         $hook.animate({ top: -220 / rem + "rem" }, 1200, function () {
-          console.log('中奖了！！！');
-          $modal.show();
-          $modal.find('.modal-content').addClass('animation');
-          // $behindList.eq(globalData.winIndex).append($topBag.eq(globalData.winIndex)); // 把福袋放回原位
-          // index = undefined;
+          $.successModal({
+            prizeImg: prizeImg,
+          });
+          $behindList.eq(globalData.winIndex).append($topBag.eq(globalData.winIndex));
+          globalData.winIndex = undefined;
         });
       } else {
         setTimeout(function () {
@@ -94,22 +87,17 @@ $(function() {
   };
   const redPacket2 = () => {
     for (let i = 0; i < $frontList.length; i++) {
-      if ($hook.find("img").length) break; // 如果钩子上已经有福袋跳出循环
+      if ($hook.find('img').length) break; // 如果钩子上已经有福袋跳出循环
       const b_left = $frontList.eq(i).position().left - (130 + 60);
       if ($hook.position().left - 130 <= b_left && b_left <= $hook.position().left) {
-        !$hook.find("img").length && $hook.append($bottomBag.eq(i)); // 如果未抓取到福袋才抓取
-        $bottomBag.eq(i).css({ // 重设福袋大小
-          width: 139 / rem + "rem",
-          height: 156 / rem + "rem"
-        });
-
+        !$hook.find("img").length && $hook.append($bottomBag.eq(i));
         globalData.winIndex = i;
-        $hook.animate({ top: -220 / rem + "rem" }, 1200, function () {
-          console.log('中奖了！！！');
-          $modal.show();
-          $modal.find('.modal-content').addClass('animation');
-         /* $frontList.eq(i).append($bottomBag.eq(index)); // 把福袋放回原位
-          index = undefined;*/
+        $hook.animate({ top: - 220 / rem + "rem" }, 1200, function () {
+          $.successModal({
+            prizeImg: prizeImg,
+          });
+          $frontList.eq(globalData.winIndex).append($bottomBag.eq(globalData.winIndex));
+          globalData.winIndex = undefined;
         });
       } else {
         setTimeout(function () {
@@ -146,13 +134,22 @@ $(function() {
       $hook.animate({ top: -100 / rem + "rem"}, 1000);
       hookTimer = setTimeout(function () {
         redPacket1();
+        globalData.lock = false;
       }, 2000);
     } else {//下面
       $hook.animate({ top: 50 / rem + "rem"}, 1000 );
       hookTimer = setTimeout(function () {
         redPacket2();
+        globalData.lock = false;
       }, 2000);
     }
+  });
+
+  $('.rules').on('click', function() {
+    $.ruleModal({
+      title: '抓娃娃活动说明',
+      content: '<p>抓娃娃活动说明</p>'
+    });
   });
 
   //奖品展示

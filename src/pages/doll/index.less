@@ -1,7 +1,8 @@
 @charset "utf-8";
-@import "../../assets/styles/public.less";
 @import "../../assets/styles/commom.less";
 @import "../../assets/styles/swiper.min.css";
+@import "../../assets/styles/_modal_success.less";
+@import "../../assets/styles/_modal_rule.less";
 
 @keyframes up{
   100%{
@@ -145,6 +146,17 @@ body{
     .up{
       animation: up .5s linear forwards;
     }
+
+    img[alt=small] {
+      width: 91px;
+      height: 102px;
+      margin-left: 21px;
+    }
+
+    img[alt=big] {
+      width: 139px;
+      height: 156px;
+    }
   }
 
   /*传送带*/
@@ -160,6 +172,11 @@ body{
 
     ul {
       width: 14rem;
+      li {
+        img.invisible {
+          opacity: 0;
+        }
+      }
     }
   }
 
@@ -284,17 +301,5 @@ body{
     background-color: #f5ae4f;
     box-shadow: 0 20px 20px rgba(248, 131, 23, .7) inset;
     border-radius: 16px;
-  }
-}
-
-// 规则弹窗背景色
-#mask-rule {
-  .box-rule{
-    background-color: #fe5c51;
-
-    .star{
-      background: url(../../assets/images/common/rule/star2.png) no-repeat center;
-      background-size: 100% 100%;
-    }
   }
 }
