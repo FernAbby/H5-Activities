@@ -153,7 +153,7 @@ $(function() {
   });
 
   //奖品展示
-  const show = new Swiper(".swiper-container", {
+  const mySwiper = new Swiper(".swiper-container", {
     direction: "horizontal", // 水平方向滑动 | vertical为垂直方向滑动
     loop: false, // 是否循环
     slidesPerView: "auto" // 自动根据slides的宽度来设定数量

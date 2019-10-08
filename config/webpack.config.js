@@ -2,6 +2,7 @@ module.exports = {
   HTMLDirs: [
     "index",
     "doll",
+    "egg",
   ],
   dev: {
     host: 'localhost',

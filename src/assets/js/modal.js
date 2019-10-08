@@ -2,6 +2,7 @@
   let $successModal = null;
   let $ruleModal = null;
 
+  // 中奖提示
   function successModal(options) {
     const opts = Object.assign({
       prizeImg: 'https://cdn.oaplusplus.com/h5/static/images/modal/prize2.png',
@@ -42,9 +43,10 @@
       opts.fetch(e);
       closeModal();
     });
-    $successModal.find("#close-modal").on('click', closeModal);
+    $successModal.find("#close-success").on('click', closeModal);
   }
 
+  // 活动说明
   function ruleModal(options) {
     const opts = Object.assign({
       title: '活动说明',
