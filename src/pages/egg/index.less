@@ -1,13 +1,17 @@
+@charset "utf-8";
 @import "../../assets/styles/commom";
 @import "../../assets/styles/swiper.min.css";
+@import "../../assets/styles/_modal_success.less";
 
 @keyframes hammer-move {
   100% {
-    -o-transform: rotate(-10deg);
-    -ms-transform: rotate(-10deg);
-    -moz-transform: rotate(-10deg);
-    -webkit-transform: rotate(-10deg);
     transform: rotate(-10deg);
+  }
+}
+
+@keyframes hammer-hit {
+  100% {
+    transform: rotate(-20deg);
   }
 }
 
@@ -81,11 +85,11 @@ body {
   }
   #hammer {
     position: absolute;
-    left: 8.86666667rem;
-    top: 0.8rem;
-    z-index: 10;
-    width: 1.46666667rem;
-    height: 1.6rem;
+    left: 665px;
+    top: 30px;
+    z-index: 5;
+    width: 110px;
+    height: 120px;
     background: url(../../assets/images/egg/hammer.png) no-repeat center;
     background-size: contain;
     transform-origin: right bottom;
@@ -93,6 +97,10 @@ body {
 
     &.shake {
       animation: hammer-move 0.5s linear infinite alternate;
+    }
+
+    &.hit {
+      animation: hammer-hit 0.2s 1s alternate;
     }
   }
   .eggs-wrap {
@@ -126,6 +134,12 @@ body {
         top: 20px;
         transform-origin: center bottom;
         transition: top .5s linear;
+
+        &.broken {
+          width: 150px;
+          height: 160px;
+          transform: translate3d(0, 4px, 0);
+        }
       }
 
       .info {
