@@ -10,14 +10,12 @@ const rem = 75;
 
 const GData = {
   count: 5,
-
 };
 
 $(function() {
   const $hammer =  $("#hammer");
   const $eggList = $(".eggs-wrap li");
   const $count = $("#count");
-  const screenWidth = $('body').width();
 
   const brokenList = [];
   let tipIndex = 0;
@@ -39,7 +37,7 @@ $(function() {
   // 砸金蛋
   $eggList.on('click', function(e) {
     const $this = $(this);
-    if (!$this.hasClass('broken')) {
+    if (!$this.hasClass('broken') && GData.count > 0) {
       $this.addClass('broken');
       brokenList.push($this.index());
       GData.count --;
