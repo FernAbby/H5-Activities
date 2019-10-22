@@ -68,7 +68,7 @@ $(function() {
         $.successModal({
           prizeImg: prizeImg,
         });
-      }, 1300);
+      }, 1400);
     }
   });
 

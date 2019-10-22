@@ -3,6 +3,7 @@ module.exports = {
     "index",
     "doll",
     "egg",
+    "guaCard"
   ],
   dev: {
     host: 'localhost',

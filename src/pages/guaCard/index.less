@@ -1,0 +1,192 @@
+@charset "utf-8";
+@import "../../assets/styles/commom";
+@import "../../assets/styles/swiper.min.css";
+@import "../../assets/styles/_modal_success.less";
+@import "../../assets/styles/_modal_rule.less";
+
+@keyframes decoration1 {
+  100% {
+    opacity: 0;
+    left: 140px;
+    top: 340px;
+  }
+}
+
+@keyframes decoration2 {
+  100% {
+    opacity: 0;
+    left: 500px;
+    top: 240px;
+  }
+}
+
+@keyframes decoration3 {
+  100% {
+    top: 900px;
+  }
+}
+
+body {
+  background: #ff605d;
+}
+
+#container {
+  position: relative;
+  width: 100%;
+  height: 1200px;
+  background: url(../../assets/images/guaCard/guagua-bg.png) no-repeat center;
+  background-size: 100% auto;
+}
+
+.animate-decorations {
+  div{
+    opacity: 1;
+    position: absolute;
+  }
+
+  .decoration1 {
+    left: 40px;
+    top: 240px;
+    width: 77px;
+    height: 74px;
+    background: url(../../assets/images/guaCard/left-redpack.png) no-repeat center;
+    background-size: 100% 100%;
+    animation: decoration1 1s ease-in-out infinite;
+  }
+
+  .decoration2 {
+    left: 600px;
+    top: 140px;
+    width: 95px;
+    height: 80px;
+    background: url(../../assets/images/guaCard/right-redpack.png) no-repeat center;
+    background-size: 100% 100%;
+    animation: decoration2 1s ease-in-out infinite;
+  }
+
+  .decoration3 {
+    left: 0;
+    top: 860px;
+    width: 98px;
+    height: 88px;
+    background: url(../../assets/images/guaCard/gold-coin.png) no-repeat center;
+    background-size: 100% 100%;
+    animation: decoration3 .5s ease-in-out infinite alternate;
+  }
+
+}
+
+.header {
+  display: flex;
+  padding: 0 124px;
+  justify-content: space-between;
+
+  .rules, .personal {
+    display: inline-block;
+    width: 165px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #e04b34;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff3f0;
+    border-radius: 20px;
+  }
+}
+
+.main {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 790px;
+
+  .panel {
+    position: relative;
+    width: 600px;
+    height: 350px;
+    background: url(../../assets/images/guaCard/panel.png) no-repeat center;
+    background-size: 100% 100%;
+    margin: 85px auto 0;
+    padding: 21px 19px;
+    box-sizing: border-box;
+
+    #canvas {
+      width: 562px;
+      height: 308px;
+      background: no-repeat center / contain;
+      background-size: 100% 100%;
+    }
+
+    #canvas-mask{
+      position: absolute;
+      left: 19px;
+      top: 21px;
+      z-index: 1;
+      width: 562px;
+      height: 308px;
+
+      #fetch {
+        display: block;
+        margin: 129px auto 0;
+        width: 192px;
+        height: 50px;
+        background: url(../../assets/images/guaCard/fetch-btn.png) no-repeat center;
+        background-size: 100% 100%;
+      }
+
+      p{
+        margin-top: 50px;
+        height: 22px;
+        text-align: center;
+        line-height: 24px;
+        font-size: 22px;
+        color: #fff;
+      }
+    }
+  }
+
+  .awards {
+    position: absolute;
+    left: 25px;
+    bottom: 24px;
+    width: 700px;
+    height: 175px;
+    background-color: #ee3c3a;
+    border-radius: 20px;
+
+    .swiper-container{
+      height: 100%;
+
+      .swiper-slide {
+        margin: 19px 20px;
+        padding: 16px;
+        width: 105px;
+        height: 105px;
+        background: url(../../assets/images/common/awards/drag_box.png) no-repeat center;
+        background-size: 100% 100%;
+        box-sizing: content-box;
+
+        img {
+          width: inherit;
+          height: inherit;
+        }
+      }
+
+      .swiper-container{
+        overflow: hidden;
+        margin: 16px auto;
+        padding: 22px 0;
+        width: 658px;
+        height: 190px;
+        background-color: #f5ae4f;
+        box-shadow: 0 20px 20px rgba(248, 131, 23, .7) inset;
+        border-radius: 16px;
+      }
+    }
+  }
+}
+
+
+
