@@ -1,0 +1,254 @@
+@charset "utf-8";
+@import "../../assets/styles/commom";
+@import "../../assets/styles/swiper.min.css";
+@import "../../assets/styles/_modal_success.less";
+@import "../../assets/styles/_modal_rule.less";
+
+@keyframes running{
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background-color: #ff7040;
+}
+
+#container {
+  height: 1335px;
+  background: url(../../assets/images/wheel/wheel-bg.png) no-repeat center;
+  background-size: 100% 100%;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1024px;
+    background: url(../../assets/images/wheel/caidai.png) no-repeat center;
+    background-size: 100% 100%;
+  }
+}
+
+.header {
+  padding: 37px;
+
+  .rules, .personal {
+    position: relative;
+    z-index: 1;
+    width: 90px;
+    height: 50px;
+    border: 1px solid #d89720;
+    font-size: 24px;
+    line-height: 49px;
+    text-align: center;
+    color: #d89720;
+    border-radius: 5px;
+  }
+
+  .rules {
+    float: left;
+  }
+  
+  .personal {
+    width: 120px;
+    float: right;
+  }
+
+  .title {
+    width: 639px;
+    height: 316px;
+    margin: auto;
+    background: url(../../assets/images/wheel/title.png) no-repeat center;
+    background-size: 100% 100%;
+  }
+}
+
+.content {
+
+  .turntable-box {
+    position: relative;
+    width: 100%;
+    height: 670px;
+
+    .turntable {
+      width: 665px;
+      height: 665px;
+      margin: 0 auto;
+      background: url(../../assets/images/wheel/circle-bg.png) no-repeat center;
+      background-size: 100% 100%;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 26px;
+        width: 617px;
+        height: 617px;
+        margin-left: -306px;
+        background: url(../../assets/images/wheel/dark.png) no-repeat center;
+        background-size: 100% 100%;
+      }
+
+      &.light:before {
+        background: url(../../assets/images/wheel/light.png) no-repeat center;
+        background-size: 100% 100%;
+      }
+
+      .prizes {
+        overflow: hidden;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -290px 0 0 -290px;
+        width: 580px;
+        height: 580px;
+        border-radius: 50%;
+
+        &.running {
+          animation: running 90s linear infinite;
+        }
+
+        li {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 290px;
+          background: no-repeat center 35%;
+          font-size: 24px;
+          font-weight: bold;
+          line-height: 60px;
+          text-align: center;
+          color: #f44747;
+          transform-origin: center bottom;
+
+          &:nth-child(1) {
+            background-image: url(../../assets/images/wheel/prize-gift.png);
+            background-size: 69px 73px;
+            transform: rotate(0deg);
+          }
+
+          &:nth-child(2) {
+            background-image: url(../../assets/images/wheel/prize-50.png);
+            background-size: 54px 66px;
+            transform: rotate(60deg);
+          }
+          &:nth-child(3) {
+            background-image: url(../../assets/images/wheel/prize-20.png);
+            background-size: 54px 66px;
+            transform: rotate(120deg);
+          }
+
+          &:nth-child(4) {
+            background-image: url(../../assets/images/wheel/prize-gift.png);
+            background-size: 69px 73px;
+            transform: rotate(180deg);
+          }
+          &:nth-child(5) {
+            background-image: url(../../assets/images/wheel/prize-100.png);
+            background-size: 54px 66px;
+            transform: rotate(240deg);
+          }
+
+          &:nth-child(6) {
+            background-image: url(../../assets/images/wheel/prize-face.png);
+            background-size: 77px 77px;
+            transform: rotate(300deg);
+          }
+
+          span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin-left: -50%;
+            border-right: 2px solid #f44747;
+            transform-origin: right bottom;
+            transform: rotate(30deg) skewY(30deg);
+          }
+
+          p{
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            width: 50%;
+            height: 60%;
+            padding-top: 20px;
+            text-align: center;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+
+    #lottery {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 160px;
+      height: 198px;
+      margin: -99px 0 0 -80px;
+      background: url(../../assets/images/wheel/lottery-btn.png) no-repeat center;
+      background-size: 100% 100%;
+    }
+  }
+
+  .tips {
+    width: 380px;
+    height: 63px;
+    margin: 10px auto 25px;
+    background: url(../../assets/images/wheel/tips-border.png) no-repeat center;
+    background-size: 100% 100%;
+    font-size: 24px;
+    line-height: 63px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .scroll-info {
+    width: 550px;
+    height: 175px;
+    margin: auto;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 357px;
+      height: 22px;
+      margin: auto;
+      background: url(../../assets/images/wheel/list.png) no-repeat center;
+      background-size: 100% 100%;
+    }
+
+    .list {
+      width: 100%;
+      height: 80px;
+      margin-top: 20px;
+      padding: 20px 0;
+      background-color: rgba(255, 255, 255, .2);
+      border-radius: 10px;
+
+      ul {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+
+        li {
+          position: relative;
+          top: 0;
+          text-align: center;
+          font-size: 22px;
+          line-height: 40px;
+          color: #fff;
+          transition: all .5s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+
+
