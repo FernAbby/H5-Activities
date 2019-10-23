@@ -1,0 +1,357 @@
+@charset "utf-8";
+@import "../../assets/styles/commom";
+@import "../../assets/styles/swiper.min.css";
+@import "../../assets/styles/_modal_success.less";
+@import "../../assets/styles/_modal_rule.less";
+
+
+@keyframes twinkle {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shining {
+  100% {
+    transform: scale(.5);
+  }
+}
+
+@keyframes coin-jump {
+  100%{
+    transform: translate3d(0, -50px, 0);
+  }
+}
+
+body {
+  background: #ffca00;
+}
+
+#container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 1210px;
+  background: url(../../assets/images/nineGrid/nineGrid-bg.png) no-repeat center;
+  background-size: 100% auto;
+}
+
+.header {
+  .time {
+    position: absolute;
+    left: 50px;
+    top: 75px;
+    width: 130px;
+    line-height: 28px;
+    font-size: 24px;
+    color: #fff;
+    transform: rotate(-30deg) scale(0.92);
+  }
+
+  .stars-box {
+    position: relative;
+    width: 100%;
+    height: 320px;
+
+    .star {
+      opacity: 1;
+      position: absolute;
+      left: 55px;
+      top: -7px;
+      width: 15px;
+      height: 15px;
+      background-color: #fff;
+      border-radius: 50%;
+      transform: scale(1);
+
+      &:nth-child(2) {
+        left: 280px;
+        top: 70px;
+        width: 10px;
+        height: 10px;
+      }
+
+      &:nth-child(3) {
+        left: 480px;
+        top: 12px;
+        width: 10px;
+        height: 10px;
+      }
+
+      &:nth-child(4) {
+        left: 700px;
+        top: 30px;
+      }
+
+      &:nth-child(5) {
+        left: -7px;
+        top: 200px;
+      }
+
+      &:nth-child(6) {
+        left: 715px;
+        top: 255px;
+      }
+
+      &:nth-child(7) {
+        left: 45px;
+        top: 310px;
+        width: 6px;
+        height: 6px;
+      }
+
+      &:nth-child(odd) {
+        animation: twinkle 1s linear infinite alternate;
+      }
+
+      &:nth-child(even) {
+        animation: shining 1s 1s linear infinite alternate;
+      }
+    }
+  }
+
+  .operates {
+    display: flex;
+    padding: 20px 150px;
+    justify-content: space-between;
+
+    .rules, .personal {
+      display: inline-block;
+      width: 130px;
+      height: 48px;
+      line-height: 48px;
+      background-color: rgba(254, 60, 36, 0.8);
+      text-align: center;
+      font-size: 22px;
+      color: #fff3f0;
+      border-radius: 8px;
+    }
+  }
+}
+
+.content {
+
+  h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    padding-top: 28px;
+  }
+
+  .box-area {
+    position: relative;
+    width: 690px;
+    height: 602px;
+    margin: 0 auto;
+    background: url(../../assets/images/nineGrid/box-bg.png) no-repeat center;
+    background-size: 100% 100%;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 30px;
+      top: -40px;
+      width: 113px;
+      height: 75px;
+      background: url(../../assets/images/nineGrid/coin.png) no-repeat center;
+      background-size: contain;
+      animation: coin-jump .5s linear infinite alternate;
+    }
+
+    .light{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 520px;
+
+      &:after {
+        content: "";
+        clear: both;
+        display: block;
+        visibility: hidden;
+        height: 0;
+      }
+
+      li{
+        position: relative;
+        width: 44px;
+        height: 100%;
+
+        p{
+          margin-bottom: 100px;
+          width: 42px;
+          height: 42px;
+          background: url(../../assets/images/nineGrid/dark.png) no-repeat center;
+          background-size: 100% 100%;
+        }
+      }
+
+      .fl {
+        float: left;
+
+        p:nth-child(odd) {
+          background: url(../../assets/images/nineGrid/light.png) no-repeat center;
+          background-size: 100% 100%;
+        }
+
+        p:nth-child(even) {
+          background: url(../../assets/images/nineGrid/dark.png) no-repeat center;
+          background-size: 100% 100%;
+        }
+      }
+
+      .fr {
+        float: right;
+
+        p:nth-child(odd) {
+          background: url(../../assets/images/nineGrid/dark.png) no-repeat center;
+          background-size: 100% 100%;
+        }
+
+        p:nth-child(even) {
+          background: url(../../assets/images/nineGrid/light.png) no-repeat center;
+          background-size: 100% 100%;
+        }
+      }
+
+
+
+      &.blink {
+        .fl {
+          float: left;
+
+          p:nth-child(even) {
+            background: url(../../assets/images/nineGrid/light.png) no-repeat center;
+            background-size: 100% 100%;
+          }
+
+          p:nth-child(odd) {
+            background: url(../../assets/images/nineGrid/dark.png) no-repeat center;
+            background-size: 100% 100%;
+          }
+        }
+
+        .fr {
+          float: right;
+
+          p:nth-child(even) {
+            background: url(../../assets/images/nineGrid/dark.png) no-repeat center;
+            background-size: 100% 100%;
+          }
+
+          p:nth-child(odd) {
+            background: url(../../assets/images/nineGrid/light.png) no-repeat center;
+            background-size: 100% 100%;
+          }
+        }
+      }
+    }
+    
+    .prizes {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      margin: -205px 0 0 -300px;
+      width: 600px;
+      height: 440px;
+      
+      li {
+        position: relative;
+        float: left;
+        margin: 6px 0 0 7px;
+        width: 191px;
+        height: 140px;
+        background: url(../../assets/images/nineGrid/normal.png) no-repeat center;
+        background-size: 100% 100%;
+
+        &.selected{
+          background-image: url(../../assets/images/nineGrid/select.png);
+        }
+
+        &:nth-child(4){
+          left: 396px;
+        }
+        &:nth-child(6){
+          top: 146px;
+        }
+        &:nth-child(7){
+          left: 198px;
+        }
+        &:nth-child(8){
+          left: -198px;
+        }
+        &:nth-child(9){
+          left: -396px;
+          top: -146px;
+        }
+
+        img {
+          display: block;
+          width: 191px;
+          height: 140px;
+        }
+
+        p {
+          position: absolute;
+          left: 0;
+          bottom: 10px;
+          text-align: center;
+          //margin-left: -96px;
+          width: 100%;
+          font-size: 22px;
+          color: #c14600;
+        }
+      }
+
+      #lottery {
+        background-image: url(../../assets/images/nineGrid/start.png);
+      }
+    }
+  }
+}
+
+.awards {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  margin-left: -345px;
+  width: 690px;
+  height: 140px;
+  background-color: #fd851f;
+  box-shadow: 0 20px 20px rgba(248,85,40,.5) inset;
+  border-radius: 10px;
+
+  .swiper-container{
+    height: 100%;
+
+    .swiper-slide {
+      margin: 3px 20px;
+      padding: 16px;
+      width: 105px;
+      height: 105px;
+      background: url(../../assets/images/common/awards/drag_box.png) no-repeat center;
+      background-size: 100% 100%;
+      box-sizing: content-box;
+
+      img {
+        width: inherit;
+        height: inherit;
+      }
+    }
+
+    .swiper-container{
+      overflow: hidden;
+      margin: 16px auto;
+      padding: 22px 0;
+      width: 658px;
+      height: 190px;
+      background-color: #f5ae4f;
+      box-shadow: 0 20px 20px rgba(248, 131, 23, .7) inset;
+      border-radius: 16px;
+    }
+  }
+}
+

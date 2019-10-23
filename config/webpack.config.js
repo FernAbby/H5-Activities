@@ -3,7 +3,8 @@ module.exports = {
     "index",
     "doll",
     "egg",
-    "guaCard"
+    "guaCard",
+    "nineGrid"
   ],
   dev: {
     host: 'localhost',

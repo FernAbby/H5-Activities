@@ -31,7 +31,6 @@ $(function() {
 
     // canvas绘图
     context.beginPath();
-    // context.fillStyle = 'transparent';
     context.fillStyle = '#ccc'; // 刮刮乐图层的填充色
     context.lineCap = "round"; // 绘制的线结束时为圆形
     context.lineJoin = "round"; // 当两条线交汇时创建圆形边角
