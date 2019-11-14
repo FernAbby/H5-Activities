@@ -4,7 +4,7 @@ module.exports = {
     "doll",
     "egg",
     "wheel",
-    "guaCard",
+    "guaguale",
     "nineGrid",
   ],
   dev: {
