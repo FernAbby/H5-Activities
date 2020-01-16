@@ -1,0 +1,149 @@
+@charset "utf-8";
+@import "../../assets/styles/commom";
+@import "../../assets/styles/swiper.min.css";
+@import "../../assets/styles/_modal_success.less";
+@import "../../assets/styles/_modal_rule.less";
+
+#container {
+  width: 100%;
+  min-height: 100vh;
+  background: url(../../assets/images/scratch/sratch-bg.png) no-repeat top center;
+  background-size: 100% auto;
+  padding: 330px 20px 20px;
+
+  .times {
+    font-size: 26px;
+    color: rgba(210, 157, 233, 1);
+    text-align: center;
+    margin-bottom: 64px;
+
+    i{
+      font-style: normal;
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+
+  .scratch-area {
+    width: 100%;
+    height: 330px;
+    background: url(../../assets/images/scratch/scratch-area-bg.png) no-repeat top center;
+    background-size: 100% auto;
+    padding: 18px 16px;
+    position: relative;
+    box-sizing: border-box;
+
+    .base{
+      width: 100%;
+      height: 100%;
+      line-height: 290px;
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+      color: #a06a03;
+      background-color: #fed90b;
+    }
+
+    #redux,canvas{
+      width: calc(100% - 32px);
+      height: calc(100% - 36px);
+      position: absolute;
+      top: 18px;
+      left: 16px;
+      z-index: 2;
+    }
+  }
+
+  .my-prizes{
+    width: 556px;
+    height: 76px;
+    line-height: 76px;
+    display: block;
+    margin: 49px auto 0;
+    color: rgb(130,101,7);
+    font-size: 32px;
+    font-weight: 500;
+    background-color: rgb(255,217,2);
+    text-align: center;
+    border-radius: 76px;
+
+    &:active{
+      background-color: rgb(255, 210, 6);
+    }
+  }
+  .activityInfo{
+    width: 100%;
+    padding: 18px 36px 0;
+    background-color: rgb(247,122,90);
+    color: #fff;
+    font-size: 28px;
+    line-height: 40px;
+    margin-top: 84px;
+    margin-bottom: 34px;
+    border-radius: 6px;
+    position: relative;
+
+    &:before{
+      content: '';
+      display: block;
+      width: 206px;
+      height: 35px;
+      background: url(../../assets/images/scratch/borderTop.png) no-repeat center;
+      background-size: contain;
+      position: absolute;
+      left: 0;
+      top: -34px;
+    }
+    .item{
+      padding: 38px 20px 24px;
+      border-bottom: 1px solid rgb(244,134,111);
+
+      &:last-child{
+        border: none;
+      }
+
+      h4{
+        font-size: 30px;
+        color: rgb(204,50,16);
+        font-weight: 600;
+        line-height: 40px;
+        padding: 0 0 24px 44px;
+        position: relative;
+        &:before{
+          content: '';
+          display: inline-block;
+          margin-right: 16px;
+          width: 26px;
+          height: 26px;
+          background: url(../../assets/images/scratch/gift-icon.png) no-repeat center;
+          background-size: contain;
+          vertical-align: baseline;
+          position: absolute;
+          top: 7px;
+          left: 0;
+
+        }
+      }
+      &.gift h4:before{
+        background: url(../../assets/images/scratch/gift-icon.png) no-repeat center;
+        background-size: contain;
+      }
+      &.time h4:before{
+        background: url(../../assets/images/scratch/time-icon.png) no-repeat center;
+        background-size: contain;
+      }
+      &.tip h4:before{
+        background: url(../../assets/images/scratch/tip-icon.png) no-repeat center;
+        background-size: contain;
+      }
+      &.note h4:before{
+        background: url(../../assets/images/scratch/note-icon.png) no-repeat center;
+        background-size: contain;
+      }
+      p{
+        padding-bottom: 16px;
+        line-height: 40px;
+      }
+    }
+  }
+}

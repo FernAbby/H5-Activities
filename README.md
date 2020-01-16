@@ -1,5 +1,6 @@
 # H5-Activities
 存放部分活动页面,包含投票,问卷,大转盘,砍价,刮刮卡,摇一摇,优惠券,意见收集活动......
+一部分是自己写过的，一部分是以前网上参考活动（如原作者看到介意分享，可联系本人删除）
 
 ## 项目新运行
 
@@ -34,7 +35,7 @@ fis3 server start
 
 * appBargain --- 砍价活动
 
- <img src="./resource/appBargain.png" alt="砍价活动图"/>
+ <img src="./effects/appBargain.png" alt="砍价活动图"/>
 
 * appdownload --- App下载引导页
 
@@ -56,7 +57,7 @@ fis3 server start
 
 * lottery --- 大转盘抽奖
 
- <img src="./resource/roulette.png" alt="大转盘活动图"/>
+ <img src="./effects/roulette.png" alt="大转盘活动图"/>
 
 * marathon --- 马拉松活动
 
@@ -64,13 +65,13 @@ fis3 server start
 
 * questionnaire --- 调查问卷
 
-<img src="./resource/quiz.png" alt="摇一摇活动图"/>
+<img src="./effects/quiz.png" alt="摇一摇活动图"/>
 
 * represent --- 谁能代表大四川
 
 * scratch --- 刮刮卡
 
- <img src="./resource/scratch.png" alt="刮刮卡活动图"/>
+ <img src="./effects/scratch.png" alt="刮刮卡活动图"/>
 
 * SDbargain --- 双旦砍价活动
 
@@ -78,7 +79,7 @@ fis3 server start
 
 * shaking --- 摇一摇活动
 
- <img src="./resource/shaking.png" alt="摇一摇活动图"/>
+ <img src="./effects/shaking.png" alt="摇一摇活动图"/>
 
 * shishui --- 旅舍试睡活动
 
@@ -94,13 +95,13 @@ fis3 server start
 
 ## 待上传模板
 
- <img src="./resource/vote-screen.png" alt="摇一摇活动图"/>
+ <img src="./effects/vote-screen.png" alt="摇一摇活动图"/>
 
- <img src="./resource/white-vote.png" alt="摇一摇活动图"/>
+ <img src="./effects/white-vote.png" alt="摇一摇活动图"/>
 
- <img src="./resource/multiple-vote.png" alt="摇一摇活动图"/>
+ <img src="./effects/multiple-vote.png" alt="摇一摇活动图"/>
 
- <img src="./resource/ballot.png" alt="摇一摇活动图"/>
+ <img src="./effects/ballot.png" alt="摇一摇活动图"/>
 
 
 

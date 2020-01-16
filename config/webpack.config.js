@@ -6,6 +6,7 @@ module.exports = {
     "wheel",
     "guaguale",
     "nineGrid",
+    "scratch"
   ],
   dev: {
     host: 'localhost',
