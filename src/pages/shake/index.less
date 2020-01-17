@@ -1,0 +1,139 @@
+@charset "utf-8";
+@import "../../assets/styles/commom";
+@import "../../assets/styles/swiper.min.css";
+@import "../../assets/styles/_modal_success.less";
+@import "../../assets/styles/_modal_rule.less";
+
+#container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: #fff;
+  padding-bottom: 10px;
+
+  header{
+    background: #c8242d;
+    padding-top: 40px;
+    text-align: center;
+
+    h3{
+      font-size: 48px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .rule-bar{
+      position: relative;
+
+      .rule-btn{
+        display: block;
+        width: 200px;
+        height: 48px;
+        line-height: 48px;
+        border-radius: 24px;
+        text-align: center;
+        background: #ffc9cb;
+        color: #e50f07;
+        font-size: 28px;
+        margin: 24px auto 0;
+        position: relative;
+        z-index: 1;
+      }
+
+      .rule-modal{
+        position: absolute;
+        background: #fffce6;
+        border: 1px solid #e50f08;
+        border-radius: 6px;
+        padding: 30px;
+        width: 520px;
+        margin-left: -260px;
+        left: 50%;
+        top: 70px;
+        text-align: left;
+        display: none;
+        z-index: 10;
+
+        &.show{
+          display: block;
+        }
+
+        &:before {
+          content: '';
+          width: 30px;
+          height: 20px;
+          display: block;
+          position: absolute;
+          top: -20px;
+          left: 245px;
+          background: url(../../assets/images/shake/shaking-uparrow.png) no-repeat center;
+          background-size: contain;
+        }
+
+        .rule-content {
+          font-size: 28px;
+          color: #333;
+          line-height: 56px;
+
+          h4 {
+            font-size: 32px;
+            font-weight: 400;
+            color: #e50f08;
+          }
+
+          p{
+            font-size: 28px;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+
+  section{
+    background: #c8242d;
+    position: relative;
+    margin-top: -1px;
+
+    img {
+      width: 100%;
+      display: block;
+      vertical-align: middle;
+    }
+
+    .shake-center {
+      width: 70%;
+      position: absolute;
+      left: 15%;
+      top: 15%;
+
+      &.hand-animate {
+        -webkit-animation: hand_move infinite 1s;
+      }
+    }
+  }
+
+  footer{
+    background-color: #fff;
+    padding: 0 6% 30px;
+    font-size: 32px;
+    color: #333;
+    line-height: 52px;
+    margin-top: -1px;
+
+    h4{
+      font-weight: 400;
+      font-size: 36px;
+      color: #e50f08;
+      margin-bottom: 16px;
+    }
+
+    .blue_a{
+      display: inline-block;
+      font-weight: 400;
+      font-size: 32px;
+      color: #00a5e0;
+      margin-top: 20px;
+    }
+  }
+}

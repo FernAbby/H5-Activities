@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>摇一摇</title>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=0zhQuPBS84VNsTbDizXv0vjTbiZC11qm"></script>
+</head>
+<body style="visibility: hidden">
+<div id="container">
+  <header>
+    <h3>幸运摇一摇</h3>
+    <div class="rule-bar">
+      <div class="rule-btn">活动规则</div>
+      <div class="rule-modal">
+        <div class="rule-content">
+          <h4>活动时间：</h4>
+          <p id="date">2017-09-26 15:00:00 至 2017-09-30 14:59:59</p>
+          <h4>活动说明：</h4>
+          <p id="desc"><p>摇一摇测试活动说明，摇一摇测试活动说明,摇一摇测试活动说明</p></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <img src="../../assets/images/shake/shaking-background.jpg"/>
+    <div class="shake-center hand-animate">
+      <img src="../../assets/images/shake/shaking-center.png"/>
+    </div>
+  </section>
+
+  <footer>
+    <h4>奖项说明：</h4>
+    <div class="prize-desc">幸运摇一摇奖品1<br>幸运摇一摇奖品2</div>
+    <a class="blue_a" href="">查看中奖纪录</a>
+  </footer>
+
+  <audio src="../../assets/images/shake/shaking.mp3" id="playMiu">
+    浏览器不支持
+  </audio>
+  <div style="display:none;width:0;height:0;overflow: hidden;display: inline-block;" id="BMap"></div>
+</div>
+</body>
+</html>

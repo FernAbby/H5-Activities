@@ -6,7 +6,8 @@ module.exports = {
     "wheel",
     "guaguale",
     "nineGrid",
-    "scratch"
+    "scratch",
+    "shake"
   ],
   dev: {
     host: 'localhost',
