@@ -4,6 +4,36 @@
 @import "../../assets/styles/_modal_success.less";
 @import "../../assets/styles/_modal_rule.less";
 
+@-webkit-keyframes hand_move {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0); }
+  50% {
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    transform: rotate(15deg); }
+  100% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0); }
+}
+
+body {
+  font-size: 0;
+
+  iframe {
+    font-size: 0;
+    display: none;
+  }
+}
+
 #container {
   width: 100%;
   min-height: 100vh;
@@ -91,7 +121,7 @@
   }
 
   section{
-    background: #c8242d;
+    background: #e50f08;
     position: relative;
     margin-top: -1px;
 
